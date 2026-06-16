@@ -51,4 +51,9 @@ export const CASES: CaseMeta[] = [
   {
     slug: 'path-of-exile-2-evaluation',
     accent: 'tang',
-    type: 'Graduate
+    type: 'Graduate coursework \u00b7 UX design',
+    title: 'When depth becomes a wall.',
+    blurb: 'A heuristic evaluation of Path of Exile 2, backed by 183 player responses, on a brilliant game buried under its own cognitive load.',
+    cat: 'design',
+  },
+]
