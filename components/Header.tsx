@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-type Nav = 'home' | 'work' | 'about' | null
+type Nav = 'work' | 'writing' | 'about' | null
 
 export default function Header({ active = null }: { active?: Nav }) {
   return (
@@ -9,8 +9,8 @@ export default function Header({ active = null }: { active?: Nav }) {
         Nicholas <span>Mitchell</span>
       </Link>
       <nav className="nav" aria-label="Primary">
-        <Link href="/" className={active === 'home' ? 'active' : undefined}>Home</Link>
         <Link href="/work" className={active === 'work' ? 'active' : undefined}>Work</Link>
+        <Link href="/writing" className={active === 'writing' ? 'active' : undefined}>Writing</Link>
         <Link href="/about" className={active === 'about' ? 'active' : undefined}>About</Link>
         <a href="mailto:NicholasSMitchell@gmail.com">Contact</a>
       </nav>

@@ -11,10 +11,15 @@ const CURRENTLY: [string, string][] = [
   ['Curious about', 'HUDs and automotive alert design.'],
 ]
 
+const WRITING = [
+  { title: 'Task completion is a trap metric', meta: 'Essay · draft' },
+  { title: 'What turning a thesis into a case study taught me', meta: 'Essay · draft' },
+]
+
 export default function Home() {
   return (
     <>
-      <Header active="home" />
+      <Header />
       <main id="main">
         <section className="hero">
           <Sputnik />
@@ -52,6 +57,23 @@ export default function Home() {
             </div>
             <div className="grid">
               {CASES.map((c) => <CaseCard key={c.slug} c={c} />)}
+            </div>
+          </div>
+        </section>
+
+        <section className="home-section">
+          <div className="container">
+            <div className="section-head">
+              <h2 className="sh">From the notebook</h2>
+              <Link className="more" href="/writing">All writing <span className="arw">→</span></Link>
+            </div>
+            <div className="wlist">
+              {WRITING.map((w) => (
+                <Link className="wrow" href="/writing" key={w.title}>
+                  <h3>{w.title}</h3>
+                  <span className="meta-tag">{w.meta}</span>
+                </Link>
+              ))}
             </div>
           </div>
         </section>
