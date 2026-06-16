@@ -11,15 +11,10 @@ const CURRENTLY: [string, string][] = [
   ['Curious about', 'HUDs and automotive alert design.'],
 ]
 
-const WRITING = [
-  { title: 'Task completion is a trap metric', meta: 'Essay · draft' },
-  { title: 'What turning a thesis into a case study taught me', meta: 'Essay · draft' },
-]
-
 export default function Home() {
   return (
     <>
-      <Header />
+      <Header active="home" />
       <main id="main">
         <section className="hero">
           <Sputnik />
@@ -61,23 +56,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="home-section">
-          <div className="container">
-            <div className="section-head">
-              <h2 className="sh">From the notebook</h2>
-              <Link className="more" href="/writing">All writing <span className="arw">→</span></Link>
-            </div>
-            <div className="wlist">
-              {WRITING.map((w) => (
-                <Link className="wrow" href="/writing" key={w.title}>
-                  <h3>{w.title}</h3>
-                  <span className="meta-tag">{w.meta}</span>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-
         <section className="contact" id="contact">
           <div className="container">
             <div className="coupon">
@@ -86,7 +64,7 @@ export default function Home() {
               <p className="kicker">★ Mail this coupon today ★</p>
               <h2>Let&rsquo;s make something people can <span className="tang">actually use.</span></h2>
               <p className="sub">Open to UX research and design roles, freelance projects, and graduate research. Fill it out, drop it in the box.</p>
-           <form className="coupon-form" action="https://formspree.io/f/xzdqwdaa" method="POST">
+              <form className="coupon-form" action="https://formspree.io/f/xzdqwdaa" method="POST">
                 <div className="fields">
                   <p className="field">
                     <label className="lbl" htmlFor="cf-name">Your name</label>
@@ -103,7 +81,6 @@ export default function Home() {
                 </div>
                 <input type="hidden" name="_subject" value="New message from your portfolio" />
                 <div className="send">
-                 <div className="send">
                   <button className="btn btn-primary" type="submit">Send it over <span className="arw">→</span></button>
                   <a className="btn btn-ghost" href="https://www.linkedin.com/in/nicholasscottmitchell/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 </div>
