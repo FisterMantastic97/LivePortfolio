@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export type CaseMeta = {
   slug: string
-  accent: 'pool' | 'sun' | 'tang'
+  accent: 'pool' | 'sun' | 'tang' | 'soda'
   type: string
   title: string
   blurb: string
@@ -25,6 +25,14 @@ export default function CaseCard({ c }: { c: CaseMeta }) {
 
 export const CASES: CaseMeta[] = [
   {
+    slug: 'craft-and-cup',
+    accent: 'soda',
+    type: 'Product design + build \u00b7 Shipped',
+    title: 'Just write what you taste.',
+    blurb: 'An AI coffee-journaling app I designed, built, and shipped solo, turning plain-language tasting notes into a structured flavor wheel.',
+    cat: 'design',
+  },
+  {
     slug: 'driving-alert-salience',
     accent: 'pool',
     type: 'Master\u2019s research \u00b7 UX research',
@@ -43,9 +51,4 @@ export const CASES: CaseMeta[] = [
   {
     slug: 'path-of-exile-2-evaluation',
     accent: 'tang',
-    type: 'Graduate coursework \u00b7 UX design',
-    title: 'When depth becomes a wall.',
-    blurb: 'A heuristic evaluation of Path of Exile 2, backed by 183 player responses, on a brilliant game buried under its own cognitive load.',
-    cat: 'design',
-  },
-]
+    type: 'Graduate
