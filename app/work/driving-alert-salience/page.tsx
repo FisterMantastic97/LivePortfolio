@@ -18,7 +18,7 @@ export default function Page() {
             eyebrow="Case study · UX research"
             title={<>When does a <span className="pool">visual alert</span> beat a <span className="tang">beep?</span></>}
             lede="A 24-person study on whether an in-car alert's salience or its modality matters more for how fast drivers react, and what that means for designing alerts."
-            seal={{ number: '591', sublabel: 'MS · FASTEST', ring: '★ EVIDENCE-BASED ★ n = 24 ★ EST. 1957 ' }}
+            seal={{ number: '591', sublabel: 'MS · FASTEST', ring: '★ EVIDENCE-BASED ★ n = 24 ★ EST. 1997 ' }}
           />
 
           <MetaStrip items={[

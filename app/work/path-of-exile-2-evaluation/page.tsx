@@ -18,7 +18,7 @@ export default function Page() {
             eyebrow="Case study · UX research + design"
             title={<>When <span className="pool">depth</span> becomes a <span className="tang">wall.</span></>}
             lede="A heuristic evaluation of Path of Exile 2, backed by 183 survey responses, on how a brilliant game buries its depth under cognitive load, and how to dig it back out."
-            seal={{ number: '183', sublabel: 'RESPONSES', ring: '★ HEURISTIC EVAL ★ n = 183 ★ EST. 1957 ' }}
+            seal={{ number: '183', sublabel: 'RESPONSES', ring: '★ HEURISTIC EVAL ★ n = 183 ★ EST. 1997 ' }}
           />
 
           <MetaStrip items={[

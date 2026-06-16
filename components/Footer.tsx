@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-const SEALS = ['Built for humans', 'Meets WCAG AA', 'Nielsen tested', 'Est. 1957']
+const SEALS = ['Built for humans', 'Meets WCAG AA', 'Est. 1997']
 
 type Props = {
   prevHref?: string
