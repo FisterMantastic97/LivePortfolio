@@ -1,0 +1,30 @@
+export function Seal({ number, sublabel, ring }: { number: string; sublabel: string; ring: string }) {
+  return (
+    <svg className="seal" viewBox="0 0 120 120" aria-hidden="true">
+      <g fill="none" stroke="#2D1F15" strokeWidth="2">
+        <circle cx="60" cy="60" r="58" />
+        <circle cx="60" cy="60" r="44" />
+      </g>
+      <path id="seal-ring" d="M60,18 a42,42 0 1,1 -0.1,0" fill="none" />
+      <text fontFamily="Space Grotesk" fontWeight="700" fontSize="10" letterSpacing="3" fill="#2D1F15">
+        <textPath href="#seal-ring" startOffset="0">{ring}</textPath>
+      </text>
+      <text x="60" y="58" textAnchor="middle" fontFamily="Bowlby One" fontSize="22" fill="#E85D3F">{number}</text>
+      <text x="60" y="73" textAnchor="middle" fontFamily="Space Grotesk" fontWeight="700" fontSize="8.5" letterSpacing="2" fill="#2D1F15">{sublabel}</text>
+    </svg>
+  )
+}
+
+export function Sputnik() {
+  return (
+    <svg className="hero-art" viewBox="0 0 240 240" aria-hidden="true">
+      <g className="orbit" fill="none" stroke="#2D1F15" strokeWidth="1.6">
+        <ellipse cx="120" cy="120" rx="104" ry="40" transform="rotate(20 120 120)" />
+        <ellipse cx="120" cy="120" rx="104" ry="40" transform="rotate(80 120 120)" />
+        <ellipse cx="120" cy="120" rx="104" ry="40" transform="rotate(140 120 120)" />
+      </g>
+      <circle cx="120" cy="120" r="30" fill="#E5B033" stroke="#2D1F15" strokeWidth="2" />
+      <circle cx="120" cy="120" r="7" fill="#2D1F15" />
+    </svg>
+  )
+}
