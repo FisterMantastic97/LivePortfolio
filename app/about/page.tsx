@@ -65,7 +65,10 @@ export default function AboutPage() {
                   A UX researcher and designer, and a recent master&rsquo;s graduate in Human Factors and
                   Ergonomics from San José State. I care about the same thing in a driving alert, a party
                   app, and a sprawling video game: whether a person can actually understand what&rsquo;s in
-                  front of them and act on it.
+                front of them and act on it.
+                </p>
+                <p className="intro-link">
+                  <a href="https://www.linkedin.com/in/nicholasscottmitchell/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn <span className="arw">→</span></a>
                 </p>
               </div>
               <div className="portrait">

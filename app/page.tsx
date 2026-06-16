@@ -103,7 +103,9 @@ export default function Home() {
                 </div>
                 <input type="hidden" name="_subject" value="New message from your portfolio" />
                 <div className="send">
+                 <div className="send">
                   <button className="btn btn-primary" type="submit">Send it over <span className="arw">→</span></button>
+                  <a className="btn btn-ghost" href="https://www.linkedin.com/in/nicholasscottmitchell/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 </div>
               </form>
             </div>
