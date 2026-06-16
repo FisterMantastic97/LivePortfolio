@@ -181,6 +181,7 @@ strong,b{font-weight:600;}
 .card-type{font-family:var(--font-sub);font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--walnut);}
 .card-body h3{font-family:var(--font-display);font-weight:400;font-size:clamp(20px,2.6vw,26px);line-height:1.08;margin:0;}
 .card-out{font-size:15px;line-height:1.5;margin:0;flex:1;}
+.card-label{font-family:var(--font-sub);font-weight:600;font-size:13.5px;letter-spacing:0.2px;color:var(--walnut);margin:0;}
 .card-go{font-family:var(--font-sub);font-weight:600;font-size:13px;letter-spacing:1px;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;color:var(--tangerine);}
 .card-go .arw{display:inline-block;transition:transform .18s ease;}
 .card:hover .card-go .arw{transform:translateX(5px);}

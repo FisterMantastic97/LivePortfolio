@@ -5,6 +5,7 @@ export type CaseMeta = {
   accent: 'pool' | 'sun' | 'tang' | 'soda'
   type: string
   title: string
+  label: string
   blurb: string
   cat: string
 }
@@ -16,6 +17,7 @@ export default function CaseCard({ c }: { c: CaseMeta }) {
       <div className="card-body">
         <span className="card-type">{c.type}</span>
         <h3>{c.title}</h3>
+        <p className="card-label">{c.label}</p>
         <p className="card-out">{c.blurb}</p>
         <span className="card-go">View case study <span className="arw">→</span></span>
       </div>
@@ -29,6 +31,7 @@ export const CASES: CaseMeta[] = [
     accent: 'soda',
     type: 'Product design + build \u00b7 Shipped',
     title: 'Just write what you taste.',
+    label: 'Craft & Cup, an AI coffee-journaling app',
     blurb: 'An AI coffee-journaling app I designed, built, and shipped solo, turning plain-language tasting notes into a structured flavor wheel.',
     cat: 'design',
   },
@@ -37,6 +40,7 @@ export const CASES: CaseMeta[] = [
     accent: 'pool',
     type: 'Master\u2019s research \u00b7 UX research',
     title: 'When does a visual alert beat a beep?',
+    label: 'A driving-alert detection study',
     blurb: 'A 24-person study on whether an in-car alert\u2019s salience or its modality matters more for how fast drivers react.',
     cat: 'research',
   },
@@ -45,6 +49,7 @@ export const CASES: CaseMeta[] = [
     accent: 'sun',
     type: 'Team usability study \u00b7 Research + design',
     title: 'Fun to use, hard to trust.',
+    label: 'A usability study of Partiful',
     blurb: 'A five-person usability study of Partiful: a playful party app people enjoyed but couldn\u2019t quite trust, plus the fixes.',
     cat: 'research design',
   },
@@ -53,6 +58,7 @@ export const CASES: CaseMeta[] = [
     accent: 'tang',
     type: 'Graduate coursework \u00b7 UX design',
     title: 'When depth becomes a wall.',
+    label: 'A heuristic evaluation of Path of Exile 2',
     blurb: 'A heuristic evaluation of Path of Exile 2, backed by 183 player responses, on a brilliant game buried under its own cognitive load.',
     cat: 'design',
   },
