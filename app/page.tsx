@@ -86,14 +86,26 @@ export default function Home() {
               <p className="kicker">★ Mail this coupon today ★</p>
               <h2>Let&rsquo;s make something people can <span className="tang">actually use.</span></h2>
               <p className="sub">Open to UX research and design roles, freelance projects, and graduate research. Fill it out, drop it in the box.</p>
-              <div className="lines">
-                <div className="l"><span className="lbl">Your name</span><span className="val">&nbsp;</span></div>
-                <div className="l"><span className="lbl">The problem you&rsquo;re solving</span><span className="val">&nbsp;</span></div>
-                <div className="l"><span className="lbl">Reach me at</span><span className="val">NicholasSMitchell@gmail.com</span></div>
-              </div>
-              <div className="send">
-                <a className="btn btn-primary" href="mailto:NicholasSMitchell@gmail.com">Send it over <span className="arw">→</span></a>
-              </div>
+           <form className="coupon-form" action="https://formspree.io/f/xzdqwdaa" method="POST">
+                <div className="fields">
+                  <p className="field">
+                    <label className="lbl" htmlFor="cf-name">Your name</label>
+                    <input id="cf-name" name="name" type="text" autoComplete="name" required />
+                  </p>
+                  <p className="field">
+                    <label className="lbl" htmlFor="cf-email">Your email</label>
+                    <input id="cf-email" name="email" type="email" autoComplete="email" required />
+                  </p>
+                  <p className="field">
+                    <label className="lbl" htmlFor="cf-message">The problem you&rsquo;re solving</label>
+                    <textarea id="cf-message" name="message" rows={3} required></textarea>
+                  </p>
+                </div>
+                <input type="hidden" name="_subject" value="New message from your portfolio" />
+                <div className="send">
+                  <button className="btn btn-primary" type="submit">Send it over <span className="arw">→</span></button>
+                </div>
+              </form>
             </div>
           </div>
         </section>
