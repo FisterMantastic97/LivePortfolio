@@ -12,7 +12,7 @@ export default function Header({ active = null }: { active?: Nav }) {
         <Link href="/" className={active === 'home' ? 'active' : undefined}>Home</Link>
         <Link href="/work" className={active === 'work' ? 'active' : undefined}>Work</Link>
         <Link href="/about" className={active === 'about' ? 'active' : undefined}>About</Link>
-        <a href="mailto:NicholasSMitchell@gmail.com">Contact</a>
+        <Link href="/#contact">Contact</Link>
       </nav>
     </header>
   )

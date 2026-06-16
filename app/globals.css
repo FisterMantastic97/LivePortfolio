@@ -195,7 +195,7 @@ strong,b{font-weight:600;}
 .wrow .meta-tag{font-family:var(--font-sub);font-weight:600;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--walnut);}
 
 /* ---------- contact coupon (home) ---------- */
-.contact{padding:clamp(40px,6vw,72px) 0 clamp(30px,5vw,48px);}
+.contact{padding:clamp(40px,6vw,72px) 0 clamp(30px,5vw,48px);scroll-margin-top:80px;}
 .coupon{border:3px dashed var(--espresso);padding:clamp(28px,4vw,48px);position:relative;background:var(--cream);}
 .coupon .scissors{position:absolute;top:-13px;left:24px;background:var(--cream);padding:0 8px;font-size:16px;}
 .coupon .kicker{font-family:var(--font-sub);font-weight:700;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--tangerine);text-align:center;margin:0 0 8px;}

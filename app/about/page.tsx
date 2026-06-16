@@ -164,7 +164,7 @@ export default function AboutPage() {
             <div className="pad-cta">
               <h2>Let&rsquo;s <span className="tang">talk.</span></h2>
               <p>Open to UX research and design roles, freelance projects, and graduate research. If your problem is a real one, I&rsquo;d like to hear about it.</p>
-              <a className="btn btn-primary" href="mailto:NicholasSMitchell@gmail.com">Get in touch <span className="arw">→</span></a>
+              <a className="btn btn-primary" href="/#contact">Get in touch <span className="arw">→</span></a>
             </div>
           </div>
 

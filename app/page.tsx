@@ -33,7 +33,7 @@ export default function Home() {
             </p>
             <div className="hero-cta">
               <Link className="btn btn-primary" href="/work">See the work <span className="arw">→</span></Link>
-              <a className="btn btn-ghost" href="mailto:NicholasSMitchell@gmail.com">Get in touch</a>
+              <a className="btn btn-ghost" href="#contact">Get in touch</a>
             </div>
           </div>
         </section>
@@ -78,7 +78,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="contact">
+        <section className="contact" id="contact">
           <div className="container">
             <div className="coupon">
               <span className="scissors" aria-hidden="true">✂</span>
