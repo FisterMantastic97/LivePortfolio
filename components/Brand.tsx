@@ -5,7 +5,7 @@ export function Seal({ number, sublabel, ring }: { number: string; sublabel: str
         <circle cx="60" cy="60" r="58" />
         <circle cx="60" cy="60" r="44" />
       </g>
-      <path id="seal-ring" d="M60,18 a42,42 0 1,1 -0.1,0" fill="none" />
+      <path id="seal-ring" d="M60,14 a46,46 0 1,1 -0.1,0" fill="none" />
       <text fontFamily="Space Grotesk" fontWeight="700" fontSize="10" letterSpacing="3" fill="#2D1F15">
         <textPath href="#seal-ring" startOffset="0">{ring}</textPath>
       </text>
