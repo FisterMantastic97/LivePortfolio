@@ -65,8 +65,8 @@ strong,b{font-weight:600;}
 .cover-title{font-family:var(--font-display);font-weight:400;font-size:clamp(38px,7vw,72px);line-height:1.02;letter-spacing:-0.5px;margin:0 0 26px;max-width:15ch;}
 .cover-title .pool{color:var(--pool);}
 .cover-title .tang{color:var(--tangerine);}
-.lede{font-size:clamp(18px,2.4vw,23px);line-heigh.seal{position:absolute;top:16px;right:8px;width:118px;height:118px;animation:spin 48s linear infinite;}
-
+.lede{font-size:clamp(18px,2.4vw,23px);line-height:1.55;max-width:54ch;color:var(--espresso);margin:0;}
+.seal{position:absolute;top:16px;right:8px;width:118px;height:118px;animation:spin 48s linear infinite;}
 @media(max-width:680px){.seal{position:static;margin:0 0 18px;}}
 @keyframes spin{to{transform:rotate(360deg);}}
 
