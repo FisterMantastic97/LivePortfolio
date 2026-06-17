@@ -23,8 +23,8 @@ export default function Home() {
             <h1 className="hero-name">Nicholas <span className="tang">Mitchell.</span></h1>
             <p className="tagline">Designing tomorrow, <span className="tang">today.</span></p>
             <p className="pitch">
-              I run real studies and turn them into design decisions. Equal parts researcher and
-              designer, working in automotive UX, accessibility, and safety-critical interfaces.
+              I run real studies, then design and build what they point to. A human factors
+              researcher who ships, working across automotive UX, accessibility, and safety-critical interfaces.
             </p>
             <div className="hero-cta">
               <Link className="btn btn-primary" href="/work">See the work <span className="arw">→</span></Link>
