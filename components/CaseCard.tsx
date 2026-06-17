@@ -8,12 +8,21 @@ export type CaseMeta = {
   label: string
   blurb: string
   cat: string
+  badge?: string
 }
 
 export default function CaseCard({ c }: { c: CaseMeta }) {
   return (
-    <Link className={`card ${c.accent}`} href={`/work/${c.slug}`}>
+    <Link className={`card ${c.accent}${c.badge ? ' has-burst' : ''}`} href={`/work/${c.slug}`}>
       <div className="bar" aria-hidden="true" />
+      {c.badge && (
+        <svg className="card-burst" viewBox="0 0 100 100" aria-hidden="true">
+          <polygon points="50,4 58.3,19.1 73,10.2 72.6,27.4 89.8,27 80.9,41.7 96,50 80.9,58.3 89.8,73 72.6,72.6 73,89.8 58.3,80.9 50,96 41.7,80.9 27,89.8 27.4,72.6 10.2,73 19.1,58.3 4,50 19.1,41.7 10.2,27 27.4,27.4 27,10.2 41.7,19.1" fill="#E85D3F" stroke="#2D1F15" strokeWidth="2.5" strokeLinejoin="round" />
+          <circle cx="50" cy="50" r="30" fill="#F2EBDA" stroke="#2D1F15" strokeWidth="1.5" />
+          <text x="50" y="44" textAnchor="middle" fontFamily="'Space Grotesk',sans-serif" fontWeight="700" fontSize="9" letterSpacing="1.5" fill="#2D1F15">NOW</text>
+          <text x="50" y="66" textAnchor="middle" fontFamily="'Bowlby One',sans-serif" fontSize="17" fill="#2D1F15">{c.badge}</text>
+        </svg>
+      )}
       <div className="card-body">
         <span className="card-type">{c.type}</span>
         <h3>{c.title}</h3>
@@ -34,6 +43,7 @@ export const CASES: CaseMeta[] = [
     label: 'Craft & Cup, an AI coffee-journaling app',
     blurb: 'An AI coffee-journaling app I designed, built, and shipped solo, turning plain-language tasting notes into a structured flavor wheel.',
     cat: 'design',
+    badge: 'LIVE',
   },
   {
     slug: 'driving-alert-salience',

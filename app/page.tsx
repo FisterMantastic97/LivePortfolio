@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { Sputnik } from '@/components/Brand'
+import { Sputnik, AtomicDivider } from '@/components/Brand'
 import CaseCard, { CASES } from '@/components/CaseCard'
 
 const CURRENTLY: [string, string][] = [
@@ -44,6 +44,8 @@ export default function Home() {
           </div>
         </section>
 
+        <AtomicDivider />
+
         <section className="home-section">
           <div className="container">
             <div className="section-head">
@@ -55,6 +57,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <AtomicDivider />
 
         <section className="contact" id="contact">
           <div className="container">

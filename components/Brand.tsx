@@ -28,3 +28,23 @@ export function Sputnik() {
     </svg>
   )
 }
+
+export function AtomicDivider() {
+  return (
+    <div className="atomic-divider" aria-hidden="true">
+      <span className="ad-line" />
+      <svg className="ad-atom" viewBox="0 0 60 60" width="58" height="58">
+        <g fill="none" stroke="#2D1F15" strokeWidth="1.6">
+          <ellipse cx="30" cy="30" rx="22" ry="8" />
+          <ellipse cx="30" cy="30" rx="22" ry="8" transform="rotate(60 30 30)" />
+          <ellipse cx="30" cy="30" rx="22" ry="8" transform="rotate(120 30 30)" />
+        </g>
+        <circle cx="30" cy="30" r="5" fill="#E85D3F" stroke="#2D1F15" strokeWidth="1.5" />
+        <circle cx="52" cy="30" r="2.6" fill="#2DA8A8" />
+        <circle cx="19" cy="11" r="2.6" fill="#2DA8A8" />
+        <circle cx="19" cy="49" r="2.6" fill="#2DA8A8" />
+      </svg>
+      <span className="ad-line" />
+    </div>
+  )
+}
