@@ -520,6 +520,20 @@ strong,b{font-weight:600;}
 .alert[data-sal="high"] .ag-dot{fill:var(--cream);}
 .alert[data-sal="low"] .ag-line{stroke:#CDBE9F;}
 .alert[data-sal="low"] .ag-dot{fill:#CDBE9F;}
+/* demo road: lane dashes and posts drive toward the viewer while the task runs */
+.rm-item{transform-box:view-box;transform-origin:160px 85.3px;animation:rm-drive 3s linear infinite;}
+@keyframes rm-drive{
+  0%{transform:scale(.123);opacity:0;}
+  10%{opacity:1;}
+  25%{transform:scale(.16);}
+  50%{transform:scale(.229);}
+  70%{transform:scale(.35);}
+  85%{transform:scale(.575);}
+  95%{transform:scale(1.01);}
+  100%{transform:scale(1.6);opacity:1;}
+}
+.demo-scene:not(.is-running) .rm-item{animation-play-state:paused;}
+@media (prefers-reduced-motion:reduce){.rm-item{animation-play-state:paused !important;}}
 /* demo controls: one push button per answer, keycap underneath */
 .ctl{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:14px;}
 .ctl-btn{display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px 6px 11px;background:var(--cream);color:var(--espresso);border:2px solid var(--espresso);box-shadow:3px 4px 0 var(--espresso);font:inherit;cursor:pointer;touch-action:manipulation;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent;}

@@ -67,8 +67,9 @@ export default function Page() {
             <section className="block pad">
               <p className="stamp"><span className="num">★ Try it</span></p>
               <h2 className="sec-title">Feel the salience effect.</h2>
-              <p>Same task as the study, shrunk to eight alerts. Keep your eyes on the center of the road. Navigation and message alerts will pop up, some bold and some faint. Answer each one as fast as you can with its own control.</p>
+              <p>Here’s the study’s task, shrunk to eight alerts. Keep your eyes on the center of the road. Navigation and message alerts will pop up, some bold and some faint. Answer each one as fast as you can with its own control.</p>
               <p>Use the arrow keys for a left turn, straight ahead, or a right turn. Press Space to acknowledge a message. On a phone, tap the matching button under the road. Speed counts, but so does picking the right one.</p>
+              <p>The real study played these alerts over dashcam footage from Chicago and Los Angeles. This version uses a simple animated road instead, so it shows the salience gap, not real driving performance.</p>
               <ReactionDemo />
             </section>
 

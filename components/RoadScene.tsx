@@ -1,7 +1,15 @@
 import { ReactNode } from 'react'
 
-/** Flat retro road, seen from the driver's seat. Children render on top of it. */
-export function RoadScene({ children, className = '' }: { children?: ReactNode; className?: string }) {
+/** How many lane dashes travel down the road at once when it's moving. */
+const LANE = 6
+
+/**
+ * Flat retro road, seen from the driver's seat. Children render on top of it.
+ * With `moving`, the lane dashes and roadside posts drive toward the viewer. Each one is drawn once,
+ * close up, and scaled about the vanishing point, which is how ground-plane objects shrink with distance.
+ * The parent pauses the animation by leaving off `.is-running`.
+ */
+export function RoadScene({ children, className = '', moving = false }: { children?: ReactNode; className?: string; moving?: boolean }) {
   return (
     <div className={`road ${className}`}>
       <svg className="road-svg" viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
@@ -14,11 +22,24 @@ export function RoadScene({ children, className = '' }: { children?: ReactNode; 
         <path d="M0 94 Q40 70 92 88 T190 82 T320 90 V100 H0Z" fill="#2DA8A8" opacity="0.45" />
         <rect y="94" width="320" height="86" fill="#8B6F47" opacity="0.28" />
         <polygon points="146,94 174,94 312,180 8,180" fill="#2D1F15" />
-        <g fill="#F2EBDA">
-          <polygon points="159.3,100 160.7,100 161.2,108 158.8,108" />
-          <polygon points="158.4,118 161.6,118 162.6,132 157.4,132" />
-          <polygon points="157,146 163,146 164.6,166 155.4,166" />
-        </g>
+        {moving ? (
+          <g className="rm">
+            {Array.from({ length: LANE }, (_, i) => (
+              <g key={i} className="rm-item" style={{ animationDelay: `${(-i * 3) / LANE}s` }}>
+                <polygon points="157,146 163,146 164.6,166 155.4,166" fill="#F2EBDA" />
+                {i % 2 === 0
+                  ? <g><rect x="30" y="140" width="3.6" height="16" fill="#2D1F15" /><rect x="30" y="140" width="3.6" height="4" fill="#E85D3F" /></g>
+                  : <g><rect x="286.4" y="140" width="3.6" height="16" fill="#2D1F15" /><rect x="286.4" y="140" width="3.6" height="4" fill="#E85D3F" /></g>}
+              </g>
+            ))}
+          </g>
+        ) : (
+          <g fill="#F2EBDA">
+            <polygon points="159.3,100 160.7,100 161.2,108 158.8,108" />
+            <polygon points="158.4,118 161.6,118 162.6,132 157.4,132" />
+            <polygon points="157,146 163,146 164.6,166 155.4,166" />
+          </g>
+        )}
         <g stroke="#E5B033" strokeWidth="1.6">
           <line x1="149" y1="94" x2="22" y2="180" />
           <line x1="171" y1="94" x2="298" y2="180" />

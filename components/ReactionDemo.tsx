@@ -176,7 +176,7 @@ export default function ReactionDemo() {
         tabIndex={phase === 'running' ? 0 : -1}
         aria-label="Driving scene. Answer each alert with its matching control."
       >
-        <RoadScene>
+        <RoadScene moving>
           <span ref={alertEl} className="alert" data-sal="high" data-kind="left">
             {CONTROLS.map((c) => <NavGlyph key={c.kind} kind={c.kind} />)}
           </span>
