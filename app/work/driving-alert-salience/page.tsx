@@ -5,6 +5,7 @@ import {
 } from '@/components/CaseStudy'
 import { ReadModeProvider, ReadToggle, DeepRead } from '@/components/ReadMode'
 import SpecPlate from '@/components/SpecPlate'
+import WorkPlate from '@/components/WorkPlate'
 import ReactionDemo from '@/components/ReactionDemo'
 import ResultsChart from '@/components/ResultsChart'
 import { AlertIllustration } from '@/components/RoadScene'
@@ -21,11 +22,13 @@ export default function Page() {
         <article className="sheet">
           <ReadModeProvider>
             <CaseCover
-              eyebrow="Case study · UX research"
+              crumb="Driving-alert study"
               title={<>When does a <span className="pool">visual alert</span> beat a <span className="tang">beep?</span></>}
               lede="A 24-person study on whether an in-car alert's salience or its modality matters more for how fast drivers react, and what that means for designing alerts."
               seal={{ number: '591', sublabel: 'MS · FASTEST', ring: '★ EVIDENCE-BASED ★ n = 24 ★ EST. 1997 ' }}
             />
+
+            <WorkPlate kind="thesis" cover />
 
             <MetaStrip items={[
               ['Role', 'Researcher (sole)'],
@@ -146,7 +149,7 @@ export default function Page() {
               ]}
             />
 
-            <Footer prevHref="/work" nextHref="/work/partiful-usability" />
+            <Footer prevHref="/work" nextHref="/work/path-of-exile-2-evaluation" />
           </ReadModeProvider>
         </article>
       </main>

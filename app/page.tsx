@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { Sputnik, AtomicDivider } from '@/components/Brand'
-import CaseCard, { CASES } from '@/components/CaseCard'
+import CaseCard, { CaseRow, CASES } from '@/components/CaseCard'
 
 const CURRENTLY: [string, string][] = [
   ['Recently finished', 'My M.S. thesis on in-car alert design.'],
@@ -71,8 +71,11 @@ export default function Home() {
               <h2 className="sh">Selected work</h2>
               <Link className="more" href="/work">All work <span className="arw">→</span></Link>
             </div>
+            <ul className="catalog feature">
+              <CaseRow c={CASES[0]} />
+            </ul>
             <div className="grid">
-              {CASES.map((c) => <CaseCard key={c.slug} c={c} />)}
+              {CASES.slice(1).map((c) => <CaseCard key={c.slug} c={c} />)}
             </div>
           </div>
         </section>

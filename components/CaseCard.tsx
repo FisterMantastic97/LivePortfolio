@@ -1,75 +1,103 @@
 import Link from 'next/link'
+import WorkPlate, { PlateKind } from './WorkPlate'
 
 export type CaseMeta = {
   slug: string
-  accent: 'pool' | 'sun' | 'tang' | 'soda'
-  type: string
+  plate: PlateKind
+  project: string
+  kind: string
   title: string
-  label: string
   blurb: string
+  facts: [string, string][]
   cat: string
-  badge?: string
 }
 
+/** Home page card: plate on top, the finding as the headline. */
 export default function CaseCard({ c }: { c: CaseMeta }) {
   return (
-    <Link className={`card ${c.accent}${c.badge ? ' has-burst' : ''}`} href={`/work/${c.slug}`}>
-      <div className="bar" aria-hidden="true" />
-      {c.badge && (
-        <svg className="card-burst" viewBox="0 0 100 100" aria-hidden="true">
-          <polygon points="50,4 58.3,19.1 73,10.2 72.6,27.4 89.8,27 80.9,41.7 96,50 80.9,58.3 89.8,73 72.6,72.6 73,89.8 58.3,80.9 50,96 41.7,80.9 27,89.8 27.4,72.6 10.2,73 19.1,58.3 4,50 19.1,41.7 10.2,27 27.4,27.4 27,10.2 41.7,19.1" fill="#E85D3F" stroke="#2D1F15" strokeWidth="2.5" strokeLinejoin="round" />
-          <circle cx="50" cy="50" r="30" fill="#F2EBDA" stroke="#2D1F15" strokeWidth="1.5" />
-          <text x="50" y="44" textAnchor="middle" fontFamily="'Space Grotesk',sans-serif" fontWeight="700" fontSize="9" letterSpacing="1.5" fill="#2D1F15">NOW</text>
-          <text x="50" y="66" textAnchor="middle" fontFamily="'Bowlby One',sans-serif" fontSize="17" fill="#2D1F15">{c.badge}</text>
-        </svg>
-      )}
+    <Link className="card" href={`/work/${c.slug}`}>
+      <WorkPlate kind={c.plate} />
       <div className="card-body">
-        <span className="card-type">{c.type}</span>
+        <p className="card-meta"><span className="cm-proj">{c.project}</span><span className="cm-kind">{c.kind}</span></p>
         <h3>{c.title}</h3>
-        <p className="card-label">{c.label}</p>
         <p className="card-out">{c.blurb}</p>
-        <span className="card-go">View case study <span className="arw">→</span></span>
+        <span className="card-go">Read the case study</span>
       </div>
     </Link>
   )
 }
 
+/** Work page row: the same plate, plus the facts a recruiter scans for. */
+export function CaseRow({ c }: { c: CaseMeta }) {
+  return (
+    <li>
+      <Link className="crow" href={`/work/${c.slug}`}>
+        <WorkPlate kind={c.plate} />
+        <div className="card-body">
+          <p className="card-meta"><span className="cm-proj">{c.project}</span><span className="cm-kind">{c.kind}</span></p>
+          <h3>{c.title}</h3>
+          <p className="card-out">{c.blurb}</p>
+          <dl className="crow-facts">
+            {c.facts.map(([dt, dd]) => (
+              <div key={dt}><dt>{dt}</dt><dd>{dd}</dd></div>
+            ))}
+          </dl>
+          <span className="card-go">Read the case study</span>
+        </div>
+      </Link>
+    </li>
+  )
+}
+
 export const CASES: CaseMeta[] = [
   {
-    slug: 'craft-and-cup',
-    accent: 'soda',
-    type: 'Product design + build \u00b7 Shipped',
-    title: 'Just write what you taste.',
-    label: 'Craft & Cup, an AI coffee-journaling app',
-    blurb: 'An AI coffee-journaling app I designed, built, and shipped solo, turning plain-language tasting notes into a structured flavor wheel.',
-    cat: 'design',
-    badge: 'LIVE',
-  },
-  {
-    slug: 'path-of-exile-2-evaluation',
-    accent: 'tang',
-    type: 'Graduate coursework \u00b7 Research + design',
-    title: 'No player type scored above a B-.',
-    label: 'When depth becomes a wall \u00b7 Path of Exile 2 heuristic evaluation',
-    blurb: 'A heuristic evaluation of Path of Exile 2, backed by 183 player responses, on a brilliant game buried under its own cognitive load.',
-    cat: 'research design',
-  },
-  {
     slug: 'driving-alert-salience',
-    accent: 'pool',
-    type: 'Master\u2019s research \u00b7 UX research',
+    plate: 'thesis',
+    project: 'Driving-alert study',
+    kind: 'Master’s thesis',
     title: 'A well-placed visual alert beat the beep, at 591 ms.',
-    label: 'When does a visual alert beat a beep? \u00b7 Driving-alert study',
-    blurb: 'A 24-person study on whether an in-car alert\u2019s salience or its modality matters more for how fast drivers react.',
+    blurb: 'A 24-person study on whether an in-car alert’s salience or its modality matters more for how fast drivers react.',
+    facts: [['Role', 'Sole researcher'], ['Design', '2×2 within-subjects, 24 people'], ['When', 'May 2026']],
     cat: 'research',
   },
   {
-    slug: 'partiful-usability',
-    accent: 'sun',
-    type: 'Team usability study \u00b7 Research + design',
-    title: 'No one could tell if cancelling notified guests.',
-    label: 'Fun to use, hard to trust \u00b7 Partiful usability study',
-    blurb: 'A five-person usability study of Partiful: a playful party app people enjoyed but couldn\u2019t quite trust, plus the fixes.',
+    slug: 'path-of-exile-2-evaluation',
+    plate: 'poe2',
+    project: 'Path of Exile 2',
+    kind: 'Heuristic evaluation',
+    title: 'No player type scored above a B-.',
+    blurb: 'A heuristic evaluation of Path of Exile 2, backed by 183 player responses, on a brilliant game buried under its own cognitive load.',
+    facts: [['Role', 'Sole researcher'], ['Sample', '183 players, 20+ hours'], ['When', 'Fall 2025']],
     cat: 'research design',
+  },
+  {
+    slug: 'partiful-usability',
+    plate: 'partiful',
+    project: 'Partiful',
+    kind: 'Team usability study',
+    title: 'No one could tell if cancelling notified guests.',
+    blurb: 'A five-person usability study of Partiful: a playful party app people enjoyed but couldn’t quite trust, plus the fixes.',
+    facts: [['Role', 'Study design and moderation'], ['Sample', '5 participants, 4 tasks'], ['When', 'Spring 2025']],
+    cat: 'research design',
+  },
+  {
+    slug: 'dashboard-usability',
+    plate: 'dash',
+    project: 'Dashboard study',
+    kind: 'Survey research',
+    title: 'The all-button dashboards scored lowest.',
+    blurb: 'A 67-driver survey on how people rate analog, hybrid, and digital car dashboards, as automakers trade knobs for touchscreens.',
+    facts: [['Role', 'Survey build and analysis'], ['Sample', '67 drivers, 3 dashboard types'], ['When', 'Fall 2024']],
+    cat: 'research',
+  },
+  {
+    slug: 'craft-and-cup',
+    plate: 'craft',
+    project: 'Craft & Cup',
+    kind: 'Product design and build',
+    title: 'Just write what you taste.',
+    blurb: 'An AI coffee-journaling app I designed, built, and shipped solo, turning plain-language tasting notes into a structured flavor wheel.',
+    facts: [['Role', 'Designer and developer, solo'], ['Stack', 'Next.js, Supabase, Claude'], ['Year', '2026']],
+    cat: 'design',
   },
 ]

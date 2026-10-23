@@ -6,6 +6,7 @@ import {
 import PartifulScorecard from '@/components/PartifulScorecard'
 import { ReadModeProvider, ReadToggle, DeepRead } from '@/components/ReadMode'
 import SpecPlate from '@/components/SpecPlate'
+import WorkPlate from '@/components/WorkPlate'
 
 export const metadata = {
   title: 'Fun to use, hard to trust — Nicholas Mitchell',
@@ -19,11 +20,13 @@ export default function Page() {
         <article className="sheet">
           <ReadModeProvider>
           <CaseCover
-            eyebrow="Case study · UX research + design"
+            crumb="Partiful"
             title={<>Fun to use, hard to <span className="tang">trust.</span></>}
             lede="A five-person usability study of Partiful that found a playful party app people enjoyed but couldn't quite trust, plus the fixes to close the gap."
             seal={{ number: 'C-', sublabel: 'OVERALL', ring: '★ USABILITY STUDY ★ n = 5 ★ ISE 215 ★ ' }}
           />
+
+          <WorkPlate kind="partiful" cover />
 
           <MetaStrip items={[
             ['Role', 'Study design & moderation'],
@@ -117,7 +120,7 @@ export default function Page() {
           <Outcome num="05">
             <p>The app rarely told people that anything had worked. No clear confirmation after edits, text blasts, or messages. Participants would finish an action and then sit there second-guessing it.</p>
             <p className="twist">The worst case was cancellation: all five participants couldn't tell whether cancelling an event had actually notified guests. For the one action where ambiguity is genuinely dangerous, the app stayed silent.</p>
-            <p>Two more patterns ran through everything. Public and private were blurry: three of five assumed the RSVP comment box was private, but it posts publicly to the event feed, so people dropped dietary and personal details into a public field thinking only the host would see. And critical features hid: the messaging feature, half the entire reason the app exists, went undiscovered by every single participant, and "Text Blast" got misread or missed because the name didn't match what anyone expected to find. Overall grade: C-. Fun on the surface, real trust and discoverability gaps underneath.</p>
+            <p>Two more patterns ran through everything. Public and private were blurry: three of five assumed the RSVP comment box was private, but it posts publicly to the event feed, so people dropped dietary and personal details into a public field thinking only the host would see. And critical features hid: most participants only found the messaging feature, half the reason the app exists, after a prompt or a deep click into the guest list, and "Text Blast" got misread or missed because the name didn't match what anyone expected to find. Overall grade: C-. Fun on the surface, real trust and discoverability gaps underneath.</p>
             <PartifulScorecard />
             <Takeaways items={[
               <><b>Task completion is a trap metric.</b> People finished nearly everything and still didn't trust the app. Measure confidence, not just success.</>,
@@ -134,7 +137,7 @@ export default function Page() {
             { h: 'What\u2019s next', body: 'Prototype the top fixes, the confirmations and the public-private labeling, and re-test them, to prove they actually move the trust needle rather than just reading well on paper.' },
           ]} />
 
-          <Footer prevHref="/work" nextHref="/work/path-of-exile-2-evaluation" />
+          <Footer prevHref="/work" nextHref="/work/dashboard-usability" />
           </ReadModeProvider>
         </article>
       </main>

@@ -5,6 +5,7 @@ import {
 } from '@/components/CaseStudy'
 import { ReadModeProvider, ReadToggle, DeepRead } from '@/components/ReadMode'
 import SpecPlate from '@/components/SpecPlate'
+import WorkPlate from '@/components/WorkPlate'
 import PersonaGrades from '@/components/PersonaGrades'
 
 export const metadata = {
@@ -19,24 +20,26 @@ export default function Page() {
         <article className="sheet">
           <ReadModeProvider>
           <CaseCover
-            eyebrow="Case study · UX research + design"
+            crumb="Path of Exile 2"
             title={<>When <span className="pool">depth</span> becomes a <span className="tang">wall.</span></>}
             lede="A heuristic evaluation of Path of Exile 2, backed by 183 survey responses, on how a brilliant game buries its depth under cognitive load, and how to dig it back out."
             seal={{ number: '183', sublabel: 'RESPONSES', ring: '★ HEURISTIC EVAL ★ n = 183 ★ EST. 1997 ' }}
           />
+
+          <WorkPlate kind="poe2" cover />
 
           <MetaStrip items={[
             ['Role', 'Researcher + evaluator (sole)'],
             ['Type', 'Graduate coursework'],
             ['Methods', 'Survey · heuristic eval'],
             ['Sample', '183 players (20h+)'],
-            ['Timeline', 'Spring 2025'],
+            ['Timeline', 'Fall 2025'],
           ]} />
 
             <ReadToggle />
 
             <SpecPlate
-              model="Graduate coursework · Spring 2025"
+              model="Graduate coursework · Fall 2025"
               rows={[
                 ['Question', 'Where does the interface fail experienced players?'],
                 ['Method', 'Survey of 183 players with 20+ hours. Heuristic evaluation.'],
@@ -148,7 +151,7 @@ export default function Page() {
             { h: 'What\u2019s next', body: 'Prototype the highest-impact fix, progressive disclosure on the passive tree, and usability-test it head to head against the current version. The recommendations are well-grounded; the honest next step is proving a redesign lowers the load.' },
           ]} />
 
-          <Footer prevHref="/work" nextHref="/work/driving-alert-salience" />
+          <Footer prevHref="/work" nextHref="/work/partiful-usability" />
           </ReadModeProvider>
         </article>
       </main>

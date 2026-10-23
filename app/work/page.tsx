@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import CaseCard, { CASES } from '@/components/CaseCard'
+import { CaseRow, CASES } from '@/components/CaseCard'
 
 const FILTERS = ['all', 'research', 'design'] as const
 type Filter = (typeof FILTERS)[number]
@@ -16,7 +16,6 @@ export default function WorkPage() {
     <>
       <Header active="work" />
       <main id="main" className="page">
-        <p className="eyebrow">★ Selected work</p>
         <h1 className="sh" style={{ fontSize: 'clamp(40px,7vw,72px)', margin: '0 0 18px' }}>
           The <span className="tang">work.</span>
         </h1>
@@ -33,9 +32,9 @@ export default function WorkPage() {
           ))}
         </div>
 
-        <div className="grid">
-          {shown.map((c) => <CaseCard key={c.slug} c={c} />)}
-        </div>
+        <ul className="catalog">
+          {shown.map((c) => <CaseRow key={c.slug} c={c} />)}
+        </ul>
       </main>
       <Footer />
     </>

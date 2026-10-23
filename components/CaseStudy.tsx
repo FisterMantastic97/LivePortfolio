@@ -1,12 +1,14 @@
 import { ReactNode } from 'react'
+import Link from 'next/link'
 import { Seal } from './Brand'
 import { SectionBody } from './ReadMode'
 import GradeStamp from './GradeStamp'
 
 export function CaseCover({
-  eyebrow, title, lede, seal,
+  eyebrow, crumb, title, lede, seal,
 }: {
-  eyebrow: string
+  eyebrow?: string
+  crumb?: string
   title: ReactNode
   lede: string
   seal: { number: string; sublabel: string; ring: string }
@@ -14,7 +16,13 @@ export function CaseCover({
   return (
     <div className="pad cover">
       <Seal number={seal.number} sublabel={seal.sublabel} ring={seal.ring} />
-      <p className="eyebrow">{eyebrow}</p>
+      {crumb ? (
+        <nav className="crumb" aria-label="Breadcrumb">
+          <Link href="/work">Work</Link><span aria-hidden="true">/</span><span aria-current="page">{crumb}</span>
+        </nav>
+      ) : (
+        <p className="eyebrow">{eyebrow}</p>
+      )}
       <h1 className="cover-title">{title}</h1>
       <p className="lede">{lede}</p>
     </div>

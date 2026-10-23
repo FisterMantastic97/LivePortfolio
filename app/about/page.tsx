@@ -1,5 +1,17 @@
+import fs from 'fs'
+import path from 'path'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+
+// A portrait.jpg dropped into /public replaces the fact card in the intro.
+const HAS_PORTRAIT = fs.existsSync(path.join(process.cwd(), 'public', 'portrait.jpg'))
+
+const FACTS: [string, string][] = [
+  ['Based in', 'San José, California'],
+  ['Degree', 'M.S. Human Factors and Ergonomics, SJSU, 2026'],
+  ['Focus', 'Automotive UX, accessibility, safety-critical interfaces'],
+  ['Open to', 'UX research and human factors roles'],
+]
 
 const FOCUS = [
   {
@@ -59,7 +71,6 @@ export default function AboutPage() {
           <div className="pad">
             <div className="intro-grid">
               <div>
-                <p className="eyebrow">★ About</p>
                 <h1 className="about-title">Hi, I&rsquo;m <span className="tang">Nicholas.</span></h1>
                 <p className="lede">
                   A UX researcher and designer, and a recent master&rsquo;s graduate in Human Factors and
@@ -71,15 +82,26 @@ export default function AboutPage() {
                   <a href="https://www.linkedin.com/in/nicholasscottmitchell/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn <span className="arw">→</span></a>
                 </p>
               </div>
-              <div className="portrait">
-                <span className="tag">Portrait</span>
-                <span className="ph">drop in a photo</span>
-              </div>
+              {HAS_PORTRAIT ? (
+                <img className="portrait-img" src="/portrait.jpg" alt="Nicholas Mitchell" />
+              ) : (
+                <div className="plate about-plate">
+                  <span className="rivet tl" aria-hidden="true" />
+                  <span className="rivet tr" aria-hidden="true" />
+                  <span className="rivet bl" aria-hidden="true" />
+                  <span className="rivet br" aria-hidden="true" />
+                  <p className="plate-k">At a glance</p>
+                  <dl className="plate-rows">
+                    {FACTS.map(([dt, dd]) => (
+                      <div key={dt}><dt>{dt}</dt><dd>{dd}</dd></div>
+                    ))}
+                  </dl>
+                </div>
+              )}
             </div>
           </div>
 
           <section className="block pad">
-            <p className="stamp"><span className="num">★ 01</span></p>
             <h2 className="sec-title">The short version</h2>
             <p>
               I run real studies and turn them into design decisions. I came up through behavioral
@@ -98,7 +120,6 @@ export default function AboutPage() {
           </section>
 
           <section className="block pad">
-            <p className="stamp"><span className="num">★ 02</span></p>
             <h2 className="sec-title">What I work on</h2>
             <p>A few threads run through everything I do, from a 24-person driving study to a heuristic teardown of one of gaming&rsquo;s most overwhelming interfaces:</p>
             <div className="focus">
@@ -113,7 +134,6 @@ export default function AboutPage() {
           </section>
 
           <section className="block pad">
-            <p className="stamp"><span className="num">★ 03</span></p>
             <h2 className="sec-title">How I work</h2>
             <p>
               A few things I don&rsquo;t compromise on. I start from evidence, real users and real data,
@@ -126,7 +146,6 @@ export default function AboutPage() {
           </section>
 
           <section className="block pad">
-            <p className="stamp"><span className="num">★ 04</span></p>
             <h2 className="sec-title">Background</h2>
             <p>
               I&rsquo;m a recent graduate with an M.S. in Human Factors and Ergonomics Engineering from San
@@ -148,7 +167,6 @@ export default function AboutPage() {
           </section>
 
           <section className="block pad">
-            <p className="stamp"><span className="num">★ 05</span></p>
             <h2 className="sec-title">Tools &amp; methods</h2>
             <p>An unusual spread for a UX researcher: I script my own experiments, run my own stats in code, and build accessible full-stack apps. The combination is the point.</p>
             <div className="skills">
