@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     siteName: 'Nicholas Mitchell',
     title: 'Nicholas Mitchell — UX Research + Human Factors',
     description: DESCRIPTION,
-    images: [{ url: '/og.png', width: 1200, height: 630, alt: 'Nicholas Mitchell, UX research and human factors. 183 players surveyed, 1,008 experiment trials, 1 app shipped solo.' }],
+    images: [{ url: '/og.png', width: 1200, height: 630, alt: 'Nicholas Mitchell, UX research and human factors. 180+ players surveyed for one study, 1,000+ trials in a single experiment, 1 app designed, built, and shipped solo.' }],
   },
   twitter: {
     card: 'summary_large_image',
