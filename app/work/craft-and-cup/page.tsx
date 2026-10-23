@@ -251,7 +251,7 @@ export default function Page() {
                   <thead><tr><th scope="col">Issue</th><th scope="col">WCAG</th><th scope="col">Before</th><th scope="col">After</th></tr></thead>
                   <tbody>
                     {BEFORE_AFTER.map(([issue, c, b, a]) => (
-                      <tr key={issue}><th scope="row">{issue}</th><td>{c}</td><td>{b}</td><td>{a}</td></tr>
+                      <tr key={issue}><th scope="row">{issue}</th><td data-label="WCAG">{c}</td><td data-label="Before">{b}</td><td data-label="After">{a}</td></tr>
                     ))}
                   </tbody>
                 </table>

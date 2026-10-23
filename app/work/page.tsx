@@ -22,8 +22,8 @@ export default function WorkPage() {
               The <span className="tang">work.</span>
             </h1>
             <p className="work-intro">
-              UX research and design, weighted equally. Each project is a real study with real findings,
-              written so you can read the judgment behind the decisions, not just the outcome.
+              UX research and design, weighted equally. Four are real studies with real findings, and one is an app I
+              designed and shipped. Each is written so you can read the judgment behind the decisions, not just the outcome.
             </p>
           </div>
           <nav className="toc" aria-label="In this catalog">

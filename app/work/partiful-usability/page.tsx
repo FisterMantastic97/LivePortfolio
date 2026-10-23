@@ -24,7 +24,7 @@ export default function Page() {
             crumb="Partiful"
             title={<>Fun to use, hard to <span className="tang">trust.</span></>}
             lede="A five-person usability study of Partiful that found a playful party app people enjoyed but couldn't quite trust, plus the fixes to close the gap."
-            seal={{ number: 'C-', sublabel: 'OVERALL', ring: '★ USABILITY STUDY ★ n = 5 ★ ISE 215 ★ ' }}
+            seal={{ number: 'C-', sublabel: 'OVERALL', ring: '★ USABILITY STUDY ★ n = 5 ★ ISE 215 ' }}
           />
 
           <WorkPlate kind="partiful" cover />
@@ -33,7 +33,7 @@ export default function Page() {
             ['Role', 'UX researcher'],
             ['Type', 'Team usability study'],
             ['Methods', 'Moderated · heuristic'],
-            ['Team', 'Lumon Research (5)'],
+            ['Team', 'Five classmates'],
             ['Timeline', 'Spring 2025'],
           ]} />
 
@@ -50,7 +50,7 @@ export default function Page() {
             />
 
           <Section num="01" heading="At a Glance">
-            <p>Our team was brought in to test whether Partiful's experience actually lives up to its mission: helping people make friends and memories through social events.</p>
+            <p>For ISE 215, our team tested whether Partiful's experience actually lives up to its mission: helping people make friends and memories through social events.</p>
             <p>Across five participants and four real host-and-guest tasks, the app tested as fun but low-trust. People finished almost everything we asked, then immediately second-guessed whether any of it had worked.</p>
             <Stats
               items={[
@@ -59,7 +59,7 @@ export default function Page() {
                 { n: '3', l: 'measure types triangulated' },
                 { n: 'C-', l: 'overall usability grade', stamp: true },
               ]}
-              note="Rated high severity. All five participants couldn't tell whether cancelling an event notified guests."
+              note="Rated high severity. None of the five participants could tell whether cancelling an event notified guests."
             />
           </Section>
 
@@ -106,7 +106,7 @@ export default function Page() {
             <p>That split, finishing a task while visibly unsure it worked, is where the most important findings came from. We rated every issue on a severity framework so the recommendations could be ranked by impact rather than just listed.</p>
               <DeepRead title="Study design">
                 <dl className="specs">
-                  <div><dt>Team</dt><dd>Lumon Research, five people.</dd></div>
+                  <div><dt>Team</dt><dd>Five classmates, working under the team name Lumon Research.</dd></div>
                   <div><dt>Participants</dt><dd>Five, sorted after the sessions by how much they had used Partiful. Personas built from its Gen Z and Millennial audience shaped the scenarios.</dd></div>
                   <div><dt>Tasks</dt><dd>A first-time guest RSVPing. A first-time host creating and adjusting an event. An experienced host handling a venue change and a cancellation. Reconnecting with a guest from a past event.</dd></div>
                   <div><dt>Performance</dt><dd>Time on task, completion, and errors.</dd></div>
@@ -170,7 +170,7 @@ export default function Page() {
 
           <Outcome num="05">
             <p>The app rarely told people that anything had worked. No clear confirmation after edits, text blasts, or messages. Participants would finish an action and then sit there second-guessing it.</p>
-            <p className="twist">The worst case was cancellation: all five participants couldn't tell whether cancelling an event had actually notified guests. For the one action where ambiguity is genuinely dangerous, the app stayed silent.</p>
+            <p className="twist">The worst case was cancellation. None of the five participants could tell whether cancelling an event had actually notified guests. For the one action where ambiguity is genuinely dangerous, the app stayed silent.</p>
             <p>Two more patterns ran through everything. Public and private were blurry: three of five assumed the RSVP comment box was private, but it posts publicly to the event feed, so people dropped dietary and personal details into a public field thinking only the host would see. And critical features hid: most participants only found the messaging feature, half the reason the app exists, after a prompt or a deep click into the guest list, and "Text Blast" got misread or missed because the name didn't match what anyone expected to find. Overall grade: C-. Fun on the surface, real trust and discoverability gaps underneath.</p>
             <PartifulScorecard />
             <Takeaways items={[

@@ -26,7 +26,7 @@ export default function Page() {
               doc={{ href: '/thesis/mitchell-ms-thesis.pdf', label: 'Read the full thesis', meta: 'PDF, 61 pages' }}
               title={<>When does a <span className="pool">visual alert</span> beat a <span className="tang">voice?</span></>}
               lede="A 24-person study on whether an in-car alert's salience or its modality matters more for how fast drivers react, and what that means for designing alerts."
-              seal={{ number: '591', sublabel: 'MS · FASTEST', ring: '★ EVIDENCE-BASED ★ n = 24 ★ ISE 298 ★ ' }}
+              seal={{ number: '591', sublabel: 'MS · FASTEST', ring: '★ EVIDENCE-BASED ★ n = 24 ★ ISE 298 ' }}
             />
 
             <WorkPlate kind="thesis" cover />
@@ -147,7 +147,7 @@ export default function Page() {
                     'Debrief statement.',
                   ]} />
                 </Doc>
-                <Doc form="ISE 298 · Condition order" title="Two orders, so practice and fatigue cancel out">
+                <Doc form="ISE 298 · Condition order" title="Two orders, to balance salience order">
                   <div className="ctr-wrap" tabIndex={0} role="region" aria-label="Condition order by group">
                     <table className="ctr">
                       <thead><tr><th scope="col">Group</th><th scope="col">Run 1</th><th scope="col">Run 2</th><th scope="col">Run 3</th><th scope="col">Run 4</th></tr></thead>
@@ -157,7 +157,7 @@ export default function Page() {
                       </tbody>
                     </table>
                   </div>
-                  <p className="doc-fn">12 people per group. The Chicago and Los Angeles videos alternate across the four runs, so no video is tied to one channel.</p>
+                  <p className="doc-fn">12 people per group. The Chicago and Los Angeles videos alternate across the four runs, so no video is tied to one channel. Both orders run audio first and last, so the design balances salience order, not channel order.</p>
                 </Doc>
                 <Doc form="ISE 298 · Post-task questionnaire" title="What participants rated afterward" note="Items and scales as reported">
                   <ol className="sc-list">
@@ -173,11 +173,11 @@ export default function Page() {
             </Section>
 
             <Outcome num="05">
-              <p>Salience dominated everything. High-salience alerts were dramatically faster and missed far less often, in both channels. Reaction time swung 166 ms between low and high salience for visual alerts and 117 ms for audio. Low-salience alerts were missed roughly twice as often as high-salience ones.</p>
+              <p>Salience dominated everything. High-salience alerts were dramatically faster and missed far less often, in both channels. Reaction time swung 166 ms between low and high salience for visual alerts and 117 ms for audio. Low-salience alerts were missed more than twice as often as high-salience ones.</p>
               <p>Modality, on its own, did nothing significant. Which channel you used didn't move the needle. Whether the alert stood out did.</p>
               <ResultsChart />
               <p className="twist">Then the twist: at high salience, the visual alert was the fastest of all four conditions at 591 ms, beating audio. That's the reverse of what the field predicted.</p>
-              <p>The reason is placement. My visual alert sat where the driver was already looking, so it never paid the glance penalty that sank visual alerts in earlier work. The "audio is faster" rule was really measuring a glance, not a channel. And the worst performer of the whole study was the low-salience visual alert at 757 ms. Same channel as the winner, opposite end of the result.</p>
+              <p>Placement is the likely reason. I didn&rsquo;t test it directly, so that&rsquo;s the next study. My visual alert sat where the driver was already looking, so it never paid the glance penalty that sank visual alerts in earlier work. The "audio is faster" rule was really measuring a glance, not a channel. And the worst performer of the whole study was the low-salience visual alert at 757 ms. Same channel as the winner, opposite end of the result.</p>
               <p>One last finding that's easy to miss and worth a lot: what people <em>said</em> didn't match what they <em>did</em>. Preference was split almost evenly between visual and audio, even though visual measurably won at high salience. A preference survey alone would have pointed the wrong way.</p>
               <Takeaways items={[
                 <><b>Get salience right before you argue about channel.</b> It's the bigger lever, and it isn't close.</>,
@@ -187,7 +187,7 @@ export default function Page() {
             </Outcome>
 
             <Reflection
-              summary="Placement, not channel, explained the result. The next study tests placement head-on."
+              summary="Placement, not channel, is the likely explanation. The next study tests placement head-on."
               items={[
                 { h: 'What I learned', body: 'The cleanest result wasn’t the one I hypothesized. I predicted audio would win at high salience. Placement flipped it. A lot of "modality" findings are really "placement" findings wearing a costume.' },
                 { h: 'What I’d change', body: 'Accuracy hit a ceiling, about 97% across every condition, so it couldn’t tell conditions apart. A harder response mapping or tighter window would pull it off the ceiling next time.' },

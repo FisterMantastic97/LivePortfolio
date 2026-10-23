@@ -24,7 +24,7 @@ export default function Page() {
             crumb="Dashboard study"
             title={<><span className="pool">Buttons,</span> screens, or <span className="tang">both?</span></>}
             lede="A 67-driver survey on how people rate analog, hybrid, and fully digital car dashboards, run while automakers were trading knobs for touchscreens."
-            seal={{ number: '67', sublabel: 'DRIVERS', ring: '★ SURVEY STUDY ★ n = 67 ★ ISE 210 ★ ' }}
+            seal={{ number: '67', sublabel: 'DRIVERS', ring: '★ SURVEY STUDY ★ n = 67 ★ ISE 210 ' }}
           />
 
           <WorkPlate kind="dash" cover />
@@ -142,7 +142,7 @@ export default function Page() {
             <DashDemo />
             <Takeaways items={[
               <><b>Ask about their car, not cars.</b> Piping each driver&rsquo;s own year, make, and model into the questions kept the answers grounded in real use.</>,
-              <><b>Keep the buttons that matter.</b> Physical controls for what drivers reach for while moving, like volume and climate, with a simpler screen for the rest.</>,
+              <><b>Keep the buttons that matter.</b> Hybrids outscored all-button cars, and drivers rated knobs for volume 4.0 out of 5. Keep physical controls for what people reach for while moving, and simplify the screen for the rest.</>,
               <><b>A small group can&rsquo;t carry a headline.</b> Digital scored highest, but four drivers is an anecdote, not a finding.</>,
             ]} />
           </Outcome>

@@ -23,7 +23,7 @@ export default function Page() {
             crumb="Path of Exile 2"
             title={<>When <span className="pool">depth</span> becomes a <span className="tang">wall.</span></>}
             lede="A heuristic evaluation of Path of Exile 2, backed by 183 survey responses, on how a brilliant game buries its depth under cognitive load, and how to dig it back out."
-            seal={{ number: '183', sublabel: 'RESPONSES', ring: '★ HEURISTIC EVAL ★ n = 183 ★ PSYCH 273 ★ ' }}
+            seal={{ number: '183', sublabel: 'RESPONSES', ring: '★ HEURISTIC EVAL ★ n = 183 ★ PSYCH 273 ' }}
           />
 
           <WorkPlate kind="poe2" cover />
@@ -147,7 +147,7 @@ export default function Page() {
             summary="Heuristics travel further than expected. Next is prototyping progressive disclosure on the passive tree and testing it head to head."
             items={[
             { h: 'What I learned', body: 'Heuristics travel further than I assumed. Cognitive load, recognition over recall, visibility of system status, the same principles that govern a car dashboard expose a video game just as cleanly. Evaluating something nobody calls an "interface" sharpened how I see all of them.' },
-            { h: 'What I\u2019d change', body: 'A Reddit survey is fast but self-selecting. I\u2019d pair it with a few moderated sessions watching new players, the group the data only let me infer. I\u2019d also tighten my write-up. The report states the playtime minimum two different ways, an easy slip to miss at speed.' },
+            { h: 'What I\u2019d change', body: 'A Reddit survey is fast but self-selecting. I\u2019d pair it with a few moderated sessions watching new players, the group the data only let me infer.' },
             { h: 'What\u2019s next', body: 'Prototype the highest-impact fix, progressive disclosure on the passive tree, and usability-test it head to head against the current version. The recommendations are well-grounded; the honest next step is proving a redesign lowers the load.' },
           ]} />
 

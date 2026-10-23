@@ -6,8 +6,9 @@ export function Seal({ number, sublabel, ring }: { number: string; sublabel: str
         <circle cx="60" cy="60" r="44" />
       </g>
       <path id="seal-ring" d="M60,14 a46,46 0 1,1 -0.1,0" fill="none" />
-      <text fontFamily="Space Grotesk" fontWeight="700" fontSize="10" letterSpacing="3" fill="#2D1F15">
-        <textPath href="#seal-ring" startOffset="0">{ring}</textPath>
+      <text fontFamily="Space Grotesk" fontWeight="700" fontSize="10" fill="#2D1F15">
+        {/* textLength spreads the ring text evenly around the whole circle, whatever its length */}
+        <textPath href="#seal-ring" startOffset="0" textLength="284" lengthAdjust="spacing">{ring}</textPath>
       </text>
       <text x="60" y="58" textAnchor="middle" fontFamily="Bowlby One" fontSize="22" fill="#C23617">{number}</text>
       <text x="60" y="73" textAnchor="middle" fontFamily="Space Grotesk" fontWeight="700" fontSize="8.5" letterSpacing="2" fill="#2D1F15">{sublabel}</text>
