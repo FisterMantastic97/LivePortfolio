@@ -103,7 +103,7 @@ export const CASES: CaseMeta[] = [
     kind: 'Product design and build',
     title: 'Just write what you taste.',
     blurb: 'An AI coffee-journaling app I designed, built, and shipped solo, turning plain-language tasting notes into a structured flavor wheel.',
-    facts: [['Role', 'Designer and developer, solo'], ['Stack', 'Next.js, Supabase, Claude'], ['Year', '2026']],
+    facts: [['Role', 'Designer and developer, solo'], ['Stack', 'Next.js, Supabase, Claude'], ['Status', 'Live, always in progress']],
     cat: 'design',
   },
 ]

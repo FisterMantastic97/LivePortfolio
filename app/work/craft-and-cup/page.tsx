@@ -5,6 +5,7 @@ import {
 } from '@/components/CaseStudy'
 import { ReadModeProvider, ReadToggle, DeepRead } from '@/components/ReadMode'
 import SpecPlate from '@/components/SpecPlate'
+import WorkPlate from '@/components/WorkPlate'
 
 export const metadata = {
   title: 'Just write what you taste — Nicholas Mitchell',
@@ -18,24 +19,26 @@ export default function Page() {
         <article className="sheet">
           <ReadModeProvider>
           <CaseCover
-            eyebrow="Case study · Product design + build"
+            crumb="Craft & Cup"
             title={<>Just write what you <span className="tang">taste.</span></>}
-            lede="Craft & Cup is an AI-powered coffee journaling app I designed, built, and shipped on my own, teaching myself full-stack web development to do it. It turns plain-language tasting notes into a structured flavor wheel, so anyone can journal coffee without learning the jargon."
+            lede="Craft & Cup is an AI-powered coffee journaling app I designed, built, and shipped on my own, teaching myself full-stack web development to do it. It turns plain-language tasting notes into a structured flavor wheel, so anyone can journal coffee without learning the jargon. It’s live, and it will always be a work in progress."
             seal={{ number: 'LIVE', sublabel: 'SHIPPED SOLO', ring: '★ DESIGNED · BUILT · SHIPPED ★ EST. 2026 ' }}
           />
+
+          <WorkPlate kind="craft" cover />
 
           <MetaStrip items={[
             ['Role', 'Designer + developer (solo)'],
             ['Type', 'Personal product'],
             ['Stack', 'Next.js · Supabase · Claude'],
             ['Status', 'Live · mycraftcup.com'],
-            ['Timeline', '2026'],
+            ['Timeline', '2026, ongoing'],
           ]} />
 
             <ReadToggle />
 
             <SpecPlate
-              model="Personal product · Live 2026"
+              model="Personal product · Live, always in progress"
               rows={[
                 ['Question', 'Can plain-language notes become structured coffee data?'],
                 ['Method', 'Personas, standards review, peer pilot. Built solo.'],

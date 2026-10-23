@@ -118,7 +118,7 @@ export default function WorkPlate({ kind, cover = false, catno }: { kind: PlateK
   )
 }
 
-type Call = { t: string; x: number; y: number; w: number; ax: number; ay: number; aw: number; flip?: boolean }
+type Call = { t: string; x: number; y: number; w: number; ax: number; ay: number; aw: number; flip?: boolean; up?: boolean }
 
 // Catalog-style callouts on the case study covers, placed in % of the plate. Each points at the problem in the shot.
 const CALLOUTS: Partial<Record<PlateKind, Call[]>> = {
@@ -133,6 +133,10 @@ const CALLOUTS: Partial<Record<PlateKind, Call[]>> = {
   thesis: [
     { t: 'Big, bright, and dead center.', x: 3, y: 10, w: 15, ax: 13, ay: 25, aw: 28 },
   ],
+  craft: [
+    { t: 'Plain words in\u2026', x: 6, y: 5, w: 26, ax: 20, ay: 9, aw: 9 },
+    { t: '\u2026a flavor wheel out.', x: 33, y: 84, w: 28, ax: 52, ay: 77, aw: 9, up: true },
+  ],
   dash: [
     { t: 'Lowest score', x: 9, y: 3, w: 22, ax: 22, ay: 4, aw: 8 },
     { t: 'Only four drivers', x: 64, y: 3, w: 26, ax: 75, ay: 5, aw: 8, flip: true },
@@ -140,11 +144,11 @@ const CALLOUTS: Partial<Record<PlateKind, Call[]>> = {
 }
 
 /** A handwritten catalog callout with a curved arrow. */
-function Callout({ t, x, y, w, ax, ay, aw, flip }: Call) {
+function Callout({ t, x, y, w, ax, ay, aw, flip, up }: Call) {
   return (
     <>
       <span className="wp-call" style={{ left: `${x}%`, top: `${y}%`, width: `${w}%` }}>{t}</span>
-      <svg className={`wp-arrow-c${flip ? ' fx' : ''}`} viewBox="0 0 120 80" aria-hidden="true"
+      <svg className={`wp-arrow-c${flip ? ' fx' : ''}${up ? ' fy' : ''}`} viewBox="0 0 120 80" aria-hidden="true"
         style={{ left: `${ax}%`, top: `${ay}%`, width: `${aw}%` }}>
         <path d="M6 8 C 40 4, 80 20, 104 64" fill="none" strokeWidth="3" strokeLinecap="round" />
         <path d="M104 50 L104 64 L92 56" fill="none" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />

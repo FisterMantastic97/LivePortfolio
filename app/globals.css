@@ -675,6 +675,8 @@ strong,b{font-weight:600;}
 .wp-walnut .wp-arrow-c{color:var(--cream);}
 .wp-arrow-c path{stroke:currentColor;}
 .wp-arrow-c.fx{transform:scaleX(-1);}
+.wp-arrow-c.fy{transform:scaleY(-1);}
+.wp-arrow-c.fx.fy{transform:scale(-1,-1);}
 @media(min-width:700px){.wp-cover.wp-dash .wp-lineup{inset:19% 8% 3% 8%;}}
 @media(max-width:699px){.wp-call,.wp-arrow-c{display:none;}}
 
