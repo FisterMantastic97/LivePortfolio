@@ -111,6 +111,7 @@ export default function Page() {
           </Outcome>
 
           <Reflection
+            num="05"
             summary="Asking about each driver's own car paid off. Next time I'd recruit for balance, then take it from the survey into the car."
             items={[
             { h: 'What I learned', body: 'Building the survey around each person’s own car paid off. People answer more carefully about something they use every day than about a category in the abstract.' },

@@ -107,10 +107,10 @@ export function Takeaways({ items }: { items: ReactNode[] }) {
   )
 }
 
-export function Reflection({ items, summary }: { items: { h: string; body: string }[]; summary?: string }) {
+export function Reflection({ items, summary, num = '06' }: { items: { h: string; body: string }[]; summary?: string; num?: string }) {
   return (
     <section className="block pad">
-      <p className="stamp"><span className="num">★ 06</span></p>
+      <p className="stamp"><span className="num">★ {num}</span></p>
       <h2 className="sec-title">Reflection</h2>
       <SectionBody summary={summary}>
         <div className="reflect">

@@ -128,12 +128,12 @@ export default function AboutPage() {
               design, because the best decisions come from evidence, not taste alone.
             </p>
             <p>
-              I&rsquo;m also a self-taught builder. I taught myself web development from essentially zero
-              and shipped Craft &amp; Cup, a coffee companion app, end to end with Next.js, React,
-              Supabase, and the Anthropic API. I built it to WCAG AA from the first commit using
-              axe-core and ARIA, self-directed, not a box someone made me check. Knowing how things
-              actually get built makes me a sharper designer and an easier person for engineers to work
-              with.
+              I&rsquo;m also a builder. I shipped Craft &amp; Cup, a live AI coffee journal, starting from
+              almost no coding experience. I designed it and directed AI coding agents to build it, under
+              rules I set. One change per pull request, a WCAG, Nielsen, or HIG reason on every UI
+              change, and an accessibility suite that has to pass before anything merges. Knowing how
+              things actually get built makes me a sharper designer and an easier person for engineers
+              to work with.
             </p>
           </section>
 

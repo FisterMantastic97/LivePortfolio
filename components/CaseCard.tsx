@@ -102,8 +102,8 @@ export const CASES: CaseMeta[] = [
     project: 'Craft & Cup',
     kind: 'Product design and build',
     title: 'Just write what you taste.',
-    blurb: 'An AI coffee-journaling app I designed, built, and shipped solo, turning plain-language tasting notes into a structured flavor wheel.',
-    facts: [['Role', 'Designer and developer, solo'], ['Stack', 'Next.js, Supabase, Claude'], ['Status', 'Live, always in progress']],
+    blurb: 'A live AI coffee journal I designed and shipped solo, built by directing AI coding agents. Plain-language tasting notes become a structured flavor wheel.',
+    facts: [['Role', 'Product owner and designer, solo'], ['Stack', 'Next.js, Supabase, Claude'], ['Status', 'Live, always in progress']],
     cat: 'design',
   },
 ]
