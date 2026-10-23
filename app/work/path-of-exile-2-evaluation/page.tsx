@@ -108,7 +108,17 @@ export default function Page() {
             <p><b>Combat is where the load turns violent.</b> That overload has its worst moment in a fight. Players repeatedly described dying with no idea what killed them, because lethal attacks blend into a wash of particle effects with no consistent visual hierarchy. When the interface can't separate a high-damage attack from decoration, death stops feeling earned and starts feeling random.</p>
             <p className="twist">External tools are the verdict: players leave the game to play the game. Build planners because the tree has no planning mode, loot filters because items are unreadable, wikis because modifiers go unexplained.</p>
             <p>When a core feature only works through a third-party site, the interface has failed, and the players told me so directly.</p>
-            <ImageSlot tag="Figure 02 · the verdict" desc="A loot drop with and without a third-party filter, and the sprawl of the crafting menus." />
+            <figure className="figure">
+              <div className="fig-head">
+                <p className="fig-k">★ Fig 02 · The sprawl</p>
+                <p className="fig-t">Two of the game&rsquo;s crafting stash tabs</p>
+              </div>
+              <div className="shot-pair">
+                <img src="/poe2/socketables-stash.jpg" width={853} height={998} loading="lazy" alt="Path of Exile 2 stash open to the Socketables tab: rows of near-identical socketable icons with stack counts and no labels, under eleven category tabs." />
+                <img src="/poe2/essence-stash.jpg" width={849} height={990} loading="lazy" alt="Path of Exile 2 stash open to the Essence tab: dozens of crystal icons that differ mainly by color, with stack counts and no labels." />
+              </div>
+              <p className="fig-note">Dozens of look-alike icons and stack counts, with no labels on screen.</p>
+            </figure>
             <p>Not one of the five personas scored above a B-. The new player landed at a D. The efficient collector, whose whole loop is loot and inventory, hit a D+. That's the game's core audience grading its core experience as barely passing.</p>
             <p>The fixes don't touch the depth. They dig it out:</p>
             <Takeaways items={[

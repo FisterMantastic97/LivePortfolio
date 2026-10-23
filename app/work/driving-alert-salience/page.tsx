@@ -113,7 +113,11 @@ export default function Page() {
                   <div><dt>Audio salience</dt><dd>Phrasing of the audio alert.</dd></div>
                   <div><dt>Order</dt><dd>Condition order counterbalanced across two groups to control practice and fatigue.</dd></div>
                   <div><dt>Measures</dt><dd>Reaction time, accuracy and misses, and a post-task modality preference.</dd></div>
-                  {/* TODO(Nicholas): add the inferential stats here (F, p, and partial eta squared for salience, modality, and the interaction). */}
+                  <div><dt>Reaction time</dt><dd>2×2 repeated-measures ANOVA.<span className="sx">Salience <b>F(1, 23) = 869.47, p &lt; .001</b></span><span className="sx">Modality <b>F(1, 23) = 0.72, p = .405</b></span><span className="sx">Modality × salience <b>F(1, 23) = 39.55, p &lt; .001</b></span></dd></div>
+                  <div><dt>Planned tests</dt><dd>Paired t-tests, Bonferroni α = .0167. <span className="nw">All p &lt; .001.</span><span className="sx">Visual high vs. low <b>t(23) = −28.66, d = −5.85</b></span><span className="sx">Audio high vs. low <b>t(23) = −18.00, d = −3.67</b></span><span className="sx">Visual high vs. audio high <b>t(23) = −5.12, d = −1.05</b></span></dd></div>
+                  <div><dt>Miss rate</dt><dd>3.1% to 9.3% by condition. Modality and the interaction were not significant.<span className="sx">Salience <b>F(1, 23) = 14.39, p &lt; .001</b></span></dd></div>
+                  <div><dt>Accuracy</dt><dd>95.9% to 98.4% by condition. No significant effects.<span className="sx">Modality, the closest <b>F(1, 23) = 3.35, p = .08</b></span></dd></div>
+                  <div><dt>Preference</dt><dd>Visual 7, audio 7, both equally 6, no preference 4.</dd></div>
                   <div><dt>Limits</dt><dd>Salience scales differ across channels, so effect sizes compare cleanly within a channel only. Accuracy sat near 97% in every condition, a ceiling. No steering, so motor load is absent.</dd></div>
                 </dl>
               </DeepRead>
