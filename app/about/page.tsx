@@ -84,8 +84,16 @@ export default function AboutPage() {
               </div>
               {HAS_PORTRAIT ? (
                 <figure className="portrait-print">
-                  <img src="/portrait.jpg" width={960} height={1200}
-                    alt="Nicholas on the Chicago Riverwalk at night, with the Marina City towers lit up behind him." />
+                  <div className="deckle">
+                    <div className="mat">
+                      <img src="/portrait.jpg" width={960} height={1200}
+                        alt="Nicholas on the Chicago Riverwalk at night, with the Marina City towers lit up behind him." />
+                      <span className="pc tl" aria-hidden="true" />
+                      <span className="pc tr" aria-hidden="true" />
+                      <span className="pc bl" aria-hidden="true" />
+                      <span className="pc br" aria-hidden="true" />
+                    </div>
+                  </div>
                 </figure>
               ) : (
                 <div className="plate about-plate">

@@ -16,13 +16,31 @@ export default function WorkPage() {
     <>
       <Header active="work" />
       <main id="main" className="page">
-        <h1 className="sh" style={{ fontSize: 'clamp(40px,7vw,72px)', margin: '0 0 18px' }}>
-          The <span className="tang">work.</span>
-        </h1>
-        <p className="work-intro">
-          UX research and design, weighted equally. Each project is a real study with real findings,
-          written so you can read the judgment behind the decisions, not just the outcome.
-        </p>
+        <div className="work-head">
+          <div>
+            <h1 className="sh page-title" style={{ fontSize: 'clamp(40px,7vw,72px)', margin: '0 0 18px' }}>
+              The <span className="tang">work.</span>
+            </h1>
+            <p className="work-intro">
+              UX research and design, weighted equally. Each project is a real study with real findings,
+              written so you can read the judgment behind the decisions, not just the outcome.
+            </p>
+          </div>
+          <nav className="toc" aria-label="In this catalog">
+            <p className="toc-k">In this catalog</p>
+            <ol>
+              {CASES.map((c) => (
+                <li key={c.slug}>
+                  <a href={`#${c.slug}`} onClick={() => setFilter('all')}>
+                    <span className="ct-name">{c.project}</span>
+                    <span className="ct-dots" aria-hidden="true" />
+                    <span className="ct-no">{c.catno}</span>
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </nav>
+        </div>
 
         <div className="filters" role="group" aria-label="Filter work">
           {FILTERS.map((f) => (

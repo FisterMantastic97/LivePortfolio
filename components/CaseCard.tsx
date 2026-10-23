@@ -10,13 +10,14 @@ export type CaseMeta = {
   blurb: string
   facts: [string, string][]
   cat: string
+  catno: string
 }
 
 /** Home page card: plate on top, the finding as the headline. */
 export default function CaseCard({ c }: { c: CaseMeta }) {
   return (
     <Link className="card" href={`/work/${c.slug}`}>
-      <WorkPlate kind={c.plate} />
+      <WorkPlate kind={c.plate} catno={c.catno} />
       <div className="card-body">
         <p className="card-meta"><span className="cm-proj">{c.project}</span><span className="cm-kind">{c.kind}</span></p>
         <h3>{c.title}</h3>
@@ -30,9 +31,9 @@ export default function CaseCard({ c }: { c: CaseMeta }) {
 /** Work page row: the same plate, plus the facts a recruiter scans for. */
 export function CaseRow({ c }: { c: CaseMeta }) {
   return (
-    <li>
+    <li id={c.slug}>
       <Link className="crow" href={`/work/${c.slug}`}>
-        <WorkPlate kind={c.plate} />
+        <WorkPlate kind={c.plate} catno={c.catno} />
         <div className="card-body">
           <p className="card-meta"><span className="cm-proj">{c.project}</span><span className="cm-kind">{c.kind}</span></p>
           <h3>{c.title}</h3>
@@ -52,6 +53,7 @@ export function CaseRow({ c }: { c: CaseMeta }) {
 export const CASES: CaseMeta[] = [
   {
     slug: 'driving-alert-salience',
+    catno: 'ISE 298',
     plate: 'thesis',
     project: 'Driving-alert study',
     kind: 'Master’s thesis',
@@ -62,6 +64,7 @@ export const CASES: CaseMeta[] = [
   },
   {
     slug: 'path-of-exile-2-evaluation',
+    catno: 'PSYCH 273',
     plate: 'poe2',
     project: 'Path of Exile 2',
     kind: 'Heuristic evaluation',
@@ -72,6 +75,7 @@ export const CASES: CaseMeta[] = [
   },
   {
     slug: 'partiful-usability',
+    catno: 'ISE 215',
     plate: 'partiful',
     project: 'Partiful',
     kind: 'Team usability study',
@@ -82,6 +86,7 @@ export const CASES: CaseMeta[] = [
   },
   {
     slug: 'dashboard-usability',
+    catno: 'ISE 210',
     plate: 'dash',
     project: 'Dashboard study',
     kind: 'Survey research',
@@ -92,6 +97,7 @@ export const CASES: CaseMeta[] = [
   },
   {
     slug: 'craft-and-cup',
+    catno: 'Solo build',
     plate: 'craft',
     project: 'Craft & Cup',
     kind: 'Product design and build',

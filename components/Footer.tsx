@@ -1,7 +1,5 @@
 import Link from 'next/link'
 
-const SEALS = ['Built for humans', 'Meets WCAG AA', 'Est. 1997']
-
 type Props = {
   prevHref?: string
   prevLabel?: string
@@ -9,15 +7,11 @@ type Props = {
   nextLabel?: string
 }
 
+/** The catalog's back cover: next-project links, then the maker's mark and seals. */
 export default function Footer({ prevHref, prevLabel = 'All work', nextHref, nextLabel = 'Next project' }: Props) {
   const hasNav = prevHref || nextHref
   return (
     <footer className="site-footer">
-      <div className="seals">
-        {SEALS.map((s) => (
-          <div className="seal-badge" key={s}>{s}</div>
-        ))}
-      </div>
       {hasNav && (
         <div className="csnav">
           {prevHref ? (
@@ -28,7 +22,16 @@ export default function Footer({ prevHref, prevLabel = 'All work', nextHref, nex
           ) : <span />}
         </div>
       )}
-      <p className="copy">© 2026 Nicholas Scott Mitchell</p>
+      <div className="backcover">
+        <p className="bc-mark">Nicholas <span>Mitchell</span></p>
+        <p className="bc-line">UX research and human factors, <i>printed in San José</i></p>
+        <div className="seals">
+          <div className="seal-badge">Built for<br />humans</div>
+          <div className="seal-badge">Meets<br />WCAG AA<span className="sb-script">Guaranteed</span></div>
+          <div className="seal-badge">Est.<br />1997</div>
+        </div>
+        <p className="copy">© 2026 Nicholas Scott Mitchell</p>
+      </div>
     </footer>
   )
 }

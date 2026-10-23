@@ -7,6 +7,7 @@ import { ReadModeProvider, ReadToggle, DeepRead } from '@/components/ReadMode'
 import SpecPlate from '@/components/SpecPlate'
 import WorkPlate from '@/components/WorkPlate'
 import DashScores from '@/components/DashScores'
+import DashDemo from '@/components/DashDemo'
 
 export const metadata = {
   title: 'Buttons, screens, or both? — Nicholas Mitchell',
@@ -99,7 +100,9 @@ export default function Page() {
             <p>The all-button cars came in last. Analog dashboards averaged 82.2 out of 100, and cars with a screen scored higher. The gap held up statistically, about half a standard deviation.</p>
             <p className="twist">The popular story says buttons were always better. Our drivers didn&rsquo;t rate it that way. Hybrids, which keep physical controls and add a screen, scored 86.9 across 36 drivers.</p>
             <p>Digital dashboards scored highest on paper, 90.0, but only four people drove one. That&rsquo;s too few to call, and some drivers still described screen-only controls as complex and slow to navigate. What people drove also shaped what they preferred: car type and stated preference were linked, a modest correlation.</p>
+            <p>Preferences told a different story than scores. Asked what they&rsquo;d want, drivers rated an all-digital, Tesla-style dashboard lowest, 2.5 out of 5. A hybrid got 3.2, and for volume, knobs beat buttons at 4.0.</p>
             <DashScores />
+            <DashDemo />
             <Takeaways items={[
               <><b>Ask about their car, not cars.</b> Piping each driver&rsquo;s own year, make, and model into the questions kept the answers grounded in real use.</>,
               <><b>Keep the buttons that matter.</b> Physical controls for what drivers reach for while moving, like volume and climate, with a simpler screen for the rest.</>,

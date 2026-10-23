@@ -9,9 +9,9 @@ export default function Header({ active = null }: { active?: Nav }) {
         Nicholas <span>Mitchell</span>
       </Link>
       <nav className="nav" aria-label="Primary">
-        <Link href="/" className={active === 'home' ? 'active' : undefined}>Home</Link>
-        <Link href="/work" className={active === 'work' ? 'active' : undefined}>Work</Link>
-        <Link href="/about" className={active === 'about' ? 'active' : undefined}>About</Link>
+        <Link href="/" className={active === 'home' ? 'active' : undefined} aria-current={active === 'home' ? 'page' : undefined}>Home</Link>
+        <Link href="/work" className={active === 'work' ? 'active' : undefined} aria-current={active === 'work' ? 'page' : undefined}>Work</Link>
+        <Link href="/about" className={active === 'about' ? 'active' : undefined} aria-current={active === 'about' ? 'page' : undefined}>About</Link>
         <Link href="/#contact">Contact</Link>
       </nav>
     </header>

@@ -5,13 +5,14 @@ import { SectionBody } from './ReadMode'
 import GradeStamp from './GradeStamp'
 
 export function CaseCover({
-  eyebrow, crumb, title, lede, seal,
+  eyebrow, crumb, title, lede, seal, doc,
 }: {
   eyebrow?: string
   crumb?: string
   title: ReactNode
   lede: string
   seal: { number: string; sublabel: string; ring: string }
+  doc?: { href: string; label: string; meta: string }
 }) {
   return (
     <div className="pad cover">
@@ -25,6 +26,12 @@ export function CaseCover({
       )}
       <h1 className="cover-title">{title}</h1>
       <p className="lede">{lede}</p>
+      {doc && (
+        <p className="cover-doc">
+          <a href={doc.href}>{doc.label}</a>
+          <span>{doc.meta}</span>
+        </p>
+      )}
     </div>
   )
 }

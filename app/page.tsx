@@ -3,7 +3,7 @@ import path from 'path'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { Sputnik, AtomicDivider } from '@/components/Brand'
+import { CoverArt, AtomicDivider } from '@/components/Brand'
 import CaseCard, { CaseRow, CASES } from '@/components/CaseCard'
 import EmailButton from '@/components/EmailButton'
 
@@ -29,10 +29,16 @@ export default function Home() {
     <>
       <Header active="home" />
       <main id="main">
-        <section className="hero">
-          <Sputnik />
+        <section className="hero hero-cover">
           <div className="container">
-            <p className="eyebrow">★ UX Research + Human Factors · San José</p>
+            <p className="masthead">
+              <span>The 2026 Catalog</span>
+              <span>UX research + human factors</span>
+              <span>San José, California</span>
+            </p>
+          </div>
+          <div className="container hero-body">
+            <CoverArt count={CASES.length} />
             <h1 className="hero-name">Nicholas <span className="tang">Mitchell.</span></h1>
             <p className="tagline">Designing tomorrow, <span className="tang">today.</span></p>
             <p className="pitch">

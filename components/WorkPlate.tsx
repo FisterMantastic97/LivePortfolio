@@ -11,12 +11,14 @@ const ACCENT: Record<PlateKind, string> = { craft: 'soda', poe2: 'tang', thesis:
  * with the headline finding stamped on. Cards use it as decoration (alt text off);
  * case study covers use it as the lead image.
  */
-export default function WorkPlate({ kind, cover = false }: { kind: PlateKind; cover?: boolean }) {
+export default function WorkPlate({ kind, cover = false, catno }: { kind: PlateKind; cover?: boolean; catno?: string }) {
   const alt = (text: string) => (cover ? text : '')
   const load = cover ? 'eager' : 'lazy'
 
   return (
     <div className={`wp wp-${kind} wp-${ACCENT[kind]}${cover ? ' wp-cover' : ''}`} aria-hidden={cover ? undefined : true}>
+      {catno && <span className="wp-no">No. {catno}</span>}
+      {cover && CALLOUTS[kind]?.map((c) => <Callout key={c.t} {...c} />)}
       {kind === 'poe2' && (
         <>
           <span className="wp-print wp-back">
@@ -113,6 +115,41 @@ export default function WorkPlate({ kind, cover = false }: { kind: PlateKind; co
         </>
       )}
     </div>
+  )
+}
+
+type Call = { t: string; x: number; y: number; w: number; ax: number; ay: number; aw: number; flip?: boolean }
+
+// Catalog-style callouts on the case study covers, placed in % of the plate. Each points at the problem in the shot.
+const CALLOUTS: Partial<Record<PlateKind, Call[]>> = {
+  poe2: [
+    { t: 'Where\u2019s the boss?', x: 5, y: 5, w: 22, ax: 17, ay: 11, aw: 11 },
+    { t: 'Which crystal is which?', x: 36, y: 6, w: 26, ax: 55, ay: 9, aw: 10 },
+  ],
+  partiful: [
+    { t: 'Feels private\u2026', x: 4, y: 24, w: 20, ax: 16, ay: 32, aw: 12 },
+    { t: '\u2026posts to everyone.', x: 78, y: 50, w: 20, ax: 70, ay: 61, aw: 10, flip: true },
+  ],
+  thesis: [
+    { t: 'Big, bright, and dead center.', x: 3, y: 10, w: 15, ax: 13, ay: 25, aw: 28 },
+  ],
+  dash: [
+    { t: 'Lowest score', x: 9, y: 3, w: 22, ax: 22, ay: 4, aw: 8 },
+    { t: 'Only four drivers', x: 64, y: 3, w: 26, ax: 75, ay: 5, aw: 8, flip: true },
+  ],
+}
+
+/** A handwritten catalog callout with a curved arrow. */
+function Callout({ t, x, y, w, ax, ay, aw, flip }: Call) {
+  return (
+    <>
+      <span className="wp-call" style={{ left: `${x}%`, top: `${y}%`, width: `${w}%` }}>{t}</span>
+      <svg className={`wp-arrow-c${flip ? ' fx' : ''}`} viewBox="0 0 120 80" aria-hidden="true"
+        style={{ left: `${ax}%`, top: `${ay}%`, width: `${aw}%` }}>
+        <path d="M6 8 C 40 4, 80 20, 104 64" fill="none" strokeWidth="3" strokeLinecap="round" />
+        <path d="M104 50 L104 64 L92 56" fill="none" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    </>
   )
 }
 
