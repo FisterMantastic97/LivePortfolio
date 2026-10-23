@@ -29,7 +29,7 @@ export default function Page() {
           <WorkPlate kind="dash" cover />
 
           <MetaStrip items={[
-            ['Role', 'Survey build + analysis'],
+            ['Role', 'Co-researcher'],
             ['Type', 'Graduate coursework'],
             ['Methods', 'Survey · modified SUS'],
             ['Team', 'With Abdullah Rehman'],
@@ -50,7 +50,7 @@ export default function Page() {
 
           <Section num="01" heading="At a Glance">
             <p>Car dashboards are moving from knobs and buttons to touchscreens, fast. My classmate Abdullah Rehman and I wanted to know how drivers actually feel about that shift, so we asked them.</p>
-            <p>I built the survey in Qualtrics and ran the analysis in SPSS. Sixty-seven drivers finished it. Each one rated the car they drive most, and we sorted every car into analog, hybrid, or digital by its dashboard.</p>
+            <p>We built the survey in Qualtrics and ran the analysis in SPSS. Sixty-seven drivers finished it. Each one rated the car they drive most, and we sorted every car into analog, hybrid, or digital by its dashboard.</p>
             <Stats
               items={[
                 { n: '67', l: 'drivers surveyed' },
@@ -83,7 +83,7 @@ export default function Page() {
             <p>We sorted every car by hand into analog, hybrid, or digital, scored each driver&rsquo;s answers out of 100, and compared the groups.</p>
               <DeepRead title="Study design">
                 <dl className="specs">
-                  <div><dt>Team</dt><dd>Two researchers, Abdullah Rehman and me. I built the survey in Qualtrics and ran the analysis in SPSS.</dd></div>
+                  <div><dt>Team</dt><dd>Two researchers, Abdullah Rehman and me.</dd></div>
                   <div><dt>Participants</dt><dd>67 completed responses out of 77 started. Licensed drivers 18 and older, recruited at SJSU and through friends, family, and coworkers in California and Nevada.</dd></div>
                   <div><dt>Instrument</dt><dd>27 questions, 10 to 20 minutes. Multiple choice and 5-point Likert items, with each driver&rsquo;s own car piped into the wording.</dd></div>
                   <div><dt>Scoring</dt><dd>A modified seven-item SUS, scored out of 35 and converted to 100.</dd></div>

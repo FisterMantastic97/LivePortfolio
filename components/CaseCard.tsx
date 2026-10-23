@@ -87,7 +87,7 @@ export const CASES: CaseMeta[] = [
     kind: 'Survey research',
     title: 'The all-button dashboards scored lowest.',
     blurb: 'A 67-driver survey on how people rate analog, hybrid, and digital car dashboards, as automakers trade knobs for touchscreens.',
-    facts: [['Role', 'Survey build and analysis'], ['Sample', '67 drivers, 3 dashboard types'], ['When', 'Fall 2024']],
+    facts: [['Role', 'Co-researcher'], ['Sample', '67 drivers, 3 dashboard types'], ['When', 'Fall 2024']],
     cat: 'research',
   },
   {

@@ -3,7 +3,7 @@ import path from 'path'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
-// A portrait.jpg dropped into /public replaces the fact card in the intro.
+// With a portrait.jpg in /public, the photo takes the intro spot and the facts move to a strip below it.
 const HAS_PORTRAIT = fs.existsSync(path.join(process.cwd(), 'public', 'portrait.jpg'))
 
 const FACTS: [string, string][] = [
@@ -83,7 +83,10 @@ export default function AboutPage() {
                 </p>
               </div>
               {HAS_PORTRAIT ? (
-                <img className="portrait-img" src="/portrait.jpg" alt="Nicholas Mitchell" />
+                <figure className="portrait-print">
+                  <img src="/portrait.jpg" width={960} height={1200}
+                    alt="Nicholas on the Chicago Riverwalk at night, with the Marina City towers lit up behind him." />
+                </figure>
               ) : (
                 <div className="plate about-plate">
                   <span className="rivet tl" aria-hidden="true" />
@@ -100,6 +103,13 @@ export default function AboutPage() {
               )}
             </div>
           </div>
+          {HAS_PORTRAIT && (
+            <dl className="meta about-meta">
+              {FACTS.map(([dt, dd]) => (
+                <div key={dt}><dt>{dt}</dt><dd>{dd}</dd></div>
+              ))}
+            </dl>
+          )}
 
           <section className="block pad">
             <h2 className="sec-title">The short version</h2>
