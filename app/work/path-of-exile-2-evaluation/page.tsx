@@ -1,7 +1,7 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import {
-  CaseCover, MetaStrip, Section, Stats, ImageSlot, Pull, Outcome, Takeaways, Reflection,
+  CaseCover, MetaStrip, Section, Stats, Pull, Outcome, Takeaways, Reflection,
 } from '@/components/CaseStudy'
 import { ReadModeProvider, ReadToggle, DeepRead } from '@/components/ReadMode'
 import SpecPlate from '@/components/SpecPlate'
@@ -76,7 +76,17 @@ export default function Page() {
             <p>I needed real player behavior fast, so I ran a contextual inquiry as a survey, mixing rating scales for measurable usability signals with open-ended questions for the why. I seeded it with experienced players I knew, then posted it to the Path of Exile community on Reddit.</p>
             <p>It went further than I expected. In a few hours, while I was at work, it pulled 183 responses, every one from a player with at least 20 hours in the game. That detail matters: this wasn't first-impression confusion. These were invested, experienced players, which makes the findings harder to wave off. If the people who love the game most are still overloaded, the interface, not the player, is the problem.</p>
             <p>One honest limit I'll name: a Reddit survey self-selects for the most engaged slice of the community. But that cuts in the study's favor here. The overload showed up in exactly the population most equipped to handle it.</p>
-            <ImageSlot tag="Figure 01 · the systems" desc="The empty passive skill tree, and a chaotic combat encounter where threats vanish into particle effects." />
+            <figure className="figure">
+              <div className="fig-head">
+                <p className="fig-k">★ Fig 01 · The systems</p>
+                <p className="fig-t">The skill tree and a boss fight</p>
+              </div>
+              <div className="shot-pair uneven">
+                <img src="/poe2/passive-tree.jpg" width={1000} height={1042} loading="lazy" alt="The full Path of Exile 2 passive skill tree zoomed out: a dense web of hundreds of tiny nodes around an empty center." />
+                <img src="/poe2/boss-fight.jpg" width={1280} height={720} loading="lazy" alt="A Path of Exile 2 boss fight where a large fiery explosion fills most of the screen, hiding both the boss and the player character." />
+              </div>
+              <p className="fig-note">Left: the full passive tree, where every dot is a separate skill. Right: a boss fight with both the boss and the player somewhere in the frame.</p>
+            </figure>
           </Section>
 
           <Section

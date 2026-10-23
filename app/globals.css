@@ -329,6 +329,27 @@ strong,b{font-weight:600;}
 .shot-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:6px;}
 .shot-pair img{display:block;width:100%;height:auto;border:2px solid var(--espresso);background:var(--espresso);}
 @media(max-width:560px){.shot-pair{grid-template-columns:1fr;}}
+.shot-pair.uneven{grid-template-columns:0.9fr 1.6fr;align-items:start;}
+.shot-pair.phones{grid-template-columns:repeat(2,minmax(0,240px));justify-content:center;gap:20px;}
+.shot-pair.phones img{border-radius:18px;border-width:3px;}
+@media(max-width:560px){.shot-pair.uneven{grid-template-columns:1fr;}.shot-pair.phones{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;}}
+.fig-sub{font-family:var(--font-sub);font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;margin:24px 0 10px;padding-top:16px;border-top:2px solid var(--espresso);}
+.score-rows{list-style:none;margin:6px 0 0;padding:0;}
+.score-rows li{display:grid;grid-template-columns:1fr auto;align-items:center;gap:6px 18px;padding:12px 0;border-top:1.5px solid rgba(45,31,21,0.22);}
+.score-rows li:first-child{border-top:none;}
+.score-rows li.score-overall{border-top:2px solid var(--espresso);}
+.score-q{font-family:var(--font-sub);font-weight:700;font-size:16px;line-height:1.3;margin:0 0 3px;}
+.score-why{font-size:14.5px;line-height:1.45;margin:0;color:var(--espresso);}
+.score-rows .gstamp{margin:0 6px 0 0;}
+.gstamp-sm{padding:3px 9px 4px;border-width:2.5px;}
+.gstamp-sm .gstamp-l{font-size:7.5px;letter-spacing:2px;}
+.gstamp-sm .gstamp-g{font-size:22px;}
+.hbars{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
+.hbars li{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) 24px;align-items:center;gap:12px;font-family:var(--font-sub);font-size:14px;line-height:1.3;}
+.hb-track{display:block;height:14px;background:rgba(45,31,21,0.08);}
+.hb-fill{display:block;height:100%;background:var(--pool);border:1.5px solid var(--espresso);border-left:none;border-radius:0 4px 4px 0;}
+.hb-n{font-weight:700;text-align:right;}
+@media(max-width:560px){.hbars li{grid-template-columns:1fr 24px;}.hb-track{grid-column:1 / span 2;grid-row:2;}}
 
 /* ---------- results chart (bars draw in once) ---------- */
 .rtc{display:grid;grid-template-columns:32px 1fr;column-gap:8px;margin-top:34px;}
