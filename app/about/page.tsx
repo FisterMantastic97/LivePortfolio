@@ -168,9 +168,14 @@ export default function AboutPage() {
             <p>
               I&rsquo;m a recent graduate with an M.S. in Human Factors and Ergonomics Engineering from San
               José State University, finished in May 2026. My thesis, advised by Dr. Gaojian Huang,
-              examined visual and auditory alert salience in driving. Before that, I earned my degree in
-              Behavioral Science, also at SJSU, which is where the through-line starts: understanding how
-              people think and decide before designing for them.
+              examined visual and auditory alert salience in driving.
+            </p>
+            <p>
+              Before that, I earned a B.A. in Behavioral Science, also at SJSU. That&rsquo;s where the
+              through-line starts. Behavioral science is the study of how people perceive, think, and
+              decide. Human factors puts that knowledge to work in design, shaping the alert, the
+              control, or the screen around the person using it. One taught me how people work. The
+              other taught me how to build for them.
             </p>
             <p>
               On the experience side, I&rsquo;ve spent nine years at Best Buy, starting as a Computer Sales
