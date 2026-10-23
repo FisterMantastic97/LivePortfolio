@@ -9,7 +9,7 @@ export function Seal({ number, sublabel, ring }: { number: string; sublabel: str
       <text fontFamily="Space Grotesk" fontWeight="700" fontSize="10" letterSpacing="3" fill="#2D1F15">
         <textPath href="#seal-ring" startOffset="0">{ring}</textPath>
       </text>
-      <text x="60" y="58" textAnchor="middle" fontFamily="Bowlby One" fontSize="22" fill="#E85D3F">{number}</text>
+      <text x="60" y="58" textAnchor="middle" fontFamily="Bowlby One" fontSize="22" fill="#C23617">{number}</text>
       <text x="60" y="73" textAnchor="middle" fontFamily="Space Grotesk" fontWeight="700" fontSize="8.5" letterSpacing="2" fill="#2D1F15">{sublabel}</text>
     </svg>
   )

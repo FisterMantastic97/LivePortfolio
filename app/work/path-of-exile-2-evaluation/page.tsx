@@ -5,6 +5,7 @@ import {
 } from '@/components/CaseStudy'
 import { ReadModeProvider, ReadToggle, DeepRead } from '@/components/ReadMode'
 import SpecPlate from '@/components/SpecPlate'
+import PersonaGrades from '@/components/PersonaGrades'
 
 export const metadata = {
   title: 'When depth becomes a wall — Nicholas Mitchell',
@@ -130,6 +131,7 @@ export default function Page() {
               <p className="fig-note">Dozens of look-alike icons and stack counts, with no labels on screen.</p>
             </figure>
             <p>Not one of the five personas scored above a B-. The new player landed at a D. The efficient collector, whose whole loop is loot and inventory, hit a D+. That's the game's core audience grading its core experience as barely passing.</p>
+            <PersonaGrades />
             <p>The fixes don't touch the depth. They dig it out:</p>
             <Takeaways items={[
               <><b>Externalize the knowledge.</b> Progressive disclosure on the passive tree, collapsible clusters, search, and tooltips that actually explain modifiers. Stop making players memorize what the interface could just show.</>,

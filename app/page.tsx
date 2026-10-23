@@ -1,3 +1,5 @@
+import fs from 'fs'
+import path from 'path'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -5,11 +7,21 @@ import { Sputnik, AtomicDivider } from '@/components/Brand'
 import CaseCard, { CASES } from '@/components/CaseCard'
 
 const CURRENTLY: [string, string][] = [
-  ['Working on', 'This portfolio, in 1950s retro-futurism.'],
-  ['Wrestling with', 'Showing research work visually.'],
+  ['Recently finished', 'My M.S. thesis on in-car alert design.'],
   ['Recently shipped', 'Craft & Cup, a coffee companion app.'],
+  ['Writing', '\u201cLook, Listen, Feel,\u201d a follow-up study design.'],
   ['Curious about', 'HUDs and automotive alert design.'],
 ]
+
+const PROOF: [string, string][] = [
+  ['183', 'players surveyed for one study'],
+  ['1,008', 'trials in a controlled experiment'],
+  ['1', 'app designed, built, and shipped solo'],
+]
+
+const EMAIL = 'NicholasSMitchell@gmail.com'
+// The Resume button appears on its own once a resume.pdf is added to /public.
+const HAS_RESUME = fs.existsSync(path.join(process.cwd(), 'public', 'resume.pdf'))
 
 export default function Home() {
   return (
@@ -19,23 +31,30 @@ export default function Home() {
         <section className="hero">
           <Sputnik />
           <div className="container">
-            <p className="eyebrow">★ UX Research + Design · San José</p>
+            <p className="eyebrow">★ UX Research + Human Factors · San José</p>
             <h1 className="hero-name">Nicholas <span className="tang">Mitchell.</span></h1>
             <p className="tagline">Designing tomorrow, <span className="tang">today.</span></p>
             <p className="pitch">
               I run real studies, then design and build what they point to. A human factors
               researcher who ships, working across automotive UX, accessibility, and safety-critical interfaces.
             </p>
+            <p className="hero-open"><span className="dot" aria-hidden="true" />Open to UX research and human factors roles</p>
+            <ul className="proof" aria-label="At a glance">
+              {PROOF.map(([n, l]) => (
+                <li key={l}><span className="proof-n">{n}</span><span className="proof-l">{l}</span></li>
+              ))}
+            </ul>
             <div className="hero-cta">
               <Link className="btn btn-primary" href="/work">See the work <span className="arw">→</span></Link>
-              <a className="btn btn-ghost" href="#contact">Get in touch</a>
+              {HAS_RESUME && <a className="btn btn-ghost" href="/resume.pdf">Resume <span className="arw">↓</span></a>}
+              <a className="btn btn-ghost" href={`mailto:${EMAIL}`}>Email me</a>
             </div>
           </div>
         </section>
 
         <section className="currently">
           <div className="container">
-            <div className="lead"><span className="k">Currently</span><span className="d">★ Jun &rsquo;26</span></div>
+            <div className="lead"><span className="k">Currently</span></div>
             <dl className="curgrid">
               {CURRENTLY.map(([dt, dd]) => (
                 <div key={dt}><dt>{dt}</dt><dd>{dd}</dd></div>
