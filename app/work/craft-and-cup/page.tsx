@@ -1,7 +1,7 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import {
-  CaseCover, MetaStrip, Section, Stats, ImageSlot, Pull, Outcome, Takeaways, Reflection,
+  CaseCover, MetaStrip, Section, Stats, Pull, Outcome, Takeaways, Reflection,
 } from '@/components/CaseStudy'
 import { ReadModeProvider, ReadToggle, DeepRead } from '@/components/ReadMode'
 import SpecPlate from '@/components/SpecPlate'
@@ -79,7 +79,6 @@ export default function Page() {
             <p>This was a solo product, so the research leaned on persona work, a heuristic evaluation, and a small pilot test rather than a large formal study, and I want to be upfront about that scope.</p>
             <p>I built three personas grounded in the real specialty-coffee community. The Curious Beginner has a French press and good instincts but no vocabulary. The Dialing-In Enthusiast owns a V60 and an espresso machine, buys from named roasters, and tracks ratios and water temperature. The Social Sharer is already active on r/coffee and wants friends to see what they are trying. Each one needed something different, and naming them kept the feature list honest.</p>
             <p>I evaluated the app against a stack of established standards instead of designing by feel: Nielsen's ten heuristics as a working checklist through every screen, the WCAG accessibility guidelines, Apple's Human Interface Guidelines, ISO 9241, and inclusive design principles. I also pilot tested with other graduate students in my Human Factors program and folded their feedback back in. The honest limit is that those testers were informed peers, not the home baristas the app is actually for, which is exactly the gap I name at the end.</p>
-            <ImageSlot tag="Figure 01 · the users" desc="The three personas and the SCA flavor wheel the app maps tasting notes onto." />
           </Section>
 
           <Section
@@ -90,10 +89,31 @@ export default function Page() {
             <p>The defining decision was not technical, it was about the vocabulary barrier, and it shaped everything else.</p>
             <Pull>Instead of teaching users the flavor wheel, I let them write like humans and taught the app to do the mapping.</Pull>
             <p>You type "tastes chocolatey with some berry," and Claude maps it onto the SCA wheel structurally. That one move is what lets the same app serve a beginner and an expert at once: the beginner never has to learn the taxonomy, and the expert's detailed notes still get parsed into comparable data.</p>
+            <figure className="figure">
+              <div className="fig-head">
+                <p className="fig-k">★ Fig 01 · Plain words in</p>
+                <p className="fig-t">One tasting note, mapped onto the wheel</p>
+              </div>
+              <div className="shot-pair phones">
+                <img src="/craft/bean-notes.jpg" width={750} height={1390} loading="lazy" alt="Craft &amp; Cup bean page showing a long plain-language tasting note, with the detected flavors listed above it: wild blackberry, blood orange, white peach, jasmine, dried rose, demerara, dark chocolate, tobacco, and crisp." />
+                <img src="/craft/bean-profile.jpg" width={750} height={1390} loading="lazy" alt="The same bean's one-line flavor profile above a multi-tier flavor wheel, with fruity, floral, and sweet families broken out into specific notes like blackberry and blood orange." />
+              </div>
+              <p className="fig-note">An example entry from the live app. The note on the left is written the way people talk. The app pulls out the flavors and builds the profile and wheel on the right.</p>
+            </figure>
             <p>From there the persona work drove a string of decisions. Onboarding asks "where are you at with coffee?" and branches into three paths, so beginners are not overwhelmed and experts are not bored. The app is offline-first, because people journal in cafes with bad wifi: everything saves locally the instant you type it and syncs to the cloud when you are back online, so a dropped connection never costs you data.</p>
             <p>A few smaller calls show where I chose intent over the default pattern. I used a five-second undo window instead of "are you sure?" confirmation dialogs, which keeps the workflow fast while still protecting against mistakes. Scores carry a text label (Excellent, Great, Good) next to the color, so colorblind users are not excluded, which is a real WCAG requirement rather than a nicety. And the brew calculator pre-selects your most-used method, because returning users should not have to re-enter what the app already knows.</p>
+            <figure className="figure">
+              <div className="fig-head">
+                <p className="fig-k">★ Fig 02 · Small calls</p>
+                <p className="fig-t">A word next to every color, and a calculator that asks how it tasted</p>
+              </div>
+              <div className="shot-pair phones">
+                <img src="/craft/bean-scores.jpg" width={750} height={1624} loading="lazy" alt="Tasting score sliders for aroma, acidity, body, sweetness, and finish. Each score shows a number and a word label, such as 9 Excellent, 8 Great, and 5 Good." />
+                <img src="/craft/brew-tasting.jpg" width={750} height={1624} loading="lazy" alt="The brew calculator asking how the coffee is tasting, with options like too bitter, too sour, too weak, and too strong, above the coffee and water amounts." />
+              </div>
+              <p className="fig-note">Scores never rely on color alone (left). The brew tool asks how the cup tasted in plain words before it talks about numbers (right).</p>
+            </figure>
             <p>The detail I am proudest of is the smallest one: if a first-time user starts writing a tasting note and then hits a sign-in prompt, the app holds onto their note and hands it back after they log in. It is the exact moment people lose their work in most apps, and protecting it is pure human factors. Reactions and comments use the same instinct, they update instantly and roll back cleanly if the request fails, so the interface always tells the truth about what happened.</p>
-            <ImageSlot tag="Figure 02 · the app" desc="Key screens: plain-language tasting input, the mapped flavor wheel, and the brew tools." />
             <p>Shipping it solo also meant learning to debug problems that only appear in production: a React hook-ordering bug that crashed the build, a service worker quietly serving a stale bundle, a tooltip thrown off by a CSS zoom. None of that is UX, but fixing it taught me the full cost of the decisions I was making on the design side.</p>
                         <DeepRead title="How it’s built">
                 <dl className="specs">
@@ -113,7 +133,17 @@ export default function Page() {
             <p>It is live and usable at mycraftcup.com, and accessibility was built in from the first commit rather than bolted on at the end. Keyboard focus indicators, a skip link, semantic HTML and heading order, ARIA labels on every icon-only button, live-region announcements for toasts, reduced-motion support, AA contrast on the dark theme, and 44px touch targets on mobile. To be precise: this is self-directed WCAG AA conformance, not a formal third-party audit.</p>
             <p>Every decision points back to one principle: lower the barrier without dumbing it down. Plain-language input, branching onboarding, undo over confirmation, color plus label, each one removes friction while keeping the depth that makes specialty coffee interesting in the first place.</p>
             <p className="twist">And it ships. The whole thing is proof I can take a product from zero to live, design and build, which is not something most research candidates can point to.</p>
-            <ImageSlot tag="Figure 03 · live" desc="The finished flavor-wheel result and the live app at mycraftcup.com." />
+            <figure className="figure">
+              <div className="fig-head">
+                <p className="fig-k">★ Fig 03 · Live</p>
+                <p className="fig-t">mycraftcup.com, as it stands today</p>
+              </div>
+              <div className="shot-pair phones">
+                <img src="/craft/landing-wheel.jpg" width={750} height={1624} loading="lazy" alt="The Craft &amp; Cup landing page with a colorful multi-tier flavor wheel for a featured coffee and its tasting note." />
+                <img src="/craft/brew-methods.jpg" width={750} height={1624} loading="lazy" alt="The Brew screen with eight brew methods to pick from and the grind, ratio, temperature, bloom, and brew time for pour over." />
+              </div>
+              <p className="fig-note">Captured October 2026. The app keeps changing, so these will too.</p>
+            </figure>
             <Takeaways items={[
               <><b>Design the hardest barrier out, do not document around it.</b> The flavor-wheel vocabulary problem got solved by removing the need to learn it, not by adding a longer tutorial.</>,
               <><b>Accessibility is cheap as a starting constraint and expensive as a final audit.</b> Building to WCAG AA from commit one cost me almost nothing; retrofitting it would have meant a rebuild.</>,
