@@ -22,6 +22,7 @@ export default function Page() {
           <ReadModeProvider>
           <CaseCover
             crumb="Partiful"
+            doc={{ href: '/papers/partiful-report.pdf', label: 'Read the team report', meta: 'PDF, 121 pages, personal details removed' }}
             title={<>Fun to use, hard to <span className="tang">trust.</span></>}
             lede="A five-person usability study of Partiful that found a playful party app people enjoyed but couldn't quite trust, plus the fixes to close the gap."
             seal={{ number: 'C-', sublabel: 'OVERALL', ring: '★ USABILITY STUDY ★ n = 5 ★ ISE 215 ' }}

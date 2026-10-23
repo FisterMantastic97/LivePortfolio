@@ -33,7 +33,7 @@ export default function AccessibilityPage() {
                 <li>Animations stop for anyone whose device is set to reduce motion.</li>
                 <li>Screenshots and figures have written descriptions. Decorative art is hidden from screen readers.</li>
                 <li>Quick and Full reading modes let people choose how much to read. The short version always comes first.</li>
-                <li>The resume and thesis PDFs are tagged, so screen readers can follow their structure.</li>
+                <li>The resume, the thesis, and the study reports are tagged PDFs, so screen readers can follow their structure.</li>
               </ul>
             </div>
           </section>

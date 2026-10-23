@@ -21,6 +21,7 @@ export default function Page() {
           <ReadModeProvider>
           <CaseCover
             crumb="Path of Exile 2"
+            doc={{ href: '/papers/path-of-exile-2-report.pdf', label: 'Read the full report', meta: 'PDF, 62 pages' }}
             title={<>When <span className="pool">depth</span> becomes a <span className="tang">wall.</span></>}
             lede="A heuristic evaluation of Path of Exile 2, backed by 183 survey responses, on how a brilliant game buries its depth under cognitive load, and how to dig it back out."
             seal={{ number: '183', sublabel: 'RESPONSES', ring: '★ HEURISTIC EVAL ★ n = 183 ★ PSYCH 273 ' }}

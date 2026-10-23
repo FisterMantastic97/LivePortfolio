@@ -22,6 +22,7 @@ export default function Page() {
           <ReadModeProvider>
           <CaseCover
             crumb="Dashboard study"
+            doc={{ href: '/papers/dashboard-paper.pdf', label: 'Read the paper', meta: 'PDF, 4 pages' }}
             title={<><span className="pool">Buttons,</span> screens, or <span className="tang">both?</span></>}
             lede="A 67-driver survey on how people rate analog, hybrid, and fully digital car dashboards, run while automakers were trading knobs for touchscreens."
             seal={{ number: '67', sublabel: 'DRIVERS', ring: '★ SURVEY STUDY ★ n = 67 ★ ISE 210 ' }}
