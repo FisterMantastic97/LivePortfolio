@@ -10,13 +10,12 @@ import EmailButton from '@/components/EmailButton'
 const CURRENTLY: [string, string][] = [
   ['Recently finished', 'My M.S. thesis on in-car alert design.'],
   ['Recently shipped', 'Craft & Cup, a coffee companion app.'],
-  ['Writing', '\u201cLook, Listen, Feel,\u201d a follow-up study design.'],
   ['Curious about', 'HUDs and automotive alert design.'],
 ]
 
 const PROOF: [string, string][] = [
-  ['183', 'players surveyed for one study'],
-  ['1,008', 'trials in a controlled experiment'],
+  ['180+', 'players surveyed for one study'],
+  ['1,000+', 'trials in a single experiment'],
   ['1', 'app designed, built, and shipped solo'],
 ]
 
