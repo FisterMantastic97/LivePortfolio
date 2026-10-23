@@ -194,7 +194,7 @@ export default function AboutPage() {
           <div className="cta-block">
             <div className="pad-cta">
               <h2>Let&rsquo;s <span className="tang">talk.</span></h2>
-              <p>Open to UX research and design roles, freelance projects, and graduate research. If your problem is a real one, I&rsquo;d like to hear about it.</p>
+              <p>Open to UX research and human factors roles. If your problem is a real one, I&rsquo;d like to hear about it.</p>
               <div className="cta-actions">
                 <a className="btn btn-primary" href="/#contact">Get in touch <span className="arw">→</span></a>
                 <a className="btn btn-ghost" href="https://www.linkedin.com/in/nicholasscottmitchell/" target="_blank" rel="noopener noreferrer">LinkedIn</a>

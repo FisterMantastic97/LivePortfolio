@@ -68,14 +68,12 @@ export function Stats({ items, note }: { items: { n: string; l: string; stamp?: 
   )
 }
 
-export function ImageSlot({ tag, desc, placeholder = 'drop in available asset' }: { tag: string; desc: string; placeholder?: string }) {
-  return (
-    <div className="slot">
-      <span className="tag">{tag}</span>
-      <span className="desc">{desc}</span>
-      <span className="ph">{placeholder}</span>
-    </div>
-  )
+/**
+ * Placeholder for a figure that hasn't been added yet. It renders nothing, so
+ * no empty boxes show on the live site. Swap it for a real figure when one exists.
+ */
+export function ImageSlot(_props: { tag: string; desc: string; placeholder?: string }) {
+  return null
 }
 
 export function Pull({ children }: { children: ReactNode }) {

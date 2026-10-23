@@ -593,3 +593,9 @@ strong,b{font-weight:600;}
 .db-fill.mid{background:var(--pool);}
 .db-fill.thin{background:repeating-linear-gradient(45deg,var(--pool) 0 5px,var(--cream) 5px 9px);}
 @media(max-width:520px){.dbars li{grid-template-columns:1fr 56px;}.db-track{grid-column:1 / span 2;grid-row:2;}}
+
+/* ---------- email button: copies the address as well ---------- */
+.email-wrap{position:relative;display:inline-flex;}
+.email-note{position:absolute;left:0;top:calc(100% + 8px);font-family:var(--font-sub);font-size:13.5px;line-height:1.35;white-space:nowrap;}
+.email-note:empty{display:none;}
+@media(max-width:520px){.email-note{white-space:normal;width:max-content;max-width:80vw;}}

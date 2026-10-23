@@ -29,7 +29,7 @@ export default function Page() {
           <WorkPlate kind="partiful" cover />
 
           <MetaStrip items={[
-            ['Role', 'Study design & moderation'],
+            ['Role', 'UX researcher'],
             ['Type', 'Team usability study'],
             ['Methods', 'Moderated · heuristic'],
             ['Team', 'Lumon Research (5)'],
@@ -49,7 +49,7 @@ export default function Page() {
             />
 
           <Section num="01" heading="At a Glance">
-            <p>Our team was brought in to test whether Partiful's experience actually lives up to its mission: helping people make friends and memories through social events. I designed the task scenarios and moderated the sessions.</p>
+            <p>Our team was brought in to test whether Partiful's experience actually lives up to its mission: helping people make friends and memories through social events.</p>
             <p>Across five participants and four real host-and-guest tasks, the app tested as fun but low-trust. People finished almost everything we asked, then immediately second-guessed whether any of it had worked.</p>
             <Stats
               items={[
@@ -88,7 +88,7 @@ export default function Page() {
             summary="Four realistic task scenarios, moderated live, measured by performance, behavior, and what people said."
           >
             <p>The study was built to provoke the gap between what people do and what they believe is happening, and then catch it in the act.</p>
-            <p>I designed the four task scenarios, each tied to a core use case and a company goal: a first-time guest RSVPing, a first-time host creating and adjusting an event, an experienced host handling a venue change and a cancellation, and someone reconnecting with a guest from a past event. I wrote them to mirror real moments rather than feature checklists, so friction would surface on its own instead of being prompted.</p>
+            <p>We designed four task scenarios, each tied to a core use case and a company goal: a first-time guest RSVPing, a first-time host creating and adjusting an event, an experienced host handling a venue change and a cancellation, and someone reconnecting with a guest from a past event. We wrote them to mirror real moments rather than feature checklists, so friction would surface on its own instead of being prompted.</p>
             <figure className="figure">
               <div className="fig-head">
                 <p className="fig-k">★ Fig 01 · Task 1</p>
@@ -100,12 +100,12 @@ export default function Page() {
               </div>
               <p className="fig-note">A dietary note typed into the RSVP comment box (left) posts to the event&rsquo;s public activity feed (right). All five participants put dietary restrictions here. Three of five assumed it was private.</p>
             </figure>
-            <Pull>I moderated the sessions, probing hardest at the moments where participants' behavior and their words split apart.</Pull>
+            <Pull>The sessions were moderated live, probing hardest at the moments where participants' behavior and their words split apart.</Pull>
             <p>We measured three ways at once and triangulated them. Performance (time on task, completion, errors), behavioral (negative non-verbal cues, asking for help, re-reading the instructions), and subjective (post-task probes, satisfaction, ease of use). Any one channel can lie. Together they tell you not just whether someone succeeded, but how confident they felt doing it.</p>
             <p>That split, finishing a task while visibly unsure it worked, is where the most important findings came from. We rated every issue on a severity framework so the recommendations could be ranked by impact rather than just listed.</p>
               <DeepRead title="Study design">
                 <dl className="specs">
-                  <div><dt>Team</dt><dd>Lumon Research, five people. I designed the task scenarios and moderated the sessions.</dd></div>
+                  <div><dt>Team</dt><dd>Lumon Research, five people.</dd></div>
                   <div><dt>Participants</dt><dd>Five, matched to personas built from Partiful’s real audience of Gen Z and Millennial hosts and guests.</dd></div>
                   <div><dt>Tasks</dt><dd>A first-time guest RSVPing. A first-time host creating and adjusting an event. An experienced host handling a venue change and a cancellation. Reconnecting with a guest from a past event.</dd></div>
                   <div><dt>Performance</dt><dd>Time on task, completion, and errors.</dd></div>

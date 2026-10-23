@@ -5,6 +5,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { Sputnik, AtomicDivider } from '@/components/Brand'
 import CaseCard, { CaseRow, CASES } from '@/components/CaseCard'
+import EmailButton from '@/components/EmailButton'
 
 const CURRENTLY: [string, string][] = [
   ['Recently finished', 'My M.S. thesis on in-car alert design.'],
@@ -47,7 +48,7 @@ export default function Home() {
             <div className="hero-cta">
               <Link className="btn btn-primary" href="/work">See the work <span className="arw">→</span></Link>
               {HAS_RESUME && <a className="btn btn-ghost" href="/resume.pdf">Resume <span className="arw">↓</span></a>}
-              <a className="btn btn-ghost" href={`mailto:${EMAIL}`}>Email me</a>
+              <EmailButton email={EMAIL} />
             </div>
           </div>
         </section>
@@ -89,7 +90,7 @@ export default function Home() {
               <div className="stampbox">Place stamp here</div>
               <p className="kicker">★ Mail this coupon today ★</p>
               <h2>Let&rsquo;s make something people can <span className="tang">actually use.</span></h2>
-              <p className="sub">Open to UX research and design roles, freelance projects, and graduate research. Fill it out, drop it in the box.</p>
+              <p className="sub">Open to UX research and human factors roles. Fill it out, drop it in the box.</p>
               <form className="coupon-form" action="https://formspree.io/f/xzdqwdaa" method="POST">
                 <div className="fields">
                   <p className="field">

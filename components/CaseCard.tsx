@@ -77,7 +77,7 @@ export const CASES: CaseMeta[] = [
     kind: 'Team usability study',
     title: 'No one could tell if cancelling notified guests.',
     blurb: 'A five-person usability study of Partiful: a playful party app people enjoyed but couldn’t quite trust, plus the fixes.',
-    facts: [['Role', 'Study design and moderation'], ['Sample', '5 participants, 4 tasks'], ['When', 'Spring 2025']],
+    facts: [['Role', 'UX researcher, team of five'], ['Sample', '5 participants, 4 tasks'], ['When', 'Spring 2025']],
     cat: 'research design',
   },
   {
