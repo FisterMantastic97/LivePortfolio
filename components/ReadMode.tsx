@@ -41,13 +41,43 @@ function useInert(open: boolean) {
   return ref
 }
 
+const WPM = 230
+
 export function ReadToggle() {
   const ctx = useReadMode()
+  const ref = useRef<HTMLDivElement>(null)
+  const [mins, setMins] = useState<{ quick: number; full: number } | null>(null)
+
+  // Estimate both read times from the page's own text, so the bar can show the
+  // difference the moment the switch flips, even when the sections that change are off screen.
+  useEffect(() => {
+    const bar = ref.current
+    const article = bar?.closest('article')
+    if (!bar || !article) return
+    const words = (el: Element) => (el.textContent || '').trim().split(/\s+/).filter(Boolean).length
+    const sum = (sel: string) => Array.from(article.querySelectorAll(sel)).reduce((n, el) => n + words(el), 0)
+    const extra = sum('.expander')
+    const base = words(article) - extra - sum('.sec-summary') - sum('.sec-more') - sum('.site-footer') - words(bar)
+    const toMin = (w: number) => Math.max(1, Math.round(w / WPM))
+    setMins({ quick: toMin(base), full: toMin(base + extra) })
+  }, [])
+
+  // Stick the bar just under the site header, whatever height the header wraps to.
+  useEffect(() => {
+    const bar = ref.current
+    const header = document.querySelector<HTMLElement>('.site-header')
+    if (!bar || !header) return
+    const place = () => bar.style.setProperty('--stick', `${header.offsetHeight}px`)
+    place()
+    window.addEventListener('resize', place)
+    return () => window.removeEventListener('resize', place)
+  }, [])
+
   if (!ctx) return null
   const full = ctx.mode === 'full'
 
   return (
-    <div className="readbar">
+    <div className="readbar" ref={ref}>
       <span className="readbar-k">Reading mode</span>
       <div className="readtoggle">
         <span className={`rt-side${!full ? ' on' : ''}`} aria-hidden="true" onClick={() => ctx.setMode('quick')}>Quick</span>
@@ -63,8 +93,9 @@ export function ReadToggle() {
         </button>
         <span className={`rt-side${full ? ' on' : ''}`} aria-hidden="true" onClick={() => ctx.setMode('full')}>Full</span>
       </div>
-      <span className="readbar-hint" aria-live="polite">
-        {full ? 'Every section open, plus the technical details.' : 'Key points only. Flip it for the full write-up.'}
+      <span className={`readbar-time${full ? ' is-full' : ''}`} aria-live="polite">
+        <span className="rt-label">{full ? 'Everything' : 'Key points'}</span>
+        {mins && <span className="rt-mins">{full ? mins.full : mins.quick} min</span>}
       </span>
     </div>
   )
