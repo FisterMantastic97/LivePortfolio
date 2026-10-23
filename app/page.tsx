@@ -23,9 +23,23 @@ const EMAIL = 'NicholasSMitchell@gmail.com'
 // The Resume button appears on its own once a resume.pdf is added to /public.
 const HAS_RESUME = fs.existsSync(path.join(process.cwd(), 'public', 'resume.pdf'))
 
+const PERSON = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Nicholas Mitchell',
+  url: 'https://live-portfolio-snowy.vercel.app',
+  jobTitle: 'UX Researcher',
+  description: 'Human factors and UX researcher. Runs studies end to end and ships the software.',
+  address: { '@type': 'PostalAddress', addressLocality: 'San José', addressRegion: 'CA', addressCountry: 'US' },
+  alumniOf: { '@type': 'CollegeOrUniversity', name: 'San José State University' },
+  knowsAbout: ['UX research', 'Human factors', 'Usability testing', 'Accessibility', 'Automotive UX'],
+  sameAs: ['https://www.linkedin.com/in/nicholasscottmitchell/'],
+}
+
 export default function Home() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(PERSON) }} />
       <Header active="home" />
       <main id="main">
         <section className="hero hero-cover">

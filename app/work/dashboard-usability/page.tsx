@@ -9,6 +9,7 @@ import WorkPlate from '@/components/WorkPlate'
 import DashScores from '@/components/DashScores'
 import DashDemo from '@/components/DashDemo'
 import { caseMetadata } from '@/lib/caseMeta'
+import { Materials, Doc, LikertItems, Pipe, RunSheet } from '@/components/Materials'
 
 export const metadata = caseMetadata('dashboard-usability', 'Buttons, screens, or both?')
 
@@ -93,6 +94,40 @@ export default function Page() {
                   <div><dt>Limits</dt><dd>Four digital drivers is too few to compare on their own. Over half the cars were Toyotas or Hondas.</dd></div>
                 </dl>
               </DeepRead>
+              <Materials>
+                <Doc form="ISE 210 · Driver survey" title="How the survey ran" note="27 questions, 10 to 20 minutes">
+                  <RunSheet steps={[
+                    'Informed consent.',
+                    <>Do you currently own or operate a vehicle? <i>Yes, or no but I do have a license.</i></>,
+                    <>Year, brand, and model, typed in. The answers are piped into every question after this, so a driver with a 2007 Honda Civic rates their <Pipe>2007 Honda Civic</Pipe>.</>,
+                    'Seven usability statements, a modified System Usability Scale.',
+                    'Seven preference statements about controls and dashboard styles.',
+                    'Demographics, such as highest completed education.',
+                    'An optional open question about anything the survey missed.',
+                  ]} />
+                </Doc>
+                <Doc form="ISE 210 · Driver survey" title="Usability statements" note="Excerpt, 5 of 7">
+                  <p>In regards to your <Pipe>2007 Honda Civic</Pipe></p>
+                  <LikertItems items={[
+                    'Finding the air conditioner/heater controls were easy for me the first time.',
+                    'I am able to easily and quickly locate the emergency hazard light.',
+                    <>I am able to quickly locate the volume control while driving my <Pipe>2007 Honda Civic</Pipe>.</>,
+                    'I feel confident in my ability to operate this vehicle.',
+                    'I have found myself unable to locate necessary buttons or screens while driving.',
+                  ]} />
+                </Doc>
+                <Doc form="ISE 210 · Driver survey" title="Preference statements" note="All 7, as written">
+                  <LikertItems items={[
+                    'For analog climate control input I prefer buttons over knobs.',
+                    'For analog volume controls I prefer knobs over buttons.',
+                    'I frequently use steering controls instead of the ones on the dashboard.',
+                    'I prefer to use Android Auto or Apple CarPlay.',
+                    'I would prefer having a hybrid (screens with analog controls) dashboard.',
+                    'I would prefer having an all-digital (Tesla style) dashboard.',
+                    'I would prefer having an analog (no screens) dashboard.',
+                  ]} />
+                </Doc>
+              </Materials>
           </Section>
 
           <Outcome num="04">

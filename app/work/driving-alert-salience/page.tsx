@@ -10,6 +10,7 @@ import ReactionDemo from '@/components/ReactionDemo'
 import ResultsChart from '@/components/ResultsChart'
 import { AlertIllustration } from '@/components/RoadScene'
 import { caseMetadata } from '@/lib/caseMeta'
+import { Materials, Doc, RunSheet } from '@/components/Materials'
 
 export const metadata = caseMetadata('driving-alert-salience', 'When does a visual alert beat a beep?')
 
@@ -126,6 +127,49 @@ export default function Page() {
                   <div><dt>Limits</dt><dd>Salience scales differ across channels, so effect sizes compare cleanly within a channel only. Accuracy sat near 97% in every condition, a ceiling. No steering, so motor load is absent.</dd></div>
                 </dl>
               </DeepRead>
+              <Materials>
+                <Doc form="ISE 298 · Eligibility screen" title="Who could take part">
+                  <dl className="log">
+                    <div><dt>Age</dt><dd>18 years of age or older</dd></div>
+                    <div><dt>Driving</dt><dd>Valid driver’s license</dd></div>
+                    <div><dt>Vision</dt><dd>Normal or corrected-to-normal vision</dd></div>
+                    <div><dt>Hearing</dt><dd>Normal hearing</dd></div>
+                    <div><dt>Consent</dt><dd>Able to provide informed consent in English</dd></div>
+                  </dl>
+                </Doc>
+                <Doc form="ISE 298 · Session run sheet" title="One session, start to finish" note="About 35 to 40 minutes">
+                  <RunSheet steps={[
+                    'Review the informed consent and eligibility screening forms.',
+                    'Seat the participant at the monitor in the SJSU Human Factors and Ergonomics Lab.',
+                    'Assign the counterbalance group from the participant ID.',
+                    'Run the four conditions. Dashcam video plays while alerts appear at preset times. The participant answers each one with the left, right, up, or Space key, as quickly and accurately as possible.',
+                    'Post-task questionnaire.',
+                    'Debrief statement.',
+                  ]} />
+                </Doc>
+                <Doc form="ISE 298 · Condition order" title="Two orders, so practice and fatigue cancel out">
+                  <div className="ctr-wrap" tabIndex={0} role="region" aria-label="Condition order by group">
+                    <table className="ctr">
+                      <thead><tr><th scope="col">Group</th><th scope="col">Run 1</th><th scope="col">Run 2</th><th scope="col">Run 3</th><th scope="col">Run 4</th></tr></thead>
+                      <tbody>
+                        <tr><th scope="row">A</th><td>Audio, high</td><td>Visual, high</td><td>Visual, low</td><td>Audio, low</td></tr>
+                        <tr><th scope="row">B</th><td>Audio, low</td><td>Visual, low</td><td>Visual, high</td><td>Audio, high</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <p className="doc-fn">12 people per group. The Chicago and Los Angeles videos alternate across the four runs, so no video is tied to one channel.</p>
+                </Doc>
+                <Doc form="ISE 298 · Post-task questionnaire" title="What participants rated afterward" note="Items and scales as reported">
+                  <ol className="sc-list">
+                    <li>Alert noticeability, 1 to 5.</li>
+                    <li>Recognition ease, 1 to 5.</li>
+                    <li>Most noticeable alert, pick one.</li>
+                    <li>Alert preference, pick one.</li>
+                    <li>Alert distraction, 1 to 5.</li>
+                    <li>One open-ended question for anything else.</li>
+                  </ol>
+                </Doc>
+              </Materials>
             </Section>
 
             <Outcome num="05">

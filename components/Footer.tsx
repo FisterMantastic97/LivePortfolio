@@ -27,10 +27,10 @@ export default function Footer({ prevHref, prevLabel = 'All work', nextHref, nex
         <p className="bc-line">UX research and human factors, <i>printed in San José</i></p>
         <div className="seals">
           <div className="seal-badge">Built for<br />humans</div>
-          <div className="seal-badge">Meets<br />WCAG AA<span className="sb-script">Guaranteed</span></div>
+          <Link className="seal-badge" href="/accessibility" aria-label="Meets WCAG AA, guaranteed. Read the accessibility statement.">Meets<br />WCAG AA<span className="sb-script">Guaranteed</span></Link>
           <div className="seal-badge">Est.<br />1997</div>
         </div>
-        <p className="copy">© 2026 Nicholas Scott Mitchell</p>
+        <p className="copy">© 2026 Nicholas Scott Mitchell <span aria-hidden="true">·</span> <Link href="/accessibility">Accessibility</Link></p>
       </div>
     </footer>
   )

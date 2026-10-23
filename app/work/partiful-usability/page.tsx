@@ -8,6 +8,7 @@ import { ReadModeProvider, ReadToggle, DeepRead } from '@/components/ReadMode'
 import SpecPlate from '@/components/SpecPlate'
 import WorkPlate from '@/components/WorkPlate'
 import { caseMetadata } from '@/lib/caseMeta'
+import { Materials, Doc, ScriptCard } from '@/components/Materials'
 import Image from 'next/image'
 
 export const metadata = caseMetadata('partiful-usability', 'Fun to use, hard to trust.')
@@ -115,6 +116,55 @@ export default function Page() {
                   <div><dt>Limits</dt><dd>Five participants surface severe, repeated problems. It’s thin for anything subtle.</dd></div>
                 </dl>
               </DeepRead>
+              <Materials>
+                <Doc form="ISE 215 · Moderator guide" title="Session intro, read aloud" note="Excerpt">
+                  <p>First, this is not a test of you. We are evaluating the product, not your abilities.</p>
+                  <p>Second, there are no right or wrong answers. Take your time during each task. If you get stuck or take a different path than expected, that is completely okay.</p>
+                  <p>If you have any questions during the session, feel free to ask. However, I may not answer right away so that I do not influence your choices.</p>
+                </Doc>
+                <Doc form="ISE 215 · Moderator guide" title="The four task scripts" note="Tasks and probes, trimmed">
+                  <ScriptCard
+                    no={1}
+                    title="First-time guest: RSVP and privacy"
+                    scenario="Your close friend Alex is turning 26 and is hosting a birthday party this weekend! Alex texted you an invite link using Partiful. You’ve never used Partiful before, but you’d love to go and celebrate. You’re vegetarian and want to make sure Alex knows this. You’re curious how much personal information other guests might see about you."
+                    tasks={['Open the link Alex sent via text.', 'RSVP to the event, noting your vegetarian dietary preference.', 'Check the event’s date, time, and location.']}
+                    probes={['What do you think happens after you RSVP?', 'What personal information do you expect others can see about you?', 'Would you feel safe and comfortable responding to invitations this way regularly?']}
+                  />
+                  <ScriptCard
+                    no={2}
+                    title="First-time host: creating and adjusting an event"
+                    scenario="You’re helping a friend throw a small get-together at their apartment this Friday night at 6:00pm. Since their apartment isn’t very large, you can only comfortably accommodate about 8 people. Their friend Sarah has a severe peanut allergy, so you must ensure the guests don’t bring peanut-based snacks to the party. After posting the event, you realize it needs to start 30 minutes later than planned, and now you have to update everyone about this change to the event."
+                    tasks={['Create your event on Partiful and choose a theme that matches your casual gathering.', 'Clearly communicate the peanut allergy restriction to your guests.', 'Distribute the invitations.', 'Adjust the start time by moving it 30 minutes later.', 'Demonstrate how you would notify guests of this updated start time.']}
+                    probes={['How clearly do you think your guests will understand the peanut allergy restriction?', 'How do you anticipate your guests will be aware of the updated start time?', 'Text Blast. Did you see it?', 'What do you think it will do if you used it? (Without tapping on it.)']}
+                    note="Here is where we mention the truth if they missed it. This lets us ask why they missed it and what they expected."
+                  />
+                  <ScriptCard
+                    no={3}
+                    title="Experienced host: a venue change, then a cancellation"
+                    scenario="You often use Partiful for organizing club meetups, and this weekend, you planned a local hiking event with about 20 RSVPs. However, heavy rain in the forecast means you have to change the meeting point to a sheltered picnic area instead. Later, due to worsening weather predictions, you unfortunately have to cancel the event entirely. You want to make sure your guests clearly understand these last-minute adjustments and cancellations."
+                    tasks={['Update the meeting location to the picnic shelter.', 'Demonstrate how you would notify your guests about this location change.', 'Cancel the event.', 'Confirm the cancellation and manage the notifications sent to your guests.']}
+                    probes={['After updating the location, how confident are you that guests will be aware of the change?', 'Upon cancellation, how clear do you expect the communication to be?']}
+                  />
+                  <ScriptCard
+                    no={4}
+                    title="Reconnecting with someone from a past event"
+                    scenario="Last weekend, you went to a party hosted through Partiful. It was a really fun night, and while you were there, you hit it off with someone. You talked for a while, shared similar interests, and really wanted to keep in touch, but the night flew by, and you never exchanged contact info. You don’t have any mutual friends, and now you’re hoping you can find a way to reconnect through the app."
+                    tasks={['Look for a way to view the guest list or people who attended.', 'Find the person from that event.', 'See if there is a way to message them directly through the app.', 'Send them a short message saying it was great to meet them.']}
+                    probes={['How confident are you that this person will receive your message?', 'Was it clear who you’re allowed to message or view from past events?']}
+                  />
+                </Doc>
+                <Doc form="ISE 215 · Session log" title="Participant 3, Task 1" note="One logged task, as recorded">
+                  <dl className="log">
+                    <div><dt>Time on task</dt><dd>1:27.81</dd></div>
+                    <div><dt>Completed</dt><dd>Yes</dd></div>
+                    <div><dt>Task error</dt><dd>Typed the vegetarian note into the RSVP comment box, which is shared with every guest.</dd></div>
+                    <div><dt>Behavior</dt><dd>Moved through the task with confidence, but asked for clarification on where to note the dietary preference. Showed confusion when probed about what personal information was shared.</dd></div>
+                    <div><dt>Said aloud</dt><dd><q>Uh, is there something for me to note?</q> <q>Um, I cannot see anybody else’s information.</q></dd></div>
+                    <div><dt>Satisfaction</dt><dd><q>Pretty easy to use.</q> <q>It was easy to figure.</q></dd></div>
+                  </dl>
+                  <p className="doc-fn">Said it was easy, and got it wrong. That gap is the study’s main finding in one row.</p>
+                </Doc>
+              </Materials>
           </Section>
 
           <Outcome num="05">

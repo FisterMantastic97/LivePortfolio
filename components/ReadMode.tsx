@@ -134,7 +134,7 @@ export function SectionBody({ summary, children }: { summary?: string; children:
 }
 
 /** "Under the hood" panel for technical readers. Opens with Full read, or on its own. */
-export function DeepRead({ title = 'Under the hood', children }: { title?: string; children: ReactNode }) {
+export function DeepRead({ title = 'Under the hood', sub = 'Technical detail', children }: { title?: string; sub?: string; children: ReactNode }) {
   const ctx = useReadMode()
   const id = useId()
   const [open, setOpen] = useState(() => ctx?.mode === 'full')
@@ -157,7 +157,7 @@ export function DeepRead({ title = 'Under the hood', children }: { title?: strin
           />
         </svg>
         <span className="deep-t">{title}</span>
-        <span className="deep-sub">Technical detail</span>
+        <span className="deep-sub">{sub}</span>
         <span className="deep-chev" aria-hidden="true" />
       </button>
       <div id={id} ref={ref} className={`expander${open ? ' open' : ''}`}>
