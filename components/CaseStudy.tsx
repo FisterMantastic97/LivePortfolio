@@ -1,5 +1,7 @@
 import { ReactNode } from 'react'
 import { Seal } from './Brand'
+import { SectionBody } from './ReadMode'
+import GradeStamp from './GradeStamp'
 
 export function CaseCover({
   eyebrow, title, lede, seal,
@@ -32,23 +34,23 @@ export function MetaStrip({ items }: { items: [string, string][] }) {
   )
 }
 
-export function Section({ num, heading, children }: { num: string; heading: string; children: ReactNode }) {
+export function Section({ num, heading, summary, children }: { num: string; heading: string; summary?: string; children: ReactNode }) {
   return (
     <section className="block pad">
       <p className="stamp"><span className="num">★ {num}</span></p>
       <h2 className="sec-title">{heading}</h2>
-      {children}
+      <SectionBody summary={summary}>{children}</SectionBody>
     </section>
   )
 }
 
-export function Stats({ items, note }: { items: { n: string; l: string }[]; note?: string }) {
+export function Stats({ items, note }: { items: { n: string; l: string; stamp?: boolean }[]; note?: string }) {
   return (
     <>
       <div className="stats">
         {items.map((s) => (
           <div className="stat" key={s.l}>
-            <span className="n">{s.n}</span>
+            {s.stamp ? <GradeStamp grade={s.n} /> : <span className="n">{s.n}</span>}
             <span className="l">{s.l}</span>
           </div>
         ))}
@@ -92,19 +94,21 @@ export function Takeaways({ items }: { items: ReactNode[] }) {
   )
 }
 
-export function Reflection({ items }: { items: { h: string; body: string }[] }) {
+export function Reflection({ items, summary }: { items: { h: string; body: string }[]; summary?: string }) {
   return (
     <section className="block pad">
       <p className="stamp"><span className="num">★ 06</span></p>
       <h2 className="sec-title">Reflection</h2>
-      <div className="reflect">
-        {items.map((r) => (
-          <div key={r.h}>
-            <h3>{r.h}</h3>
-            <p>{r.body}</p>
-          </div>
-        ))}
-      </div>
+      <SectionBody summary={summary}>
+        <div className="reflect">
+          {items.map((r) => (
+            <div key={r.h}>
+              <h3>{r.h}</h3>
+              <p>{r.body}</p>
+            </div>
+          ))}
+        </div>
+      </SectionBody>
     </section>
   )
 }

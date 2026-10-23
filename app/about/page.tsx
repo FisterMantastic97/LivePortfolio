@@ -136,10 +136,10 @@ export default function AboutPage() {
               people think and decide before designing for them.
             </p>
             <p>
-              On the experience side, I spent eight years at Best Buy, rising from Computer Sales
-              Associate to Home Theater Supervisor. That&rsquo;s eight years of watching non-expert people
-              choose, struggle with, and reason about technology, which turns out to be a real research
-              asset rather than a detour. I&rsquo;ve also worked as a research assistant at SJSU under Dr.
+              On the experience side, I&rsquo;ve spent nine years at Best Buy, starting as a Computer Sales
+              Associate and moving into home theater, where I coach every new hire and cover shift lead.
+              That&rsquo;s nine years of watching non-expert people choose, struggle with, and reason about
+              technology, which turns out to be a real research asset rather than a detour. I&rsquo;ve also worked as a research assistant at SJSU under Dr.
               Melissa Beresford on the Diverse Water Economies Project, which added qualitative,
               social-science research alongside my quantitative thesis work, and as a paraeducator at
               Discovery Charter School.

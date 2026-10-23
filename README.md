@@ -27,7 +27,20 @@ components/
   Header, Footer, Brand           Site chrome + Sputnik/Seal SVGs
   CaseStudy.tsx                   Cover, MetaStrip, Section, Outcome, etc.
   CaseCard.tsx                    Work/Home cards + the CASES list
+  ReadMode.tsx                    Quick/Full read switch, collapsible sections, Under the hood panels
+  SpecPlate.tsx                   The 60-second summary plate at the top of a case
+  ReactionDemo.tsx                Thesis reaction-time task + gauge
+  ResultsChart.tsx                Thesis results chart (draws in once, tap for details, table view)
+  GradeStamp.tsx                  Rubber-stamp grade (use stamp: true on a Stats item)
+  RoadScene.tsx                   Road illustration + alert glyph shared by the demo and Fig 01
 ```
+
+## Quick / Full read
+
+Wrap a case study's content in `<ReadModeProvider>` and add `<ReadToggle />` under the meta strip.
+Give a `Section` a `summary` and it collapses to that line in Quick read. Put technical detail in
+`<DeepRead>` and it opens in Full read. The reader's choice is remembered across case studies.
+Pages without the provider render exactly as before.
 
 ## Add a case study
 

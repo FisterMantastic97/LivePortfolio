@@ -3,6 +3,8 @@ import Footer from '@/components/Footer'
 import {
   CaseCover, MetaStrip, Section, Stats, ImageSlot, Pull, Outcome, Takeaways, Reflection,
 } from '@/components/CaseStudy'
+import { ReadModeProvider, ReadToggle, DeepRead } from '@/components/ReadMode'
+import SpecPlate from '@/components/SpecPlate'
 
 export const metadata = {
   title: 'When depth becomes a wall — Nicholas Mitchell',
@@ -14,6 +16,7 @@ export default function Page() {
       <Header active="work" />
       <main id="main">
         <article className="sheet">
+          <ReadModeProvider>
           <CaseCover
             eyebrow="Case study · UX research + design"
             title={<>When <span className="pool">depth</span> becomes a <span className="tang">wall.</span></>}
@@ -29,6 +32,18 @@ export default function Page() {
             ['Timeline', 'Spring 2025'],
           ]} />
 
+            <ReadToggle />
+
+            <SpecPlate
+              model="Graduate coursework · Spring 2025"
+              rows={[
+                ['Question', 'Where does the interface fail experienced players?'],
+                ['Method', 'Survey of 183 players with 20+ hours. Heuristic evaluation.'],
+                ['Finding', 'Over 70% felt overwhelmed. No persona scored above a B-.'],
+                ['Recommendation', 'Progressive disclosure, clearer combat cues, a built-in planner.'],
+              ]}
+            />
+
           <Section num="01" heading="At a Glance">
             <p>Path of Exile 2 is one of the deepest action RPGs ever made. It's also exhausting to play, and not because of the depth. The interface buries that depth under so much cognitive load that players fight the menus harder than the monsters.</p>
             <p>I ran a contextual inquiry and a full heuristic evaluation to find where the interface fails its players, and what to do about it. The short version: the game's biggest strength is being hidden by its own presentation.</p>
@@ -37,30 +52,54 @@ export default function Page() {
                 { n: '183', l: 'survey responses' },
                 { n: '20h+', l: 'experienced players only' },
                 { n: '7', l: 'usability violations' },
-                { n: 'B-', l: 'best persona grade' },
+                { n: 'B-', l: 'best persona grade', stamp: true },
               ]}
               note="Not one of the five personas scored above a B-. The game people love tested as a usability problem."
             />
           </Section>
 
-          <Section num="02" heading="The Problem">
+          <Section
+            num="02"
+            heading="The Problem"
+            summary="The depth is the draw, but the interface makes players carry it in their heads. For a free-to-play game, that friction is a retention problem."
+          >
             <p>Path of Exile 2's identity is its complexity: an enormous passive skill tree, deep crafting, dense itemization, fast and punishing combat. That depth is the draw. The problem is that the interface treats "deep" and "overwhelming" as the same thing, and asks players to carry the load in their heads.</p>
             <p>This isn't a complaint about the game being hard. It's that the difficulty is coming from the wrong place. Players want to fight the boss. Instead they fight the tooltip, the menu, the unlabeled node, the item they can't parse fast enough. The challenge leaks out of the gameplay and into the interface, where it doesn't belong.</p>
             <p>For a free-to-play game, that's not just a feel problem, it's a business one. Retention drives the whole model, and friction stacked at the start is exactly what stops new players from reaching the endgame where they'd happily spend money. Reducing the load is a growth lever, not a polish pass.</p>
           </Section>
 
-          <Section num="03" heading="Research">
+          <Section
+            num="03"
+            heading="Research"
+            summary="A survey of 183 experienced players, every one with 20+ hours, recruited through the game's Reddit community in a few hours."
+          >
             <p>I needed real player behavior fast, so I ran a contextual inquiry as a survey, mixing rating scales for measurable usability signals with open-ended questions for the why. I seeded it with experienced players I knew, then posted it to the Path of Exile community on Reddit.</p>
             <p>It went further than I expected. In a few hours, while I was at work, it pulled 183 responses, every one from a player with at least 20 hours in the game. That detail matters: this wasn't first-impression confusion. These were invested, experienced players, which makes the findings harder to wave off. If the people who love the game most are still overloaded, the interface, not the player, is the problem.</p>
             <p>One honest limit I'll name: a Reddit survey self-selects for the most engaged slice of the community. But that cuts in the study's favor here. The overload showed up in exactly the population most equipped to handle it.</p>
             <ImageSlot tag="Figure 01 · the systems" desc="The empty passive skill tree, and a chaotic combat encounter where threats vanish into particle effects." />
           </Section>
 
-          <Section num="04" heading="The Process">
+          <Section
+            num="04"
+            heading="The Process"
+            summary="Eight hidden usage assumptions, mapped to seven usability violations, split by interface and by player goal, then graded across five personas."
+          >
             <p>I built the evaluation in layers, each one feeding the next. First, the survey gave me the lived player experience. From those responses, I extracted eight usage assumptions the interface quietly makes, things like "players can read large amounts of information at once" and "players can tell a lethal attack from a decorative effect mid-fight." Naming the assumptions made the failures concrete instead of vague.</p>
             <p>Those assumptions mapped onto seven violations of universal usability principles: excessive cognitive load, poor visibility of system status, unpredictable mapping, weak support for recognition over recall, no clear visual hierarchy, limited feedforward, and heavy dependence on external resources. Standard heuristics, applied to a product most people would never think to evaluate that way.</p>
             <Pull>I split the problems two ways on purpose: interface-based (what's broken on screen) and goal-based (what the player is trying to do and can't).</Pull>
             <p>The same issue reads differently from each angle, and seeing both is what turns "this menu is bad" into "this menu blocks the thing the player came here to do." I closed with five personas, each graded against how well the current interface serves them, from the strategic theorycrafter to the brand-new player.</p>
+                        <DeepRead title="Evaluation method">
+                <dl className="specs">
+                  <div><dt>Recruitment</dt><dd>Seeded with experienced players I knew, then posted to the Path of Exile community on Reddit. 183 responses in a few hours.</dd></div>
+                  <div><dt>Sample</dt><dd>Every respondent had at least 20 hours in the game. No first-impression players.</dd></div>
+                  <div><dt>Instrument</dt><dd>Rating scales for measurable usability signals, plus open-ended questions for the why.</dd></div>
+                  <div><dt>Assumptions</dt><dd>Eight usage assumptions the interface quietly makes, pulled from the responses. Example: players can tell a lethal attack from a decorative effect mid-fight.</dd></div>
+                  <div><dt>Violations</dt><dd>Seven: excessive cognitive load, poor visibility of system status, unpredictable mapping, weak recognition over recall, no clear visual hierarchy, limited feedforward, heavy reliance on external resources.</dd></div>
+                  <div><dt>Framing</dt><dd>Each problem classified two ways. Interface-based, what is broken on screen. Goal-based, what the player is trying to do and can’t.</dd></div>
+                  <div><dt>Personas</dt><dd>Five, from the strategic theorycrafter to the brand-new player, each graded on how well the interface serves them. Best grade B-. New player D. Efficient collector D+.</dd></div>
+                  <div><dt>Limits</dt><dd>A Reddit survey self-selects for the most engaged players. An early draft of the instrument listed two different playtime minimums.</dd></div>
+                </dl>
+              </DeepRead>
           </Section>
 
           <Outcome num="05">
@@ -79,13 +118,16 @@ export default function Page() {
             ]} />
           </Outcome>
 
-          <Reflection items={[
+          <Reflection
+            summary="Heuristics travel further than expected. Next is prototyping progressive disclosure on the passive tree and testing it head to head."
+            items={[
             { h: 'What I learned', body: 'Heuristics travel further than I assumed. Cognitive load, recognition over recall, visibility of system status, the same principles that govern a car dashboard expose a video game just as cleanly. Evaluating something nobody calls an "interface" sharpened how I see all of them.' },
             { h: 'What I\u2019d change', body: 'A Reddit survey is fast but self-selecting. I\u2019d pair it with a few moderated sessions watching new players, the group the data only let me infer. I\u2019d also tighten my instrument: an early draft listed two different playtime minimums, easy to miss at speed.' },
             { h: 'What\u2019s next', body: 'Prototype the highest-impact fix, progressive disclosure on the passive tree, and usability-test it head to head against the current version. The recommendations are well-grounded; the honest next step is proving a redesign lowers the load.' },
           ]} />
 
           <Footer prevHref="/work" nextHref="/work/driving-alert-salience" />
+          </ReadModeProvider>
         </article>
       </main>
     </>

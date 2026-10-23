@@ -46,6 +46,15 @@ export const CASES: CaseMeta[] = [
     badge: 'LIVE',
   },
   {
+    slug: 'path-of-exile-2-evaluation',
+    accent: 'tang',
+    type: 'Graduate coursework \u00b7 Research + design',
+    title: 'When depth becomes a wall.',
+    label: 'A heuristic evaluation of Path of Exile 2',
+    blurb: 'A heuristic evaluation of Path of Exile 2, backed by 183 player responses, on a brilliant game buried under its own cognitive load.',
+    cat: 'research design',
+  },
+  {
     slug: 'driving-alert-salience',
     accent: 'pool',
     type: 'Master\u2019s research \u00b7 UX research',
@@ -62,14 +71,5 @@ export const CASES: CaseMeta[] = [
     label: 'A usability study of Partiful',
     blurb: 'A five-person usability study of Partiful: a playful party app people enjoyed but couldn\u2019t quite trust, plus the fixes.',
     cat: 'research design',
-  },
-  {
-    slug: 'path-of-exile-2-evaluation',
-    accent: 'tang',
-    type: 'Graduate coursework \u00b7 UX design',
-    title: 'When depth becomes a wall.',
-    label: 'A heuristic evaluation of Path of Exile 2',
-    blurb: 'A heuristic evaluation of Path of Exile 2, backed by 183 player responses, on a brilliant game buried under its own cognitive load.',
-    cat: 'design',
   },
 ]
