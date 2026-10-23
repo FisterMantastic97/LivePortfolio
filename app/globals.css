@@ -334,6 +334,9 @@ strong,b{font-weight:600;}
 .fcard .ico{width:34px;height:34px;margin:0 0 12px;}
 .fcard h3{font-family:var(--font-sub);font-weight:700;font-size:15px;letter-spacing:0.3px;margin:0 0 8px;}
 .fcard p{font-size:15px;line-height:1.5;margin:0;}
+.focus.off{grid-template-columns:repeat(2,minmax(0,1fr));}
+@media(min-width:900px){.focus.off{grid-template-columns:repeat(4,minmax(0,1fr));}}
+@media(max-width:480px){.focus.off{grid-template-columns:1fr;}}
 .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px;margin:6px 0 0;}
 .skillcat h3{font-family:var(--font-sub);font-weight:700;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--tang-ink);margin:0 0 12px;border-bottom:2px solid var(--espresso);padding-bottom:8px;}
 .chips{display:flex;flex-wrap:wrap;gap:8px;}
