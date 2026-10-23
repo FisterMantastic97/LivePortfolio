@@ -59,7 +59,7 @@ export default function Page() {
                 { n: '3', l: 'measure types triangulated' },
                 { n: 'C-', l: 'overall usability grade', stamp: true },
               ]}
-              note="Highest-severity finding: all five participants couldn't tell whether cancelling an event notified guests."
+              note="Rated high severity. All five participants couldn't tell whether cancelling an event notified guests."
             />
           </Section>
 
@@ -68,19 +68,19 @@ export default function Page() {
             heading="The Problem"
             summary="A playful tone can hide whether people trust what the app is doing. We tested the promise against the core host and guest flows."
           >
-            <p>Partiful's pitch is one place for the whole party: logistics and social connection, no more juggling group chats, calendar invites, and scattered DMs. Its stated mission is literally "to help people make friends (and memories)."</p>
-            <p>But a playful tone can quietly paper over whether people trust what the app is doing. We set out to test the promise against the experience, focused on the core flows: RSVPing, creating and editing events, pushing updates and cancellations, and reconnecting after the party.</p>
+            <p>Partiful's pitch is one place for the whole party. Logistics and social connection live together, with no more juggling group chats, calendar invites, and scattered DMs. Its stated mission is literally "to help people make friends (and memories)."</p>
+            <p>But a playful tone can quietly paper over whether people trust what the app is doing. We set out to test the promise against the experience in the core flows. That meant RSVPing, creating and editing events, pushing updates and cancellations, and reconnecting after the party.</p>
             <p>Here's why it matters beyond Partiful. For any social or transactional product, "the user completed the task" is not success if they walked away unsure it worked. Uncertainty is its own failure mode, and it's the kind that quietly pushes people back to texting and external apps.</p>
           </Section>
 
           <Section
             num="03"
             heading="Research"
-            summary="The team used Partiful for real meetings and ran a heuristic pass first. It flagged system status and real-world match as the weak points."
+            summary="The team used Partiful for real meetings and walked through it first. That review flagged privacy, cancellations, invite links, and silent updates as likely trouble spots."
           >
             <p>We started inside the app. The team used Partiful to organize our own meetings, as both host and guest, and ran a heuristic evaluation to find where it broke established usability principles before any participant walked in. That gave us a map of suspected trouble spots.</p>
             <p>We then built personas from Partiful's real audience, Gen Z and Millennial social hosts and guests, so the study tested realistic behavior instead of edge cases.</p>
-            <p>The heuristic pass pointed straight at visibility of system status and the match between the system and the real world as the likely weak points. That's exactly where the user sessions later did the most damage.</p>
+            <p>The walkthrough flagged four likely trouble spots before anyone walked in. Guests might not know what others could see about them. Hosts might not know whether cancellations and edits reached anyone. First-time guests might not trust a text link, and hosts might not realize updates don't send themselves. The sessions bore out the first two hardest, and visibility of system status ended up with the most violations of any heuristic.</p>
           </Section>
 
           <Section
@@ -89,7 +89,7 @@ export default function Page() {
             summary="Four realistic task scenarios, moderated live, measured by performance, behavior, and what people said."
           >
             <p>The study was built to provoke the gap between what people do and what they believe is happening, and then catch it in the act.</p>
-            <p>We designed four task scenarios, each tied to a core use case and a company goal: a first-time guest RSVPing, a first-time host creating and adjusting an event, an experienced host handling a venue change and a cancellation, and someone reconnecting with a guest from a past event. We wrote them to mirror real moments rather than feature checklists, so friction would surface on its own instead of being prompted.</p>
+            <p>We designed four task scenarios, each tied to a core use case and a company goal. They covered a first-time guest RSVPing, a first-time host creating and adjusting an event, an experienced host handling a venue change and a cancellation, and someone reconnecting with a guest from a past event. We wrote them to mirror real moments rather than feature checklists, so friction would surface on its own instead of being prompted.</p>
             <figure className="figure">
               <div className="fig-head">
                 <p className="fig-k">★ Fig 01 · Task 1</p>
@@ -107,7 +107,7 @@ export default function Page() {
               <DeepRead title="Study design">
                 <dl className="specs">
                   <div><dt>Team</dt><dd>Lumon Research, five people.</dd></div>
-                  <div><dt>Participants</dt><dd>Five, matched to personas built from Partiful’s real audience of Gen Z and Millennial hosts and guests.</dd></div>
+                  <div><dt>Participants</dt><dd>Five, sorted after the sessions by how much they had used Partiful. Personas built from its Gen Z and Millennial audience shaped the scenarios.</dd></div>
                   <div><dt>Tasks</dt><dd>A first-time guest RSVPing. A first-time host creating and adjusting an event. An experienced host handling a venue change and a cancellation. Reconnecting with a guest from a past event.</dd></div>
                   <div><dt>Performance</dt><dd>Time on task, completion, and errors.</dd></div>
                   <div><dt>Behavioral</dt><dd>Negative non-verbal cues, asking for help, and re-reading the instructions.</dd></div>
@@ -136,13 +136,13 @@ export default function Page() {
                     scenario="You’re helping a friend throw a small get-together at their apartment this Friday night at 6:00pm. Since their apartment isn’t very large, you can only comfortably accommodate about 8 people. Their friend Sarah has a severe peanut allergy, so you must ensure the guests don’t bring peanut-based snacks to the party. After posting the event, you realize it needs to start 30 minutes later than planned, and now you have to update everyone about this change to the event."
                     tasks={['Create your event on Partiful and choose a theme that matches your casual gathering.', 'Clearly communicate the peanut allergy restriction to your guests.', 'Distribute the invitations.', 'Adjust the start time by moving it 30 minutes later.', 'Demonstrate how you would notify guests of this updated start time.']}
                     probes={['How clearly do you think your guests will understand the peanut allergy restriction?', 'How do you anticipate your guests will be aware of the updated start time?', 'Text Blast. Did you see it?', 'What do you think it will do if you used it? (Without tapping on it.)']}
-                    note="Here is where we mention the truth if they missed it. This lets us ask why they missed it and what they expected."
+                    note="Here is where we mention the truth if they missed it. This lets us inquire WHY they missed it, what they expected."
                   />
                   <ScriptCard
                     no={3}
                     title="Experienced host: a venue change, then a cancellation"
                     scenario="You often use Partiful for organizing club meetups, and this weekend, you planned a local hiking event with about 20 RSVPs. However, heavy rain in the forecast means you have to change the meeting point to a sheltered picnic area instead. Later, due to worsening weather predictions, you unfortunately have to cancel the event entirely. You want to make sure your guests clearly understand these last-minute adjustments and cancellations."
-                    tasks={['Update the meeting location to the picnic shelter.', 'Demonstrate how you would notify your guests about this location change.', 'Cancel the event.', 'Confirm the cancellation and manage the notifications sent to your guests.']}
+                    tasks={['Update the meeting location to the picnic shelter.', 'Demonstrate how you would notify your guests about this location change.', 'After notifying them, you decided to completely cancel the event.', 'Confirm the cancellation and manage the notifications sent to your guests.']}
                     probes={['After updating the location, how confident are you that guests will be aware of the change?', 'Upon cancellation, how clear do you expect the communication to be?']}
                   />
                   <ScriptCard
@@ -160,9 +160,10 @@ export default function Page() {
                     <div><dt>Task error</dt><dd>Typed the vegetarian note into the RSVP comment box, which is shared with every guest.</dd></div>
                     <div><dt>Behavior</dt><dd>Moved through the task with confidence, but asked for clarification on where to note the dietary preference. Showed confusion when probed about what personal information was shared.</dd></div>
                     <div><dt>Said aloud</dt><dd><q>Uh, is there something for me to note?</q> <q>Um, I cannot see anybody else’s information.</q></dd></div>
-                    <div><dt>Satisfaction</dt><dd><q>Pretty easy to use.</q> <q>It was easy to figure.</q></dd></div>
+                    <div><dt>Ease of use</dt><dd><q>Pretty easy to use.</q></dd></div>
+                    <div><dt>Satisfaction</dt><dd><q>It was easy to figure.</q></dd></div>
                   </dl>
-                  <p className="doc-fn">Said it was easy, and got it wrong. That gap is the study’s main finding in one row.</p>
+                  <p className="doc-fn">Said it was easy, and still put a personal detail in a public box. That gap is the study’s main finding in one row.</p>
                 </Doc>
               </Materials>
           </Section>

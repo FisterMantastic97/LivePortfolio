@@ -7,7 +7,7 @@ import EmailButton from '@/components/EmailButton'
 // The web edition of /public/resume.pdf. Keep the wording in step with the PDF when either one changes.
 
 export const metadata = {
-  title: 'Resume — Nicholas Mitchell',
+  title: 'Resume | Nicholas Mitchell',
   description:
     'Human factors and UX researcher with an M.S. in Human Factors and Ergonomics Engineering. Runs studies end to end and ships the software.',
   alternates: { canonical: '/resume' },

@@ -5,6 +5,12 @@ import Footer from '@/components/Footer'
 import Image from 'next/image'
 
 // With a portrait.jpg in /public, the photo takes the intro spot and the facts move to a strip below it.
+export const metadata = {
+  title: 'About | Nicholas Mitchell',
+  description: 'UX researcher and designer with an M.S. in Human Factors and Ergonomics Engineering from San José State. Background, focus areas, and how I work.',
+  alternates: { canonical: '/about' },
+}
+
 const HAS_PORTRAIT = fs.existsSync(path.join(process.cwd(), 'public', 'portrait.jpg'))
 
 const FACTS: [string, string][] = [
@@ -141,7 +147,7 @@ export default function AboutPage() {
 
           <section className="block pad">
             <h2 className="sec-title">What I work on</h2>
-            <p>A few threads run through everything I do, from a 24-person driving study to a heuristic teardown of one of gaming&rsquo;s most overwhelming interfaces:</p>
+            <p>A few threads run through everything I do, from a 24-person driving study to a heuristic teardown of one of gaming&rsquo;s most overwhelming interfaces.</p>
             <div className="focus">
               {FOCUS.map((f) => (
                 <div className="fcard" key={f.title}>
@@ -158,7 +164,7 @@ export default function AboutPage() {
             <p>
               A few things I don&rsquo;t compromise on. I start from evidence, real users and real data,
               before I trust my own instinct. I design for accessibility from the first sketch, targeting
-              WCAG AA and going further where I can. And I lean on the fundamentals that earn their keep:
+              WCAG AA and going further where I can. And I lean on the fundamentals that earn their keep, like
               Nielsen&rsquo;s heuristics, Apple&rsquo;s Human Interface Guidelines, and the human-factors
               basics underneath both.
             </p>
@@ -193,7 +199,7 @@ export default function AboutPage() {
 
           <section className="block pad">
             <h2 className="sec-title">Tools &amp; methods</h2>
-            <p>An unusual spread for a UX researcher: I script my own experiments, run my own stats in code, and build accessible full-stack apps. The combination is the point.</p>
+            <p>It&rsquo;s an unusual spread for a UX researcher. I script my own experiments, run my own stats in code, and build accessible full-stack apps. The combination is the point.</p>
             <div className="skills">
               {SKILLS.map((s) => (
                 <div className="skillcat" key={s.cat}>

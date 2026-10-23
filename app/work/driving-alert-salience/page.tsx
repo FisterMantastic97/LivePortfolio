@@ -12,7 +12,7 @@ import { AlertIllustration } from '@/components/RoadScene'
 import { caseMetadata } from '@/lib/caseMeta'
 import { Materials, Doc, RunSheet } from '@/components/Materials'
 
-export const metadata = caseMetadata('driving-alert-salience', 'When does a visual alert beat a beep?')
+export const metadata = caseMetadata('driving-alert-salience', 'When does a visual alert beat a voice?')
 
 export default function Page() {
   return (
@@ -24,9 +24,9 @@ export default function Page() {
             <CaseCover
               crumb="Driving-alert study"
               doc={{ href: '/thesis/mitchell-ms-thesis.pdf', label: 'Read the full thesis', meta: 'PDF, 61 pages' }}
-              title={<>When does a <span className="pool">visual alert</span> beat a <span className="tang">beep?</span></>}
+              title={<>When does a <span className="pool">visual alert</span> beat a <span className="tang">voice?</span></>}
               lede="A 24-person study on whether an in-car alert's salience or its modality matters more for how fast drivers react, and what that means for designing alerts."
-              seal={{ number: '591', sublabel: 'MS · FASTEST', ring: '★ EVIDENCE-BASED ★ n = 24 ★ EST. 1997 ' }}
+              seal={{ number: '591', sublabel: 'MS · FASTEST', ring: '★ EVIDENCE-BASED ★ n = 24 ★ ISE 298 ★ ' }}
             />
 
             <WorkPlate kind="thesis" cover />
@@ -58,7 +58,7 @@ export default function Page() {
                 items={[
                   { n: '24', l: 'participants' },
                   { n: '1,008', l: 'recorded trials' },
-                  { n: '166 ms', l: 'swing from salience' },
+                  { n: '166 ms', l: 'swing from visual salience' },
                   { n: '591 ms', l: 'fastest condition' },
                 ]}
                 note="Modality on its own: no significant effect on any measure."
@@ -102,7 +102,7 @@ export default function Page() {
               summary="A 2×2 within-subjects study on real dashcam footage, with visual alerts placed where the driver was already looking."
             >
               <p>The study itself was a series of design decisions, and a couple of them drove the whole result.</p>
-              <p>I used a 2×2 within-subjects design: alert modality (visual or audio) crossed with salience (low or high), four conditions, every participant doing all four. Within-subjects means each person is their own control, which is how you get clean comparisons out of a sample of 24 instead of needing hundreds.</p>
+              <p>I used a 2×2 within-subjects design. Alert modality (visual or audio) crossed with salience (low or high) made four conditions, and every participant did all four. Within-subjects means each person is their own control, which is how you get clean comparisons out of a sample of 24 instead of needing hundreds.</p>
               <p>I ran it on video-based driving rather than a full simulator. Real dashcam footage from Chicago and LA, played back while participants responded to alerts in PsychoPy. The trade is honest: I give up the motor realism of actually steering, but I keep the perceptual demand of a busy road, the setup is fast and repeatable, and video-based driving tasks have been validated against real crash risk.</p>
               <AlertIllustration />
               <Pull>The decision that mattered most: I placed the visual alerts in the center of the driving scene, right where the driver was already looking, instead of on a separate dashboard.</Pull>
@@ -114,7 +114,7 @@ export default function Page() {
                   <div><dt>Design</dt><dd>2×2 fully within-subjects. Modality (visual, auditory) by salience (low, high). Every participant completed all four conditions.</dd></div>
                   <div><dt>Sample</dt><dd>N = 24. 1,008 recorded trials. Full IRB approval.</dd></div>
                   <div><dt>Task</dt><dd>Video-based driving. Real dashcam footage from Chicago and Los Angeles, with alerts presented and responses logged in PsychoPy.</dd></div>
-                  <div><dt>Build</dt><dd>I programmed the full study in PsychoPy: stimulus timing, randomization, data logging, and the post-task survey.</dd></div>
+                  <div><dt>Build</dt><dd>I programmed the task in PsychoPy, including alert timing and data logging.</dd></div>
                   <div><dt>Visual salience</dt><dd>Size, brightness, and contrast. Alerts appeared at the center of the scene, not on a separate display.</dd></div>
                   <div><dt>Audio salience</dt><dd>Phrasing of the audio alert.</dd></div>
                   <div><dt>Order</dt><dd>Condition order counterbalanced across two groups to control practice and fatigue.</dd></div>

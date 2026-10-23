@@ -109,7 +109,7 @@ export default function DashDemo() {
           </>
         )}
       </div>
-      <p className="fig-note">Scored the same way as the study. The sixth question is reverse-scored, then the total out of 35 converts to 100. Nothing you enter leaves this page.</p>
+      <p className="fig-note">The sixth question is reverse-scored here, since agreeing with it is a bad sign. Then the total out of 35 converts to 100. Nothing you enter leaves this page.</p>
     </figure>
   )
 }

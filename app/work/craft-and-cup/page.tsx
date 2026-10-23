@@ -33,7 +33,7 @@ const LOOP = [
 const DECISIONS: { h: string; body: string; why: string }[] = [
   { h: 'Plain words in, a structured wheel out.', body: 'Asking people to place their own notes on a flavor wheel stops beginners cold. So people write the way they talk, like “chocolatey with some berry,” and the AI maps the words onto the wheel’s three rings. Experts’ detailed notes still get parsed.', why: 'Recognition over recall' },
   { h: 'Undo, not “Are you sure?”', body: 'Confirm dialogs add friction and train people to click through them. Deletes happen at once with a five-second undo, and sync waits until the window closes. The undo banner is announced to screen readers, because a five-second window is useless if nobody hears it.', why: 'User control and freedom' },
-  { h: 'Color is never the only signal.', body: 'Tasting scores carry a word next to the color, like Excellent or Fair. Marks on the origin map are named in its label, and links are underlined, not just tinted.', why: 'WCAG 1.4.1, Use of Color' },
+  { h: 'Color is never the only signal.', body: 'Tasting scores carry a word next to the color, like Excellent or Fair. Marks on the origin map are named in its label, and links in the sign-in dialog are underlined, not just tinted.', why: 'WCAG 1.4.1, Use of Color' },
   { h: 'AI that shows its work.', body: '“What should I try next?” returns two comfort picks and one labeled stretch pick, each with a reason tied to your own beans. It suggests styles, never specific products, because the model can’t check what a roaster has in stock. And it’s one button, not a chat box, so there’s nothing to figure out and no prompt to hijack.', why: 'Calibrated trust' },
   { h: 'Fixing a mode error.', body: 'The milk amount had an oz/ml toggle that relabeled the number without converting it, so 6 oz quietly became 6 ml, and the unit was never saved. Now it converts, and the unit sticks.', why: 'Norman’s mode errors' },
 ]
@@ -92,7 +92,7 @@ export default function Page() {
                 { n: '75', l: 'pull requests merged' },
                 { n: '7', l: 'expert evaluation passes' },
                 { n: '54', l: 'end-to-end browser tests' },
-                { n: '204', l: 'screens checked per refactor' },
+                { n: '204', l: 'screenshots compared per refactor' },
               ]}
               note="Counts from the public repo as of October 2026. There's no measured user base yet, so there are no user numbers here."
             />
@@ -180,7 +180,7 @@ export default function Page() {
                 <p className="fig-t">One tasting note, mapped onto the wheel</p>
               </div>
               <div className="shot-pair phones">
-                <Image src="/craft/bean-notes.jpg" width={750} height={1390} sizes="(min-width: 600px) 240px, 37vw" alt="Craft &amp; Cup bean page showing a long plain-language tasting note, with the detected flavors listed above it: wild blackberry, blood orange, white peach, jasmine, dried rose, demerara, dark chocolate, tobacco, and crisp." />
+                <Image src="/craft/bean-notes.jpg" width={750} height={1390} sizes="(min-width: 600px) 240px, 37vw" alt="Craft &amp; Cup bean page showing a long plain-language tasting note, with the detected flavors listed above it, including wild blackberry, blood orange, white peach, jasmine, dried rose, demerara, dark chocolate, tobacco, and crisp." />
                 <Image src="/craft/bean-profile.jpg" width={750} height={1390} sizes="(min-width: 600px) 240px, 37vw" alt="The same bean's one-line flavor profile above a multi-tier flavor wheel, with fruity, floral, and sweet families broken out into specific notes like blackberry and blood orange." />
               </div>
               <p className="fig-note">An example entry from the live app. The note on the left is written the way people talk. The app pulls out the flavors and builds the profile and wheel on the right.</p>

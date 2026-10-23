@@ -50,6 +50,7 @@ export default function WorkPage() {
           ))}
         </div>
 
+        <h2 className="sr-only">Case studies</h2>
         <ul className="catalog">
           {shown.map((c) => <CaseRow key={c.slug} c={c} />)}
         </ul>

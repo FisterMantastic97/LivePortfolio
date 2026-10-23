@@ -2,7 +2,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
 export const metadata = {
-  title: 'Accessibility — Nicholas Mitchell',
+  title: 'Accessibility | Nicholas Mitchell',
   description: 'How this site is built and tested to meet WCAG 2.2 AA, and where it still falls short.',
   alternates: { canonical: '/accessibility' },
 }
@@ -18,8 +18,8 @@ export default function AccessibilityPage() {
           <header className="pad acc-head">
             <h1 className="rs-name">The fine <span className="tang">print.</span></h1>
             <p className="lede">
-              This site aims to meet WCAG 2.2 at Level AA. Accessibility is part of how I work, so here is how I check it and
-              where it still falls short.
+              This site is built and tested to meet WCAG 2.2 at Level AA. Accessibility is part of how I work, so here is how I
+              check it and where it still has limits.
             </p>
           </header>
 

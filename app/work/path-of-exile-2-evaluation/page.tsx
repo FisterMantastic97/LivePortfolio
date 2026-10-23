@@ -23,7 +23,7 @@ export default function Page() {
             crumb="Path of Exile 2"
             title={<>When <span className="pool">depth</span> becomes a <span className="tang">wall.</span></>}
             lede="A heuristic evaluation of Path of Exile 2, backed by 183 survey responses, on how a brilliant game buries its depth under cognitive load, and how to dig it back out."
-            seal={{ number: '183', sublabel: 'RESPONSES', ring: '★ HEURISTIC EVAL ★ n = 183 ★ EST. 1997 ' }}
+            seal={{ number: '183', sublabel: 'RESPONSES', ring: '★ HEURISTIC EVAL ★ n = 183 ★ PSYCH 273 ★ ' }}
           />
 
           <WorkPlate kind="poe2" cover />
@@ -67,7 +67,7 @@ export default function Page() {
             heading="The Problem"
             summary="The depth is the draw, but the interface makes players carry it in their heads. For a free-to-play game, that friction is a retention problem."
           >
-            <p>Path of Exile 2's identity is its complexity: an enormous passive skill tree, deep crafting, dense itemization, fast and punishing combat. That depth is the draw. The problem is that the interface treats "deep" and "overwhelming" as the same thing, and asks players to carry the load in their heads.</p>
+            <p>Path of Exile 2's identity is its complexity. It has an enormous passive skill tree, deep crafting, dense itemization, and fast, punishing combat. That depth is the draw. The problem is that the interface treats "deep" and "overwhelming" as the same thing, and asks players to carry the load in their heads.</p>
             <p>This isn't a complaint about the game being hard. It's that the difficulty is coming from the wrong place. Players want to fight the boss. Instead they fight the tooltip, the menu, the unlabeled node, the item they can't parse fast enough. The challenge leaks out of the gameplay and into the interface, where it doesn't belong.</p>
             <p>For a free-to-play game, that's not just a feel problem, it's a business one. Retention drives the whole model, and friction stacked at the start is exactly what stops new players from reaching the endgame where they'd happily spend money. Reducing the load is a growth lever, not a polish pass.</p>
           </Section>
@@ -98,8 +98,8 @@ export default function Page() {
             heading="The Process"
             summary="Eight hidden usage assumptions, mapped to seven usability violations, split by interface and by player goal, then graded across five personas."
           >
-            <p>I built the evaluation in layers, each one feeding the next. First, the survey gave me the lived player experience. From those responses, I extracted eight usage assumptions the interface quietly makes, things like "players can read large amounts of information at once" and "players can tell a lethal attack from a decorative effect mid-fight." Naming the assumptions made the failures concrete instead of vague.</p>
-            <p>Those assumptions mapped onto seven violations of universal usability principles: excessive cognitive load, poor visibility of system status, unpredictable mapping, weak support for recognition over recall, no clear visual hierarchy, limited feedforward, and heavy dependence on external resources. Standard heuristics, applied to a product most people would never think to evaluate that way.</p>
+            <p>I built the evaluation in layers, each one feeding the next. First, the survey gave me the lived player experience. From those responses, I extracted eight usage assumptions the interface quietly makes, things like "users can accurately interpret large amounts of information at once" and "users can reliably identify critical visual signals during combat." Naming the assumptions made the failures concrete instead of vague.</p>
+            <p>Those assumptions mapped onto seven violations of universal usability principles. They were excessive cognitive load, poor visibility of system status, unpredictable mapping, weak support for recognition over recall, no clear visual hierarchy, limited feedforward, and heavy dependence on external resources. Standard heuristics, applied to a product most people would never think to evaluate that way.</p>
             <Pull>I split the problems two ways on purpose: interface-based (what's broken on screen) and goal-based (what the player is trying to do and can't).</Pull>
             <p>The same issue reads differently from each angle, and seeing both is what turns "this menu is bad" into "this menu blocks the thing the player came here to do." I closed with five personas, each graded against how well the current interface serves them, from the strategic theorycrafter to the brand-new player.</p>
                         <DeepRead title="Evaluation method">
@@ -108,10 +108,10 @@ export default function Page() {
                   <div><dt>Sample</dt><dd>Every respondent had at least 20 hours in the game. No first-impression players.</dd></div>
                   <div><dt>Instrument</dt><dd>Rating scales for measurable usability signals, plus open-ended questions for the why.</dd></div>
                   <div><dt>Assumptions</dt><dd>Eight usage assumptions the interface quietly makes, pulled from the responses. Example: players can tell a lethal attack from a decorative effect mid-fight.</dd></div>
-                  <div><dt>Violations</dt><dd>Seven: excessive cognitive load, poor visibility of system status, unpredictable mapping, weak recognition over recall, no clear visual hierarchy, limited feedforward, heavy reliance on external resources.</dd></div>
+                  <div><dt>Violations</dt><dd>Seven in all. Excessive cognitive load, poor visibility of system status, unpredictable mapping, weak recognition over recall, no clear visual hierarchy, limited feedforward, and heavy reliance on external resources.</dd></div>
                   <div><dt>Framing</dt><dd>Each problem classified two ways. Interface-based, what is broken on screen. Goal-based, what the player is trying to do and can’t.</dd></div>
                   <div><dt>Personas</dt><dd>Five, from the strategic theorycrafter to the brand-new player, each graded on how well the interface serves them. Best grade B-. New player D. Efficient collector D+.</dd></div>
-                  <div><dt>Limits</dt><dd>A Reddit survey self-selects for the most engaged players. An early draft of the instrument listed two different playtime minimums.</dd></div>
+                  <div><dt>Limits</dt><dd>A Reddit survey self-selects for the most engaged players.</dd></div>
                 </dl>
               </DeepRead>
           </Section>
@@ -133,9 +133,9 @@ export default function Page() {
               </div>
               <p className="fig-note">Dozens of look-alike icons and stack counts, with no labels on screen.</p>
             </figure>
-            <p>Not one of the five personas scored above a B-. The new player landed at a D. The efficient collector, whose whole loop is loot and inventory, hit a D+. That's the game's core audience grading its core experience as barely passing.</p>
+            <p>Not one of the five personas scored above a B-. The new player landed at a D. The efficient collector, whose whole loop is loot and inventory, hit a D+. Those two stand for the game's core audience, and its core experience scored barely passing for them.</p>
             <PersonaGrades />
-            <p>The fixes don't touch the depth. They dig it out:</p>
+            <p>The fixes don't touch the depth. They dig it out.</p>
             <Takeaways items={[
               <><b>Externalize the knowledge.</b> Progressive disclosure on the passive tree, collapsible clusters, search, and tooltips that actually explain modifiers. Stop making players memorize what the interface could just show.</>,
               <><b>Make threats unmistakable.</b> Standardized telegraphs, stronger contrast for dangerous attacks, simplified effects in critical moments. Let players read combat in real time.</>,
@@ -147,7 +147,7 @@ export default function Page() {
             summary="Heuristics travel further than expected. Next is prototyping progressive disclosure on the passive tree and testing it head to head."
             items={[
             { h: 'What I learned', body: 'Heuristics travel further than I assumed. Cognitive load, recognition over recall, visibility of system status, the same principles that govern a car dashboard expose a video game just as cleanly. Evaluating something nobody calls an "interface" sharpened how I see all of them.' },
-            { h: 'What I\u2019d change', body: 'A Reddit survey is fast but self-selecting. I\u2019d pair it with a few moderated sessions watching new players, the group the data only let me infer. I\u2019d also tighten my instrument: an early draft listed two different playtime minimums, easy to miss at speed.' },
+            { h: 'What I\u2019d change', body: 'A Reddit survey is fast but self-selecting. I\u2019d pair it with a few moderated sessions watching new players, the group the data only let me infer. I\u2019d also tighten my write-up. The report states the playtime minimum two different ways, an easy slip to miss at speed.' },
             { h: 'What\u2019s next', body: 'Prototype the highest-impact fix, progressive disclosure on the passive tree, and usability-test it head to head against the current version. The recommendations are well-grounded; the honest next step is proving a redesign lowers the load.' },
           ]} />
 

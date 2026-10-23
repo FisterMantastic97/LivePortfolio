@@ -57,7 +57,7 @@ export const CASES: CaseMeta[] = [
     plate: 'thesis',
     project: 'Driving-alert study',
     kind: 'Master’s thesis',
-    title: 'A well-placed visual alert beat the beep, at 591 ms.',
+    title: 'A well-placed visual alert beat the spoken one, at 591 ms.',
     blurb: 'A 24-person study on whether an in-car alert’s salience or its modality matters more for how fast drivers react.',
     facts: [['Role', 'Sole researcher'], ['Design', '2×2 within-subjects, 24 people'], ['When', 'May 2026']],
     cat: 'research',

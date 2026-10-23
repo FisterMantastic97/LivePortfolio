@@ -8,19 +8,19 @@ const DESCRIPTION =
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: 'Nicholas Mitchell — UX Research + Design',
+  title: 'Nicholas Mitchell | UX Research + Human Factors',
   description: DESCRIPTION,
   openGraph: {
     type: 'website',
     url: '/',
     siteName: 'Nicholas Mitchell',
-    title: 'Nicholas Mitchell — UX Research + Human Factors',
+    title: 'Nicholas Mitchell | UX Research + Human Factors',
     description: DESCRIPTION,
     images: [{ url: '/og.png', width: 1200, height: 630, alt: 'Nicholas Mitchell, UX research and human factors. 180+ players surveyed for one study, 1,000+ trials in a single experiment, 1 app designed, built, and shipped solo.' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Nicholas Mitchell — UX Research + Human Factors',
+    title: 'Nicholas Mitchell | UX Research + Human Factors',
     description: DESCRIPTION,
     images: ['/og.png'],
   },

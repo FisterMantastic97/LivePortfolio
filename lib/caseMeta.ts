@@ -16,7 +16,7 @@ export function caseMetadata(slug: string, title: string): Metadata {
     alt: `Case study by Nicholas Mitchell. ${title} ${c.title}`,
   }
   return {
-    title: `${title.replace(/\.$/, '')} — Nicholas Mitchell`,
+    title: `${title.replace(/\.$/, '')} | Nicholas Mitchell`,
     description: c.blurb,
     alternates: { canonical: url },
     openGraph: {

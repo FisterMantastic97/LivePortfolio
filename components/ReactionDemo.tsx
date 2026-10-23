@@ -192,7 +192,6 @@ export default function ReactionDemo() {
             type="button"
             ref={(el) => { pads.current[c.kind] = el }}
             className="ctl-btn"
-            aria-label={`${c.label} (${c.keyName} key)`}
             aria-disabled={phase !== 'running'}
             onPointerDown={(e) => {
               if (phase !== 'running') return
@@ -206,7 +205,7 @@ export default function ReactionDemo() {
           >
             <span className="ctl-ico"><NavGlyph kind={c.kind} /></span>
             <span className="ctl-l">{c.label}</span>
-            <kbd className="ctl-k">{c.cap}</kbd>
+            <kbd className="ctl-k">{c.cap}</kbd><span className="sr-only"> key</span>
           </button>
         ))}
       </div>

@@ -80,7 +80,7 @@ export default function Page() {
           >
             <p>Instead of asking about dashboards in general, the survey asked about each person&rsquo;s own car. Drivers entered the year, make, and model, and the survey piped it straight into the questions. Someone with a 2007 Honda Civic rated their 2007 Honda Civic.</p>
             <Pull>People answer more carefully about the car in their driveway than about cars in the abstract.</Pull>
-            <p>The usability questions came from a modified System Usability Scale, trimmed to seven items so people wouldn&rsquo;t drop out. They asked about real moments behind the wheel, like finding the volume or a setting while driving. Three more questions asked which style each driver preferred, and an open-ended one let people tell us what we missed.</p>
+            <p>The usability questions came from a modified System Usability Scale, trimmed to seven items so people wouldn&rsquo;t drop out. They asked about real moments behind the wheel, like finding the volume or a setting while driving. Seven more statements asked about preferences, including which dashboard style each driver would want, and an open-ended question let people tell us what we missed.</p>
             <p>We sorted every car by hand into analog, hybrid, or digital, scored each driver&rsquo;s answers out of 100, and compared the groups.</p>
               <DeepRead title="Study design">
                 <dl className="specs">
@@ -98,30 +98,33 @@ export default function Page() {
                 <Doc form="ISE 210 · Driver survey" title="How the survey ran" note="27 questions, 10 to 20 minutes">
                   <RunSheet steps={[
                     'Informed consent.',
-                    <>Do you currently own or operate a vehicle? <i>Yes, or no but I do have a license.</i></>,
-                    <>Year, brand, and model, typed in. The answers are piped into every question after this, so a driver with a 2007 Honda Civic rates their <Pipe>2007 Honda Civic</Pipe>.</>,
+                    <>&ldquo;If you currently own or operate a vehicle?&rdquo; <i>Yes, or no, but I do have a license.</i></>,
+                    <>Year, brand, and model, typed in. The answers are piped into the usability statements, so a driver with a 2007 Honda Civic rates their <Pipe>2007 Honda Civic</Pipe>.</>,
                     'Seven usability statements, a modified System Usability Scale.',
                     'Seven preference statements about controls and dashboard styles.',
-                    'Demographics, such as highest completed education.',
                     'An optional open question about anything the survey missed.',
+                    'Demographics, such as driving experience and highest completed education.',
                   ]} />
                 </Doc>
-                <Doc form="ISE 210 · Driver survey" title="Usability statements" note="Excerpt, 5 of 7">
-                  <p>In regards to your <Pipe>2007 Honda Civic</Pipe></p>
+                <Doc form="ISE 210 · Driver survey" title="Usability statements" note="All 7">
+                  <p>In regards to your vehicle experience&hellip;</p>
                   <LikertItems items={[
-                    'Finding the air conditioner/heater controls were easy for me the first time.',
+                    'Finding the air conditioner/heater controls were easy for me the first time I was in this vehicle.',
                     'I am able to easily and quickly locate the emergency hazard light.',
+                    <>I like the layout of my <Pipe>2007 Honda Civic</Pipe> dashboard.</>,
                     <>I am able to quickly locate the volume control while driving my <Pipe>2007 Honda Civic</Pipe>.</>,
                     'I feel confident in my ability to operate this vehicle.',
                     'I have found myself unable to locate necessary buttons or screens while driving.',
+                    <>I imagine other people would quickly adapt to my <Pipe>2007 Honda Civic</Pipe> dashboard layout.</>,
                   ]} />
+                  <p className="doc-fn">Wording as in the survey. The last statement had a piping glitch in Qualtrics, cleaned up here.</p>
                 </Doc>
                 <Doc form="ISE 210 · Driver survey" title="Preference statements" note="All 7, as written">
                   <LikertItems items={[
                     'For analog climate control input I prefer buttons over knobs.',
                     'For analog volume controls I prefer knobs over buttons.',
                     'I frequently use steering controls instead of the ones on the dashboard.',
-                    'I prefer to use Android Auto or Apple CarPlay.',
+                    'I prefer to use Android Auto or Apple Carplay.',
                     'I would prefer having a hybrid (screens with analog controls) dashboard.',
                     'I would prefer having an all-digital (Tesla style) dashboard.',
                     'I would prefer having an analog (no screens) dashboard.',
@@ -134,7 +137,7 @@ export default function Page() {
             <p>The all-button cars came in last. Analog dashboards averaged 82.2 out of 100, and cars with a screen scored higher. The gap held up statistically, about half a standard deviation.</p>
             <p className="twist">The popular story says buttons were always better. Our drivers didn&rsquo;t rate it that way. Hybrids, which keep physical controls and add a screen, scored 86.9 across 36 drivers.</p>
             <p>Digital dashboards scored highest on paper, 90.0, but only four people drove one. That&rsquo;s too few to call, and some drivers still described screen-only controls as complex and slow to navigate. What people drove also shaped what they preferred: car type and stated preference were linked, a modest correlation.</p>
-            <p>Preferences told a different story than scores. Asked what they&rsquo;d want, drivers rated an all-digital, Tesla-style dashboard lowest, 2.5 out of 5. A hybrid got 3.2, and for volume, knobs beat buttons at 4.0.</p>
+            <p>Preferences told a different story than scores. Asked what they&rsquo;d want, drivers gave an all-digital, Tesla-style dashboard 2.5 out of 5. A hybrid got 3.2, and for volume, knobs beat buttons at 4.0.</p>
             <DashScores />
             <DashDemo />
             <Takeaways items={[
