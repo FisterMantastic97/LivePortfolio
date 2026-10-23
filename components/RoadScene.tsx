@@ -40,6 +40,33 @@ export function AlertGlyph() {
   )
 }
 
+export type AlertKind = 'left' | 'straight' | 'right' | 'msg'
+
+/** The study's alert types: three navigation cues and an incoming message. CSS sets size and color. */
+export function NavGlyph({ kind }: { kind: AlertKind }) {
+  if (kind === 'msg') {
+    return (
+      <svg viewBox="0 0 40 40" aria-hidden="true" data-g="msg">
+        <path className="ag-tri" d="M7 7 H33 a4 4 0 0 1 4 4 V25 a4 4 0 0 1 -4 4 H19 L11 35.5 V29 H7 a4 4 0 0 1 -4 -4 V11 a4 4 0 0 1 4 -4 Z" strokeLinejoin="round" />
+        <circle className="ag-dot" cx="12.5" cy="18" r="2.6" />
+        <circle className="ag-dot" cx="20" cy="18" r="2.6" />
+        <circle className="ag-dot" cx="27.5" cy="18" r="2.6" />
+      </svg>
+    )
+  }
+  const mirror = kind === 'right' ? 'translate(40 0) scale(-1 1)' : undefined
+  return (
+    <svg viewBox="0 0 40 40" aria-hidden="true" data-g={kind}>
+      <rect className="ag-tri" x="2.5" y="2.5" width="35" height="35" rx="8" />
+      {kind === 'straight' ? (
+        <path className="ag-line" d="M20 31 V10 M12.5 17 L20 9.5 L27.5 17" />
+      ) : (
+        <path className="ag-line" transform={mirror} d="M25 31 V22 a7 7 0 0 0 -7 -7 H10.5 M16.5 9 L10 15 L16.5 21" />
+      )}
+    </svg>
+  )
+}
+
 /** Static side-by-side of the two salience levels. */
 export function AlertIllustration() {
   return (

@@ -1,4 +1,5 @@
 import type React from 'react'
+import Image from 'next/image'
 import GradeStamp from './GradeStamp'
 import { RoadScene, AlertGlyph } from './RoadScene'
 
@@ -13,7 +14,6 @@ const ACCENT: Record<PlateKind, string> = { craft: 'soda', poe2: 'tang', thesis:
  */
 export default function WorkPlate({ kind, cover = false, catno }: { kind: PlateKind; cover?: boolean; catno?: string }) {
   const alt = (text: string) => (cover ? text : '')
-  const load = cover ? 'eager' : 'lazy'
 
   return (
     <div className={`wp wp-${kind} wp-${ACCENT[kind]}${cover ? ' wp-cover' : ''}`} aria-hidden={cover ? undefined : true}>
@@ -22,11 +22,11 @@ export default function WorkPlate({ kind, cover = false, catno }: { kind: PlateK
       {kind === 'poe2' && (
         <>
           <span className="wp-print wp-back">
-            <img src="/poe2/essence-stash.jpg" width={849} height={990} loading={load} decoding="async"
+            <Image src="/poe2/essence-stash.jpg" width={849} height={990} sizes="(min-width: 1000px) 250px, 30vw" priority={cover}
               alt={alt('A Path of Exile 2 stash tab packed with near-identical crystal icons and no labels.')} />
           </span>
           <span className="wp-print wp-front">
-            <img src="/poe2/boss-fight.jpg" width={1280} height={720} loading={load} decoding="async"
+            <Image src="/poe2/boss-fight.jpg" width={1280} height={720} sizes="(min-width: 1000px) 520px, 57vw" priority={cover}
               alt={alt('A Path of Exile 2 boss fight where spell effects hide both the boss and the player.')} />
           </span>
           <span className="wp-stamp"><GradeStamp grade="B-" label="Best grade" small={!cover} /></span>
@@ -36,11 +36,11 @@ export default function WorkPlate({ kind, cover = false, catno }: { kind: PlateK
       {kind === 'partiful' && (
         <>
           <span className="wp-phone wp-p1">
-            <img src="/partiful/rsvp-comment.jpg" width={516} height={1080} loading={load} decoding="async"
+            <Image src="/partiful/rsvp-comment.jpg" width={516} height={1080} sizes="(min-width: 1000px) 290px, 37vw" priority={cover}
               alt={alt('Partiful RSVP sheet with a comment typed into the optional comment box.')} />
           </span>
           <span className="wp-phone wp-p2">
-            <img src="/partiful/rsvp-feed.jpg" width={499} height={1080} loading={load} decoding="async"
+            <Image src="/partiful/rsvp-feed.jpg" width={499} height={1080} sizes="(min-width: 1000px) 290px, 37vw" priority={cover}
               alt={alt('The event page activity feed showing that comment to every guest.')} />
           </span>
           <span className="wp-stamp"><GradeStamp grade="C-" label="Overall" small={!cover} /></span>

@@ -2,6 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import Image from 'next/image'
 
 // With a portrait.jpg in /public, the photo takes the intro spot and the facts move to a strip below it.
 const HAS_PORTRAIT = fs.existsSync(path.join(process.cwd(), 'public', 'portrait.jpg'))
@@ -86,7 +87,8 @@ export default function AboutPage() {
                 <figure className="portrait-print">
                   <div className="deckle">
                     <div className="mat">
-                      <img src="/portrait.jpg" width={960} height={1200}
+                      <Image src="/portrait.jpg" width={960} height={1200} priority
+                        sizes="(min-width: 1000px) 312px, (min-width: 600px) 31vw, 71vw"
                         alt="Nicholas on the Chicago Riverwalk at night, with the Marina City towers lit up behind him." />
                       <span className="pc tl" aria-hidden="true" />
                       <span className="pc tr" aria-hidden="true" />
@@ -210,6 +212,7 @@ export default function AboutPage() {
               <p>Open to UX research and human factors roles. If your problem is a real one, I&rsquo;d like to hear about it.</p>
               <div className="cta-actions">
                 <a className="btn btn-primary" href="/#contact">Get in touch <span className="arw">→</span></a>
+                <a className="btn btn-ghost" href="/resume">Resume</a>
                 <a className="btn btn-ghost" href="https://www.linkedin.com/in/nicholasscottmitchell/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
               </div>
             </div>

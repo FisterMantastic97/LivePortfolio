@@ -7,10 +7,10 @@ import PartifulScorecard from '@/components/PartifulScorecard'
 import { ReadModeProvider, ReadToggle, DeepRead } from '@/components/ReadMode'
 import SpecPlate from '@/components/SpecPlate'
 import WorkPlate from '@/components/WorkPlate'
+import { caseMetadata } from '@/lib/caseMeta'
+import Image from 'next/image'
 
-export const metadata = {
-  title: 'Fun to use, hard to trust — Nicholas Mitchell',
-}
+export const metadata = caseMetadata('partiful-usability', 'Fun to use, hard to trust.')
 
 export default function Page() {
   return (
@@ -95,8 +95,8 @@ export default function Page() {
                 <p className="fig-t">Where an RSVP comment actually goes</p>
               </div>
               <div className="shot-pair phones">
-                <img src="/partiful/rsvp-comment.jpg" width={516} height={1080} loading="lazy" alt="Partiful RSVP sheet on a phone with 'I am vegetarian' typed into the optional comment box." />
-                <img src="/partiful/rsvp-feed.jpg" width={499} height={1080} loading="lazy" alt="The event page's public Activity feed showing the RSVP with the comment 'I am vegetarian' visible to everyone." />
+                <Image src="/partiful/rsvp-comment.jpg" width={516} height={1080} sizes="(min-width: 600px) 240px, 37vw" alt="Partiful RSVP sheet on a phone with 'I am vegetarian' typed into the optional comment box." />
+                <Image src="/partiful/rsvp-feed.jpg" width={499} height={1080} sizes="(min-width: 600px) 240px, 37vw" alt="The event page's public Activity feed showing the RSVP with the comment 'I am vegetarian' visible to everyone." />
               </div>
               <p className="fig-note">A dietary note typed into the RSVP comment box (left) posts to the event&rsquo;s public activity feed (right). All five participants put dietary restrictions here. Three of five assumed it was private.</p>
             </figure>

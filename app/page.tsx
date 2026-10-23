@@ -52,7 +52,7 @@ export default function Home() {
             </ul>
             <div className="hero-cta">
               <Link className="btn btn-primary" href="/work">See the work <span className="arw">→</span></Link>
-              {HAS_RESUME && <a className="btn btn-ghost" href="/resume.pdf">Resume <span className="arw">↓</span></a>}
+              {HAS_RESUME && <Link className="btn btn-ghost" href="/resume">Resume <span className="arw">→</span></Link>}
               <EmailButton email={EMAIL} />
             </div>
           </div>

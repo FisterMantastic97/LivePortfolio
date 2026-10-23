@@ -9,10 +9,9 @@ import WorkPlate from '@/components/WorkPlate'
 import ReactionDemo from '@/components/ReactionDemo'
 import ResultsChart from '@/components/ResultsChart'
 import { AlertIllustration } from '@/components/RoadScene'
+import { caseMetadata } from '@/lib/caseMeta'
 
-export const metadata = {
-  title: 'When does a visual alert beat a beep? — Nicholas Mitchell',
-}
+export const metadata = caseMetadata('driving-alert-salience', 'When does a visual alert beat a beep?')
 
 export default function Page() {
   return (
@@ -68,7 +67,8 @@ export default function Page() {
             <section className="block pad">
               <p className="stamp"><span className="num">★ Try it</span></p>
               <h2 className="sec-title">Feel the salience effect.</h2>
-              <p>Same idea as the study, shrunk to six alerts. Keep your eyes on the center of the road. A warning will pop up, sometimes bold and sometimes faint. Tap the road or press Space the moment you see it.</p>
+              <p>Same task as the study, shrunk to eight alerts. Keep your eyes on the center of the road. Navigation and message alerts will pop up, some bold and some faint. Answer each one as fast as you can with its own control.</p>
+              <p>Use the arrow keys for a left turn, straight ahead, or a right turn. Press Space to acknowledge a message. On a phone, tap the matching button under the road. Speed counts, but so does picking the right one.</p>
               <ReactionDemo />
             </section>
 

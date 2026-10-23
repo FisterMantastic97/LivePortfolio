@@ -7,10 +7,10 @@ import { ReadModeProvider, ReadToggle, DeepRead } from '@/components/ReadMode'
 import SpecPlate from '@/components/SpecPlate'
 import WorkPlate from '@/components/WorkPlate'
 import PersonaGrades from '@/components/PersonaGrades'
+import { caseMetadata } from '@/lib/caseMeta'
+import Image from 'next/image'
 
-export const metadata = {
-  title: 'When depth becomes a wall — Nicholas Mitchell',
-}
+export const metadata = caseMetadata('path-of-exile-2-evaluation', 'When depth becomes a wall.')
 
 export default function Page() {
   return (
@@ -86,8 +86,8 @@ export default function Page() {
                 <p className="fig-t">The skill tree and a boss fight</p>
               </div>
               <div className="shot-pair uneven">
-                <img src="/poe2/passive-tree.jpg" width={1000} height={1042} loading="lazy" alt="The full Path of Exile 2 passive skill tree zoomed out: a dense web of hundreds of tiny nodes around an empty center." />
-                <img src="/poe2/boss-fight.jpg" width={1280} height={720} loading="lazy" alt="A Path of Exile 2 boss fight where a large fiery explosion fills most of the screen, hiding both the boss and the player character." />
+                <Image src="/poe2/passive-tree.jpg" width={1000} height={1042} sizes="(min-width: 1000px) 290px, (min-width: 600px) 30vw, 76vw" alt="The full Path of Exile 2 passive skill tree zoomed out: a dense web of hundreds of tiny nodes around an empty center." />
+                <Image src="/poe2/boss-fight.jpg" width={1280} height={720} sizes="(min-width: 1000px) 510px, (min-width: 600px) 53vw, 76vw" alt="A Path of Exile 2 boss fight where a large fiery explosion fills most of the screen, hiding both the boss and the player character." />
               </div>
               <p className="fig-note">Left: the full passive tree, where every dot is a separate skill. Right: a boss fight with both the boss and the player somewhere in the frame.</p>
             </figure>
@@ -128,8 +128,8 @@ export default function Page() {
                 <p className="fig-t">Two of the game&rsquo;s crafting stash tabs</p>
               </div>
               <div className="shot-pair">
-                <img src="/poe2/socketables-stash.jpg" width={853} height={998} loading="lazy" alt="Path of Exile 2 stash open to the Socketables tab: rows of near-identical socketable icons with stack counts and no labels, under eleven category tabs." />
-                <img src="/poe2/essence-stash.jpg" width={849} height={990} loading="lazy" alt="Path of Exile 2 stash open to the Essence tab: dozens of crystal icons that differ mainly by color, with stack counts and no labels." />
+                <Image src="/poe2/socketables-stash.jpg" width={853} height={998} sizes="(min-width: 1000px) 400px, (min-width: 600px) 41vw, 76vw" alt="Path of Exile 2 stash open to the Socketables tab: rows of near-identical socketable icons with stack counts and no labels, under eleven category tabs." />
+                <Image src="/poe2/essence-stash.jpg" width={849} height={990} sizes="(min-width: 1000px) 400px, (min-width: 600px) 41vw, 76vw" alt="Path of Exile 2 stash open to the Essence tab: dozens of crystal icons that differ mainly by color, with stack counts and no labels." />
               </div>
               <p className="fig-note">Dozens of look-alike icons and stack counts, with no labels on screen.</p>
             </figure>

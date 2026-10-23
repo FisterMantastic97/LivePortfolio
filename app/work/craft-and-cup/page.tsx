@@ -7,10 +7,10 @@ import {
 import { ReadModeProvider, ReadToggle, DeepRead } from '@/components/ReadMode'
 import SpecPlate from '@/components/SpecPlate'
 import WorkPlate from '@/components/WorkPlate'
+import { caseMetadata } from '@/lib/caseMeta'
+import Image from 'next/image'
 
-export const metadata = {
-  title: 'Just write what you taste — Nicholas Mitchell',
-}
+export const metadata = caseMetadata('craft-and-cup', 'Just write what you taste.')
 
 // Everything on this page comes from the Craft & Cup case study brief, current as of October 2026.
 
@@ -180,8 +180,8 @@ export default function Page() {
                 <p className="fig-t">One tasting note, mapped onto the wheel</p>
               </div>
               <div className="shot-pair phones">
-                <img src="/craft/bean-notes.jpg" width={750} height={1390} loading="lazy" alt="Craft &amp; Cup bean page showing a long plain-language tasting note, with the detected flavors listed above it: wild blackberry, blood orange, white peach, jasmine, dried rose, demerara, dark chocolate, tobacco, and crisp." />
-                <img src="/craft/bean-profile.jpg" width={750} height={1390} loading="lazy" alt="The same bean's one-line flavor profile above a multi-tier flavor wheel, with fruity, floral, and sweet families broken out into specific notes like blackberry and blood orange." />
+                <Image src="/craft/bean-notes.jpg" width={750} height={1390} sizes="(min-width: 600px) 240px, 37vw" alt="Craft &amp; Cup bean page showing a long plain-language tasting note, with the detected flavors listed above it: wild blackberry, blood orange, white peach, jasmine, dried rose, demerara, dark chocolate, tobacco, and crisp." />
+                <Image src="/craft/bean-profile.jpg" width={750} height={1390} sizes="(min-width: 600px) 240px, 37vw" alt="The same bean's one-line flavor profile above a multi-tier flavor wheel, with fruity, floral, and sweet families broken out into specific notes like blackberry and blood orange." />
               </div>
               <p className="fig-note">An example entry from the live app. The note on the left is written the way people talk. The app pulls out the flavors and builds the profile and wheel on the right.</p>
             </figure>
@@ -196,8 +196,8 @@ export default function Page() {
                 <p className="fig-t">A word next to every color, and a calculator that asks how it tasted</p>
               </div>
               <div className="shot-pair phones">
-                <img src="/craft/bean-scores.jpg" width={750} height={1624} loading="lazy" alt="Tasting score sliders for aroma, acidity, body, sweetness, and finish. Each score shows a number and a word label, such as 9 Excellent, 8 Great, and 5 Good." />
-                <img src="/craft/brew-tasting.jpg" width={750} height={1624} loading="lazy" alt="The brew calculator asking how the coffee is tasting, with options like too bitter, too sour, too weak, and too strong, above the coffee and water amounts." />
+                <Image src="/craft/bean-scores.jpg" width={750} height={1624} sizes="(min-width: 600px) 240px, 37vw" alt="Tasting score sliders for aroma, acidity, body, sweetness, and finish. Each score shows a number and a word label, such as 9 Excellent, 8 Great, and 5 Good." />
+                <Image src="/craft/brew-tasting.jpg" width={750} height={1624} sizes="(min-width: 600px) 240px, 37vw" alt="The brew calculator asking how the coffee is tasting, with options like too bitter, too sour, too weak, and too strong, above the coffee and water amounts." />
               </div>
               <p className="fig-note">Scores never rely on color alone (left). The brew tool asks how the cup tasted in plain words before it talks about numbers (right).</p>
             </figure>
@@ -264,8 +264,8 @@ export default function Page() {
                 <p className="fig-t">mycraftcup.com, as it stands today</p>
               </div>
               <div className="shot-pair phones">
-                <img src="/craft/landing-wheel.jpg" width={750} height={1624} loading="lazy" alt="The Craft &amp; Cup landing page with a colorful multi-tier flavor wheel for a featured coffee and its tasting note." />
-                <img src="/craft/brew-methods.jpg" width={750} height={1624} loading="lazy" alt="The Brew screen with eight brew methods to pick from and the grind, ratio, temperature, bloom, and brew time for pour over." />
+                <Image src="/craft/landing-wheel.jpg" width={750} height={1624} sizes="(min-width: 600px) 240px, 37vw" alt="The Craft &amp; Cup landing page with a colorful multi-tier flavor wheel for a featured coffee and its tasting note." />
+                <Image src="/craft/brew-methods.jpg" width={750} height={1624} sizes="(min-width: 600px) 240px, 37vw" alt="The Brew screen with eight brew methods to pick from and the grind, ratio, temperature, bloom, and brew time for pour over." />
               </div>
               <p className="fig-note">Captured October 2026. The app keeps changing, so these will too.</p>
             </figure>

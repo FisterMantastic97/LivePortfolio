@@ -8,10 +8,9 @@ import SpecPlate from '@/components/SpecPlate'
 import WorkPlate from '@/components/WorkPlate'
 import DashScores from '@/components/DashScores'
 import DashDemo from '@/components/DashDemo'
+import { caseMetadata } from '@/lib/caseMeta'
 
-export const metadata = {
-  title: 'Buttons, screens, or both? — Nicholas Mitchell',
-}
+export const metadata = caseMetadata('dashboard-usability', 'Buttons, screens, or both?')
 
 export default function Page() {
   return (
